@@ -7,7 +7,7 @@ import numpy as np
 import operator
 import random
 import glob
-from UCFdata import DataSet
+from data import DataSet
 from processor import process_image
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
