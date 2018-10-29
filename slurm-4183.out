@@ -1,0 +1,38 @@
+2018-10-29 10:40:11.123681: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Using TensorFlow backend.
+--------------------------------------------------------------------------------
+data/test/BoxingPunchingBag/v_BoxingPunchingBag_g07_c04-0283.jpg
+BoxingPunchingBag: 0.47
+BodyWeightSquats: 0.36
+Biking: 0.12
+Basketball: 0.03
+BoxingSpeedBag: 0.00
+--------------------------------------------------------------------------------
+data/test/BoxingSpeedBag/v_BoxingSpeedBag_g07_c01-0228.jpg
+Biking: 0.28
+BoxingPunchingBag: 0.16
+BodyWeightSquats: 0.16
+Basketball: 0.08
+Bowling: 0.05
+--------------------------------------------------------------------------------
+data/test/BasketballDunk/v_BasketballDunk_g04_c02-0035.jpg
+FloorGymnastics: 0.91
+BalanceBeam: 0.08
+BasketballDunk: 0.00
+FieldHockeyPenalty: 0.00
+Diving: 0.00
+--------------------------------------------------------------------------------
+data/test/Biking/v_Biking_g06_c02-0034.jpg
+Biking: 1.00
+Basketball: 0.00
+FloorGymnastics: 0.00
+BodyWeightSquats: 0.00
+CliffDiving: 0.00
+--------------------------------------------------------------------------------
+data/test/BenchPress/v_BenchPress_g01_c06-0055.jpg
+BenchPress: 0.99
+CleanAndJerk: 0.00
+Bowling: 0.00
+BoxingPunchingBag: 0.00
+BodyWeightSquats: 0.00
+/var/lib/slurm-llnl/slurmd/job04183/slurm_script: 9: /var/lib/slurm-llnl/slurmd/job04183/slurm_script: /home/ICTDOMAIN/d14122793: Permission denied
