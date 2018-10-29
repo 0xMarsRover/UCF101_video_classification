@@ -6,4 +6,3 @@
 #SBATCH --cpus-per-task=4
 
 python3 train.py
-

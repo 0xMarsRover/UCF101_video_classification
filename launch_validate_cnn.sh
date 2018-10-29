@@ -6,4 +6,3 @@
 #SBATCH --cpus-per-task=4
 
 python3 validate_cnn.py
-~                    
