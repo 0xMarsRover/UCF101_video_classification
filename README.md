@@ -1,7 +1,5 @@
 # UCF101_video_classification
 
-# Five video classification methods
-
 The five video classification methods:
 
 1. Classify one frame at a time with a ConvNet
@@ -34,13 +32,14 @@ Now you can run the scripts in the data folder to move the videos to the appropr
 
 `python 2_extract_files.py`
 
-Notes: only select first 30 classes:
-        Train: 2282 avi, 476857 jpg
-        Test: 1151 avi, 186640 jpg
+Notes: only select first 30 classes: 
+
+1. Train: 2282 avi, 476857 jpg
+2. Test: 1151 avi, 186640 jpg
 
 ## Extracting features
 
-Before you can run the `lstm` and `mlp`, you need to extract features from the images with the CNN. This is done by running `extract_features.py`. On my Dell with a GeFore 960m GPU, this takes about 8 hours. If you want to limit to just the first N classes, you can set that option in the file.
+Before you can run the `lstm` and `mlp`, you need to extract features from the images with the CNN. This is done by running `extract_features.py`. If you want to limit to just the first N classes, you can set that option in the file.
 
 ## Training models
 
