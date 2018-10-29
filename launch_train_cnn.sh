@@ -1,8 +1,5 @@
 #!/bin/sh
+#sbatch --job-name=KQH_cnn --gres=gpu:1 --mem=32768 --cpus-per-task=4 launch_train_cnn.sh
 
-#SBATCH --job-name=KQH_train
-#SBATCH --gres=gpu:0
-#SBATCH --mem=32768
-#SBATCH --cpus-per-task=4
 
 python3 train_cnn.py
