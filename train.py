@@ -84,7 +84,7 @@ def main():
     """These are the main training settings. Set each before running
     this file."""
     # model can be one of lstm, lrcn, mlp, conv_3d, c3d
-    model = 'lrcn'
+    model = 'mlp'
     saved_model = None  # None or weights file
     class_limit = 30  # int, can be 1-101 or None
     seq_length = 40
