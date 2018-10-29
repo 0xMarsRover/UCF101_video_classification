@@ -1,0 +1,37 @@
+2018-10-29 14:36:41.604371: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Using TensorFlow backend.
+--------------------------------------------------------------------------------
+data/test/BlowDryHair/v_BlowDryHair_g06_c06-0122.jpg
+BoxingSpeedBag: 0.73
+BlowDryHair: 0.18
+BoxingPunchingBag: 0.05
+Biking: 0.02
+BandMarching: 0.00
+--------------------------------------------------------------------------------
+data/test/Drumming/v_Drumming_g04_c07-0290.jpg
+Drumming: 0.97
+Biking: 0.01
+BodyWeightSquats: 0.01
+BandMarching: 0.00
+Basketball: 0.00
+--------------------------------------------------------------------------------
+data/test/CleanAndJerk/v_CleanAndJerk_g07_c05-0049.jpg
+CleanAndJerk: 1.00
+BenchPress: 0.00
+BoxingPunchingBag: 0.00
+BoxingSpeedBag: 0.00
+BodyWeightSquats: 0.00
+--------------------------------------------------------------------------------
+data/test/Bowling/v_Bowling_g05_c06-0126.jpg
+Bowling: 1.00
+CricketBowling: 0.00
+FloorGymnastics: 0.00
+Fencing: 0.00
+BalanceBeam: 0.00
+--------------------------------------------------------------------------------
+data/test/FieldHockeyPenalty/v_FieldHockeyPenalty_g02_c03-0104.jpg
+FieldHockeyPenalty: 0.83
+Basketball: 0.08
+FloorGymnastics: 0.06
+BaseballPitch: 0.01
+BalanceBeam: 0.01

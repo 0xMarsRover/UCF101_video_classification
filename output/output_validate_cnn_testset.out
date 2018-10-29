@@ -1,0 +1,5 @@
+2018-10-29 15:09:34.203468: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Using TensorFlow backend.
+Found 186640 images belonging to 30 classes.
+[0.9873887806573809, 0.7236100394375857, 0.9475415809327846]
+['accuracy', 'top_k_categorical_accuracy']
