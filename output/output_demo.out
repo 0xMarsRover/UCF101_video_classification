@@ -1,0 +1,22 @@
+2018-11-05 14:15:40.791766: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-05 14:15:43.072059: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-11-05 14:15:43.072187: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: ADAPT-02
+2018-11-05 14:15:43.072203: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: ADAPT-02
+2018-11-05 14:15:43.072423: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 387.26.0
+2018-11-05 14:15:43.072522: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 387.26.0
+2018-11-05 14:15:43.072539: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 387.26.0
+Using TensorFlow backend.
+Current video name: v_Basketball_g07_c04
+[[2.65774725e-06 2.20281436e-06 5.96093150e-06 1.07424501e-04
+  5.71201667e-07 1.15201365e-05 1.76135742e-04 9.76940393e-01
+  8.60207706e-07 3.98011753e-06 1.79048424e-04 6.49073627e-07
+  4.89206968e-07 5.04713853e-07 1.31195542e-04 5.95193342e-06
+  2.82377041e-05 6.00625981e-07 3.54030533e-07 5.22704295e-06
+  3.04514833e-05 9.88968054e-07 1.40231999e-03 3.36375029e-04
+  9.41810754e-07 4.83881877e-06 2.33371770e-06 1.20350178e-05
+  1.94908362e-02 1.11501641e-03]]
+Basketball: 0.98
+FieldHockeyPenalty: 0.02
+CricketBowling: 0.00
+FloorGymnastics: 0.00
+CricketShot: 0.00

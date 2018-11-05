@@ -48,8 +48,8 @@ def main():
     # TODO Make this way more useful. It should take in the path to
     # an actual video file, extract frames, generate sequences, etc.
     # video_name = 'v_Archery_g04_c02'
-    video_name = 'v_ApplyLipstick_g01_c01'
-
+    video_name = 'v_Basketball_g07_c04'
+    print ("Current video name:", video_name)
     # Chose images or features and image shape based on network.
     if model in ['conv_3d', 'c3d', 'lrcn']:
         data_type = 'images'
@@ -61,7 +61,6 @@ def main():
         raise ValueError("Invalid model. See train.py for options.")
 
     predict(data_type, seq_length, saved_model, image_shape, video_name, class_limit)
-
 
 if __name__ == '__main__':
     main()
