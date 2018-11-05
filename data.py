@@ -141,7 +141,6 @@ class DataSet():
 
                 if sequence is None:
                     print("Can't find sequence. Did you generate them?")
-                    raise
 
             X.append(sequence)
             y.append(self.get_class_one_hot(row[1]))

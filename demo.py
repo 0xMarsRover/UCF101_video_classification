@@ -12,6 +12,7 @@ from keras.models import load_model
 from data import DataSet
 import numpy as np
 
+
 def predict(data_type, seq_length, saved_model, image_shape, video_name, class_limit):
     model = load_model(saved_model)
 
@@ -19,8 +20,7 @@ def predict(data_type, seq_length, saved_model, image_shape, video_name, class_l
     if image_shape is None:
         data = DataSet(seq_length=seq_length, class_limit=class_limit)
     else:
-        data = DataSet(seq_length=seq_length, image_shape=image_shape,
-            class_limit=class_limit)
+        data = DataSet(seq_length=seq_length, image_shape=image_shape, class_limit=class_limit)
     
     # Extract the sample from the data.
     sample = data.get_frames_by_filename(video_name, data_type)
@@ -30,15 +30,16 @@ def predict(data_type, seq_length, saved_model, image_shape, video_name, class_l
     print(prediction)
     data.print_class_from_prediction(np.squeeze(prediction, axis=0))
 
+
 def main():
     # model can be one of lstm, lrcn, mlp, conv_3d, c3d.
     model = 'lstm'
     # Must be a weights file.
-    saved_model = 'data/checkpoints/lstm-features.026-0.239.hdf5'
+    saved_model = 'data/checkpoints/lstm-features.017-0.525.hdf5'
     # Sequence length must match the lengh used during training.
     seq_length = 40
     # Limit must match that used during training.
-    class_limit = 4
+    class_limit = 30
 
     # Demo file. Must already be extracted & features generated (if model requires)
     # Do not include the extension.
@@ -46,7 +47,7 @@ def main():
     # It also must be part of the train/test data.
     # TODO Make this way more useful. It should take in the path to
     # an actual video file, extract frames, generate sequences, etc.
-    #video_name = 'v_Archery_g04_c02'
+    # video_name = 'v_Archery_g04_c02'
     video_name = 'v_ApplyLipstick_g01_c01'
 
     # Chose images or features and image shape based on network.
@@ -60,6 +61,7 @@ def main():
         raise ValueError("Invalid model. See train.py for options.")
 
     predict(data_type, seq_length, saved_model, image_shape, video_name, class_limit)
+
 
 if __name__ == '__main__':
     main()
