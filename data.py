@@ -280,4 +280,4 @@ class DataSet():
         for i, class_prediction in enumerate(sorted_lps):
             if i > nb_to_return - 1 or class_prediction[1] == 0.0:
                 break
-            print("%s: %.2f" % (class_prediction[0], class_prediction[1]))
+            print("%s: %.2f" % (class_prediction[0], class_prediction[1]))  
