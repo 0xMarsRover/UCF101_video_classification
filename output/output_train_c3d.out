@@ -1,0 +1,1541 @@
+2018-10-30 11:43:00.062779: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Loading C3D
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv1 (Conv3D)               (None, 40, 80, 80, 64)    5248      
+_________________________________________________________________
+pool1 (MaxPooling3D)         (None, 40, 40, 40, 64)    0         
+_________________________________________________________________
+conv2 (Conv3D)               (None, 40, 40, 40, 128)   221312    
+_________________________________________________________________
+pool2 (MaxPooling3D)         (None, 20, 20, 20, 128)   0         
+_________________________________________________________________
+conv3a (Conv3D)              (None, 20, 20, 20, 256)   884992    
+_________________________________________________________________
+conv3b (Conv3D)              (None, 20, 20, 20, 256)   1769728   
+_________________________________________________________________
+pool3 (MaxPooling3D)         (None, 10, 10, 10, 256)   0         
+_________________________________________________________________
+conv4a (Conv3D)              (None, 10, 10, 10, 512)   3539456   
+_________________________________________________________________
+conv4b (Conv3D)              (None, 10, 10, 10, 512)   7078400   
+_________________________________________________________________
+pool4 (MaxPooling3D)         (None, 5, 5, 5, 512)      0         
+_________________________________________________________________
+conv5a (Conv3D)              (None, 5, 5, 5, 512)      7078400   
+_________________________________________________________________
+conv5b (Conv3D)              (None, 5, 5, 5, 512)      7078400   
+_________________________________________________________________
+zero_padding3d_1 (ZeroPaddin (None, 5, 7, 7, 512)      0         
+_________________________________________________________________
+pool5 (MaxPooling3D)         (None, 2, 3, 3, 512)      0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 9216)              0         
+_________________________________________________________________
+fc6 (Dense)                  (None, 4096)              37752832  
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 4096)              0         
+_________________________________________________________________
+fc7 (Dense)                  (None, 4096)              16781312  
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 4096)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 30)                122910    
+=================================================================
+Total params: 82,312,990
+Trainable params: 82,312,990
+Non-trainable params: 0
+_________________________________________________________________
+None
+Epoch 1/1000
+Creating train generator with 2695 samples.
+Creating test generator with 1084 samples.
+
+ 1/82 [..............................] - ETA: 4:46:19 - loss: 3.4017 - acc: 0.0625 - top_k_categorical_accuracy: 0.2188
+ 2/82 [..............................] - ETA: 4:37:08 - loss: 3.4019 - acc: 0.0625 - top_k_categorical_accuracy: 0.1562
+ 3/82 [>.............................] - ETA: 4:31:39 - loss: 3.3992 - acc: 0.0729 - top_k_categorical_accuracy: 0.2292
+ 4/82 [>.............................] - ETA: 4:28:31 - loss: 3.3996 - acc: 0.0547 - top_k_categorical_accuracy: 0.2188
+ 5/82 [>.............................] - ETA: 4:24:29 - loss: 3.4002 - acc: 0.0500 - top_k_categorical_accuracy: 0.2000
+ 6/82 [=>............................] - ETA: 4:20:30 - loss: 3.4011 - acc: 0.0469 - top_k_categorical_accuracy: 0.1823
+ 7/82 [=>............................] - ETA: 4:16:38 - loss: 3.4012 - acc: 0.0402 - top_k_categorical_accuracy: 0.1786
+ 8/82 [=>............................] - ETA: 4:12:59 - loss: 3.4011 - acc: 0.0352 - top_k_categorical_accuracy: 0.1758
+ 9/82 [==>...........................] - ETA: 4:09:12 - loss: 3.4010 - acc: 0.0347 - top_k_categorical_accuracy: 0.1736
+10/82 [==>...........................] - ETA: 4:05:39 - loss: 3.4007 - acc: 0.0344 - top_k_categorical_accuracy: 0.1750
+11/82 [===>..........................] - ETA: 4:02:01 - loss: 3.4004 - acc: 0.0369 - top_k_categorical_accuracy: 0.1790
+12/82 [===>..........................] - ETA: 3:58:21 - loss: 3.4008 - acc: 0.0365 - top_k_categorical_accuracy: 0.1797
+13/82 [===>..........................] - ETA: 3:54:57 - loss: 3.4010 - acc: 0.0385 - top_k_categorical_accuracy: 0.1755
+14/82 [====>.........................] - ETA: 3:51:27 - loss: 3.4009 - acc: 0.0379 - top_k_categorical_accuracy: 0.1786
+15/82 [====>.........................] - ETA: 3:48:02 - loss: 3.4010 - acc: 0.0354 - top_k_categorical_accuracy: 0.1771
+16/82 [====>.........................] - ETA: 3:44:48 - loss: 3.4009 - acc: 0.0371 - top_k_categorical_accuracy: 0.1777
+17/82 [=====>........................] - ETA: 3:41:26 - loss: 3.4008 - acc: 0.0368 - top_k_categorical_accuracy: 0.1728
+18/82 [=====>........................] - ETA: 3:37:55 - loss: 3.4010 - acc: 0.0347 - top_k_categorical_accuracy: 0.1753
+19/82 [=====>........................] - ETA: 3:34:38 - loss: 3.4007 - acc: 0.0329 - top_k_categorical_accuracy: 0.1793
+20/82 [======>.......................] - ETA: 3:31:07 - loss: 3.4003 - acc: 0.0328 - top_k_categorical_accuracy: 0.1750
+21/82 [======>.......................] - ETA: 3:27:36 - loss: 3.4005 - acc: 0.0312 - top_k_categorical_accuracy: 0.1711
+22/82 [=======>......................] - ETA: 3:24:08 - loss: 3.4004 - acc: 0.0312 - top_k_categorical_accuracy: 0.1719
+23/82 [=======>......................] - ETA: 3:20:48 - loss: 3.4003 - acc: 0.0312 - top_k_categorical_accuracy: 0.1712
+24/82 [=======>......................] - ETA: 3:17:22 - loss: 3.4006 - acc: 0.0312 - top_k_categorical_accuracy: 0.1719
+25/82 [========>.....................] - ETA: 3:13:57 - loss: 3.4005 - acc: 0.0312 - top_k_categorical_accuracy: 0.1737
+26/82 [========>.....................] - ETA: 3:10:39 - loss: 3.4002 - acc: 0.0312 - top_k_categorical_accuracy: 0.1743
+27/82 [========>.....................] - ETA: 3:07:11 - loss: 3.4003 - acc: 0.0312 - top_k_categorical_accuracy: 0.1759
+28/82 [=========>....................] - ETA: 3:03:49 - loss: 3.4001 - acc: 0.0301 - top_k_categorical_accuracy: 0.1786
+29/82 [=========>....................] - ETA: 3:00:23 - loss: 3.3998 - acc: 0.0334 - top_k_categorical_accuracy: 0.1800
+30/82 [=========>....................] - ETA: 2:56:59 - loss: 3.4001 - acc: 0.0333 - top_k_categorical_accuracy: 0.1771
+31/82 [==========>...................] - ETA: 2:53:36 - loss: 3.4003 - acc: 0.0323 - top_k_categorical_accuracy: 0.1724
+32/82 [==========>...................] - ETA: 2:50:13 - loss: 3.4003 - acc: 0.0332 - top_k_categorical_accuracy: 0.1738
+33/82 [===========>..................] - ETA: 2:46:50 - loss: 3.4004 - acc: 0.0322 - top_k_categorical_accuracy: 0.1714
+34/82 [===========>..................] - ETA: 2:43:26 - loss: 3.4002 - acc: 0.0322 - top_k_categorical_accuracy: 0.1728
+35/82 [===========>..................] - ETA: 2:40:05 - loss: 3.3997 - acc: 0.0357 - top_k_categorical_accuracy: 0.1777
+36/82 [============>.................] - ETA: 2:36:41 - loss: 3.3996 - acc: 0.0373 - top_k_categorical_accuracy: 0.1823
+37/82 [============>.................] - ETA: 2:33:17 - loss: 3.3995 - acc: 0.0363 - top_k_categorical_accuracy: 0.1833
+38/82 [============>.................] - ETA: 2:29:52 - loss: 3.3990 - acc: 0.0370 - top_k_categorical_accuracy: 0.1859
+39/82 [=============>................] - ETA: 2:26:25 - loss: 3.3991 - acc: 0.0369 - top_k_categorical_accuracy: 0.1859
+40/82 [=============>................] - ETA: 2:23:00 - loss: 3.3992 - acc: 0.0367 - top_k_categorical_accuracy: 0.1852
+41/82 [==============>...............] - ETA: 2:19:35 - loss: 3.3989 - acc: 0.0358 - top_k_categorical_accuracy: 0.1852
+42/82 [==============>...............] - ETA: 2:16:10 - loss: 3.3997 - acc: 0.0357 - top_k_categorical_accuracy: 0.1830
+43/82 [==============>...............] - ETA: 2:12:45 - loss: 3.3995 - acc: 0.0371 - top_k_categorical_accuracy: 0.1817
+44/82 [===============>..............] - ETA: 2:09:23 - loss: 3.3991 - acc: 0.0376 - top_k_categorical_accuracy: 0.1847
+45/82 [===============>..............] - ETA: 2:06:00 - loss: 3.3992 - acc: 0.0382 - top_k_categorical_accuracy: 0.1840
+46/82 [===============>..............] - ETA: 2:02:35 - loss: 3.3991 - acc: 0.0387 - top_k_categorical_accuracy: 0.1848
+47/82 [================>.............] - ETA: 1:59:11 - loss: 3.3994 - acc: 0.0379 - top_k_categorical_accuracy: 0.1835
+48/82 [================>.............] - ETA: 1:55:47 - loss: 3.3994 - acc: 0.0384 - top_k_categorical_accuracy: 0.1842
+49/82 [================>.............] - ETA: 1:52:22 - loss: 3.3992 - acc: 0.0376 - top_k_categorical_accuracy: 0.1843
+50/82 [=================>............] - ETA: 1:48:57 - loss: 3.3992 - acc: 0.0369 - top_k_categorical_accuracy: 0.1837
+51/82 [=================>............] - ETA: 1:45:33 - loss: 3.3988 - acc: 0.0362 - top_k_categorical_accuracy: 0.1863
+52/82 [==================>...........] - ETA: 1:42:08 - loss: 3.3988 - acc: 0.0373 - top_k_categorical_accuracy: 0.1875
+53/82 [==================>...........] - ETA: 1:38:44 - loss: 3.3979 - acc: 0.0377 - top_k_categorical_accuracy: 0.1934
+54/82 [==================>...........] - ETA: 1:35:20 - loss: 3.3975 - acc: 0.0388 - top_k_categorical_accuracy: 0.1944
+55/82 [===================>..........] - ETA: 1:31:54 - loss: 3.3969 - acc: 0.0398 - top_k_categorical_accuracy: 0.1966
+56/82 [===================>..........] - ETA: 1:28:29 - loss: 3.3968 - acc: 0.0396 - top_k_categorical_accuracy: 0.1981
+57/82 [===================>..........] - ETA: 1:25:05 - loss: 3.3969 - acc: 0.0400 - top_k_categorical_accuracy: 0.1985
+58/82 [====================>.........] - ETA: 1:21:41 - loss: 3.3966 - acc: 0.0404 - top_k_categorical_accuracy: 0.1983
+59/82 [====================>.........] - ETA: 1:18:17 - loss: 3.3968 - acc: 0.0397 - top_k_categorical_accuracy: 0.1976
+60/82 [====================>.........] - ETA: 1:14:52 - loss: 3.3964 - acc: 0.0411 - top_k_categorical_accuracy: 0.1984
+61/82 [=====================>........] - ETA: 1:11:28 - loss: 3.3966 - acc: 0.0405 - top_k_categorical_accuracy: 0.1977
+62/82 [=====================>........] - ETA: 1:08:03 - loss: 3.3956 - acc: 0.0408 - top_k_categorical_accuracy: 0.1996
+63/82 [======================>.......] - ETA: 1:04:39 - loss: 3.3948 - acc: 0.0412 - top_k_categorical_accuracy: 0.2004
+64/82 [======================>.......] - ETA: 1:01:14 - loss: 3.3944 - acc: 0.0415 - top_k_categorical_accuracy: 0.2017
+65/82 [======================>.......] - ETA: 57:49 - loss: 3.3948 - acc: 0.0418 - top_k_categorical_accuracy: 0.2014  
+66/82 [=======================>......] - ETA: 54:25 - loss: 3.3941 - acc: 0.0417 - top_k_categorical_accuracy: 0.2022
+67/82 [=======================>......] - ETA: 51:01 - loss: 3.3938 - acc: 0.0410 - top_k_categorical_accuracy: 0.2034
+68/82 [=======================>......] - ETA: 47:36 - loss: 3.3947 - acc: 0.0404 - top_k_categorical_accuracy: 0.2022
+69/82 [========================>.....] - ETA: 44:12 - loss: 3.3955 - acc: 0.0399 - top_k_categorical_accuracy: 0.2011
+70/82 [========================>.....] - ETA: 40:48 - loss: 3.3951 - acc: 0.0402 - top_k_categorical_accuracy: 0.2000
+71/82 [========================>.....] - ETA: 37:24 - loss: 3.3952 - acc: 0.0401 - top_k_categorical_accuracy: 0.1998
+72/82 [=========================>....] - ETA: 34:00 - loss: 3.3951 - acc: 0.0408 - top_k_categorical_accuracy: 0.2001
+73/82 [=========================>....] - ETA: 30:36 - loss: 3.3944 - acc: 0.0415 - top_k_categorical_accuracy: 0.2012
+74/82 [==========================>...] - ETA: 27:12 - loss: 3.3946 - acc: 0.0414 - top_k_categorical_accuracy: 0.2019
+75/82 [==========================>...] - ETA: 23:47 - loss: 3.3949 - acc: 0.0413 - top_k_categorical_accuracy: 0.2017
+76/82 [==========================>...] - ETA: 20:23 - loss: 3.3956 - acc: 0.0411 - top_k_categorical_accuracy: 0.2002
+77/82 [===========================>..] - ETA: 16:59 - loss: 3.3950 - acc: 0.0414 - top_k_categorical_accuracy: 0.2013
+78/82 [===========================>..] - ETA: 13:35 - loss: 3.3951 - acc: 0.0409 - top_k_categorical_accuracy: 0.2019
+79/82 [===========================>..] - ETA: 10:11 - loss: 3.3945 - acc: 0.0407 - top_k_categorical_accuracy: 0.2037
+80/82 [============================>.] - ETA: 6:47 - loss: 3.3947 - acc: 0.0406 - top_k_categorical_accuracy: 0.2031 
+81/82 [============================>.] - ETA: 3:23 - loss: 3.3944 - acc: 0.0413 - top_k_categorical_accuracy: 0.2037
+82/82 [==============================] - 17511s 214s/step - loss: 3.3946 - acc: 0.0408 - top_k_categorical_accuracy: 0.2043 - val_loss: 3.3864 - val_acc: 0.0437 - val_top_k_categorical_accuracy: 0.2172
+
+Epoch 00001: val_loss improved from inf to 3.38642, saving model to data/checkpoints/c3d-images.001-3.386.hdf5
+Epoch 2/1000
+
+ 1/82 [..............................] - ETA: 4:38:03 - loss: 3.3799 - acc: 0.0625 - top_k_categorical_accuracy: 0.1562
+ 2/82 [..............................] - ETA: 4:32:56 - loss: 3.3780 - acc: 0.0781 - top_k_categorical_accuracy: 0.1719
+ 3/82 [>.............................] - ETA: 4:30:31 - loss: 3.3913 - acc: 0.0625 - top_k_categorical_accuracy: 0.1354
+ 4/82 [>.............................] - ETA: 4:26:58 - loss: 3.3827 - acc: 0.0547 - top_k_categorical_accuracy: 0.1719
+ 5/82 [>.............................] - ETA: 4:23:30 - loss: 3.3831 - acc: 0.0563 - top_k_categorical_accuracy: 0.1875
+ 6/82 [=>............................] - ETA: 4:20:03 - loss: 3.3772 - acc: 0.0521 - top_k_categorical_accuracy: 0.1979
+ 7/82 [=>............................] - ETA: 4:16:29 - loss: 3.3754 - acc: 0.0536 - top_k_categorical_accuracy: 0.2054
+ 8/82 [=>............................] - ETA: 4:13:05 - loss: 3.3773 - acc: 0.0586 - top_k_categorical_accuracy: 0.2148
+ 9/82 [==>...........................] - ETA: 4:09:35 - loss: 3.3794 - acc: 0.0625 - top_k_categorical_accuracy: 0.2083
+10/82 [==>...........................] - ETA: 4:06:12 - loss: 3.3765 - acc: 0.0594 - top_k_categorical_accuracy: 0.2125
+11/82 [===>..........................] - ETA: 4:02:50 - loss: 3.3770 - acc: 0.0568 - top_k_categorical_accuracy: 0.2074
+12/82 [===>..........................] - ETA: 3:59:31 - loss: 3.3773 - acc: 0.0521 - top_k_categorical_accuracy: 0.2109
+13/82 [===>..........................] - ETA: 3:56:01 - loss: 3.3823 - acc: 0.0505 - top_k_categorical_accuracy: 0.2043
+14/82 [====>.........................] - ETA: 3:52:40 - loss: 3.3800 - acc: 0.0558 - top_k_categorical_accuracy: 0.2098
+15/82 [====>.........................] - ETA: 3:49:03 - loss: 3.3772 - acc: 0.0563 - top_k_categorical_accuracy: 0.2125
+16/82 [====>.........................] - ETA: 3:45:34 - loss: 3.3754 - acc: 0.0605 - top_k_categorical_accuracy: 0.2109
+17/82 [=====>........................] - ETA: 3:42:04 - loss: 3.3741 - acc: 0.0607 - top_k_categorical_accuracy: 0.2151
+18/82 [=====>........................] - ETA: 3:38:31 - loss: 3.3730 - acc: 0.0590 - top_k_categorical_accuracy: 0.2118
+19/82 [=====>........................] - ETA: 3:35:07 - loss: 3.3738 - acc: 0.0576 - top_k_categorical_accuracy: 0.2089
+20/82 [======>.......................] - ETA: 3:31:43 - loss: 3.3749 - acc: 0.0563 - top_k_categorical_accuracy: 0.2109
+21/82 [======>.......................] - ETA: 3:28:17 - loss: 3.3750 - acc: 0.0536 - top_k_categorical_accuracy: 0.2113
+22/82 [=======>......................] - ETA: 3:24:48 - loss: 3.3738 - acc: 0.0526 - top_k_categorical_accuracy: 0.2102
+23/82 [=======>......................] - ETA: 3:21:28 - loss: 3.3732 - acc: 0.0516 - top_k_categorical_accuracy: 0.2120
+24/82 [=======>......................] - ETA: 3:17:57 - loss: 3.3757 - acc: 0.0521 - top_k_categorical_accuracy: 0.2122
+25/82 [========>.....................] - ETA: 3:14:30 - loss: 3.3800 - acc: 0.0512 - top_k_categorical_accuracy: 0.2062
+26/82 [========>.....................] - ETA: 3:11:03 - loss: 3.3785 - acc: 0.0505 - top_k_categorical_accuracy: 0.2091
+27/82 [========>.....................] - ETA: 3:07:37 - loss: 3.3775 - acc: 0.0509 - top_k_categorical_accuracy: 0.2095
+28/82 [=========>....................] - ETA: 3:04:15 - loss: 3.3790 - acc: 0.0502 - top_k_categorical_accuracy: 0.2098
+29/82 [=========>....................] - ETA: 3:00:48 - loss: 3.3790 - acc: 0.0496 - top_k_categorical_accuracy: 0.2101
+30/82 [=========>....................] - ETA: 2:57:21 - loss: 3.3782 - acc: 0.0531 - top_k_categorical_accuracy: 0.2146
+31/82 [==========>...................] - ETA: 2:53:50 - loss: 3.3787 - acc: 0.0514 - top_k_categorical_accuracy: 0.2137
+32/82 [==========>...................] - ETA: 2:50:26 - loss: 3.3795 - acc: 0.0508 - top_k_categorical_accuracy: 0.2100
+33/82 [===========>..................] - ETA: 2:46:59 - loss: 3.3771 - acc: 0.0492 - top_k_categorical_accuracy: 0.2121
+34/82 [===========>..................] - ETA: 2:43:29 - loss: 3.3782 - acc: 0.0496 - top_k_categorical_accuracy: 0.2105
+35/82 [===========>..................] - ETA: 2:40:03 - loss: 3.3776 - acc: 0.0509 - top_k_categorical_accuracy: 0.2134
+36/82 [============>.................] - ETA: 2:36:40 - loss: 3.3770 - acc: 0.0521 - top_k_categorical_accuracy: 0.2135
+37/82 [============>.................] - ETA: 2:33:17 - loss: 3.3781 - acc: 0.0507 - top_k_categorical_accuracy: 0.2120
+38/82 [============>.................] - ETA: 2:29:54 - loss: 3.3794 - acc: 0.0510 - top_k_categorical_accuracy: 0.2122
+39/82 [=============>................] - ETA: 2:26:28 - loss: 3.3798 - acc: 0.0513 - top_k_categorical_accuracy: 0.2115
+40/82 [=============>................] - ETA: 2:23:04 - loss: 3.3817 - acc: 0.0508 - top_k_categorical_accuracy: 0.2102
+41/82 [==============>...............] - ETA: 2:19:38 - loss: 3.3811 - acc: 0.0511 - top_k_categorical_accuracy: 0.2096
+42/82 [==============>...............] - ETA: 2:16:13 - loss: 3.3811 - acc: 0.0521 - top_k_categorical_accuracy: 0.2106
+43/82 [==============>...............] - ETA: 2:12:47 - loss: 3.3806 - acc: 0.0523 - top_k_categorical_accuracy: 0.2129
+44/82 [===============>..............] - ETA: 2:09:23 - loss: 3.3806 - acc: 0.0526 - top_k_categorical_accuracy: 0.2138
+45/82 [===============>..............] - ETA: 2:05:58 - loss: 3.3804 - acc: 0.0521 - top_k_categorical_accuracy: 0.2125
+46/82 [===============>..............] - ETA: 2:02:34 - loss: 3.3801 - acc: 0.0523 - top_k_categorical_accuracy: 0.2126
+47/82 [================>.............] - ETA: 1:59:09 - loss: 3.3793 - acc: 0.0525 - top_k_categorical_accuracy: 0.2161
+48/82 [================>.............] - ETA: 1:55:45 - loss: 3.3793 - acc: 0.0527 - top_k_categorical_accuracy: 0.2174
+49/82 [================>.............] - ETA: 1:52:19 - loss: 3.3788 - acc: 0.0523 - top_k_categorical_accuracy: 0.2188
+50/82 [=================>............] - ETA: 1:48:55 - loss: 3.3785 - acc: 0.0525 - top_k_categorical_accuracy: 0.2188
+51/82 [=================>............] - ETA: 1:45:31 - loss: 3.3791 - acc: 0.0515 - top_k_categorical_accuracy: 0.2163
+52/82 [==================>...........] - ETA: 1:42:06 - loss: 3.3796 - acc: 0.0505 - top_k_categorical_accuracy: 0.2151
+53/82 [==================>...........] - ETA: 1:38:40 - loss: 3.3796 - acc: 0.0501 - top_k_categorical_accuracy: 0.2140
+54/82 [==================>...........] - ETA: 1:35:16 - loss: 3.3792 - acc: 0.0503 - top_k_categorical_accuracy: 0.2164
+55/82 [===================>..........] - ETA: 1:31:53 - loss: 3.3789 - acc: 0.0500 - top_k_categorical_accuracy: 0.2193
+56/82 [===================>..........] - ETA: 1:28:29 - loss: 3.3799 - acc: 0.0502 - top_k_categorical_accuracy: 0.2199
+57/82 [===================>..........] - ETA: 1:25:04 - loss: 3.3791 - acc: 0.0510 - top_k_categorical_accuracy: 0.2193
+58/82 [====================>.........] - ETA: 1:21:40 - loss: 3.3792 - acc: 0.0506 - top_k_categorical_accuracy: 0.2188
+59/82 [====================>.........] - ETA: 1:18:15 - loss: 3.3786 - acc: 0.0503 - top_k_categorical_accuracy: 0.2198
+60/82 [====================>.........] - ETA: 1:14:50 - loss: 3.3790 - acc: 0.0500 - top_k_categorical_accuracy: 0.2193
+61/82 [=====================>........] - ETA: 1:11:27 - loss: 3.3794 - acc: 0.0492 - top_k_categorical_accuracy: 0.2188
+62/82 [=====================>........] - ETA: 1:08:02 - loss: 3.3788 - acc: 0.0489 - top_k_categorical_accuracy: 0.2193
+63/82 [======================>.......] - ETA: 1:04:39 - loss: 3.3790 - acc: 0.0496 - top_k_categorical_accuracy: 0.2197
+64/82 [======================>.......] - ETA: 1:01:14 - loss: 3.3784 - acc: 0.0503 - top_k_categorical_accuracy: 0.2207
+65/82 [======================>.......] - ETA: 57:50 - loss: 3.3777 - acc: 0.0505 - top_k_categorical_accuracy: 0.2221  
+66/82 [=======================>......] - ETA: 54:26 - loss: 3.3781 - acc: 0.0502 - top_k_categorical_accuracy: 0.2221
+67/82 [=======================>......] - ETA: 51:02 - loss: 3.3788 - acc: 0.0499 - top_k_categorical_accuracy: 0.2220
+68/82 [=======================>......] - ETA: 47:38 - loss: 3.3798 - acc: 0.0492 - top_k_categorical_accuracy: 0.2201
+69/82 [========================>.....] - ETA: 44:14 - loss: 3.3798 - acc: 0.0489 - top_k_categorical_accuracy: 0.2188
+70/82 [========================>.....] - ETA: 40:50 - loss: 3.3801 - acc: 0.0487 - top_k_categorical_accuracy: 0.2179
+71/82 [========================>.....] - ETA: 37:26 - loss: 3.3802 - acc: 0.0484 - top_k_categorical_accuracy: 0.2161
+72/82 [=========================>....] - ETA: 34:02 - loss: 3.3791 - acc: 0.0486 - top_k_categorical_accuracy: 0.2174
+73/82 [=========================>....] - ETA: 30:37 - loss: 3.3785 - acc: 0.0488 - top_k_categorical_accuracy: 0.2179
+74/82 [==========================>...] - ETA: 27:13 - loss: 3.3790 - acc: 0.0481 - top_k_categorical_accuracy: 0.2171
+75/82 [==========================>...] - ETA: 23:49 - loss: 3.3789 - acc: 0.0483 - top_k_categorical_accuracy: 0.2171
+76/82 [==========================>...] - ETA: 20:25 - loss: 3.3783 - acc: 0.0485 - top_k_categorical_accuracy: 0.2171
+77/82 [===========================>..] - ETA: 17:01 - loss: 3.3783 - acc: 0.0495 - top_k_categorical_accuracy: 0.2183
+78/82 [===========================>..] - ETA: 13:37 - loss: 3.3784 - acc: 0.0505 - top_k_categorical_accuracy: 0.2188
+79/82 [===========================>..] - ETA: 10:12 - loss: 3.3774 - acc: 0.0510 - top_k_categorical_accuracy: 0.2207
+80/82 [============================>.] - ETA: 6:48 - loss: 3.3770 - acc: 0.0516 - top_k_categorical_accuracy: 0.2227 
+81/82 [============================>.] - ETA: 3:24 - loss: 3.3768 - acc: 0.0517 - top_k_categorical_accuracy: 0.2234
+82/82 [==============================] - 17534s 214s/step - loss: 3.3774 - acc: 0.0511 - top_k_categorical_accuracy: 0.2222 - val_loss: 3.3729 - val_acc: 0.0453 - val_top_k_categorical_accuracy: 0.2633
+
+Epoch 00002: val_loss improved from 3.38642 to 3.37287, saving model to data/checkpoints/c3d-images.002-3.373.hdf5
+Epoch 3/1000
+
+ 1/82 [..............................] - ETA: 4:38:48 - loss: 3.3787 - acc: 0.0312 - top_k_categorical_accuracy: 0.2188
+ 2/82 [..............................] - ETA: 4:33:27 - loss: 3.3499 - acc: 0.0625 - top_k_categorical_accuracy: 0.2500
+ 3/82 [>.............................] - ETA: 4:29:28 - loss: 3.3861 - acc: 0.0521 - top_k_categorical_accuracy: 0.2083
+ 4/82 [>.............................] - ETA: 4:25:25 - loss: 3.3857 - acc: 0.0703 - top_k_categorical_accuracy: 0.2109
+ 5/82 [>.............................] - ETA: 4:22:04 - loss: 3.3929 - acc: 0.0563 - top_k_categorical_accuracy: 0.2000
+ 6/82 [=>............................] - ETA: 4:18:45 - loss: 3.3834 - acc: 0.0573 - top_k_categorical_accuracy: 0.1979
+ 7/82 [=>............................] - ETA: 4:15:33 - loss: 3.3742 - acc: 0.0670 - top_k_categorical_accuracy: 0.2232
+ 8/82 [=>............................] - ETA: 4:11:58 - loss: 3.3617 - acc: 0.0703 - top_k_categorical_accuracy: 0.2422
+ 9/82 [==>...........................] - ETA: 4:08:35 - loss: 3.3614 - acc: 0.0694 - top_k_categorical_accuracy: 0.2431
+10/82 [==>...........................] - ETA: 4:05:13 - loss: 3.3585 - acc: 0.0656 - top_k_categorical_accuracy: 0.2375
+11/82 [===>..........................] - ETA: 4:01:47 - loss: 3.3615 - acc: 0.0625 - top_k_categorical_accuracy: 0.2330
+12/82 [===>..........................] - ETA: 3:58:35 - loss: 3.3644 - acc: 0.0573 - top_k_categorical_accuracy: 0.2266
+13/82 [===>..........................] - ETA: 3:55:01 - loss: 3.3626 - acc: 0.0577 - top_k_categorical_accuracy: 0.2260
+14/82 [====>.........................] - ETA: 3:51:33 - loss: 3.3609 - acc: 0.0625 - top_k_categorical_accuracy: 0.2321
+15/82 [====>.........................] - ETA: 3:48:10 - loss: 3.3575 - acc: 0.0625 - top_k_categorical_accuracy: 0.2417
+16/82 [====>.........................] - ETA: 3:44:41 - loss: 3.3553 - acc: 0.0645 - top_k_categorical_accuracy: 0.2461
+17/82 [=====>........................] - ETA: 3:41:10 - loss: 3.3574 - acc: 0.0625 - top_k_categorical_accuracy: 0.2500
+18/82 [=====>........................] - ETA: 3:37:49 - loss: 3.3583 - acc: 0.0625 - top_k_categorical_accuracy: 0.2483
+19/82 [=====>........................] - ETA: 3:34:24 - loss: 3.3614 - acc: 0.0592 - top_k_categorical_accuracy: 0.2451
+20/82 [======>.......................] - ETA: 3:31:03 - loss: 3.3587 - acc: 0.0625 - top_k_categorical_accuracy: 0.2484
+21/82 [======>.......................] - ETA: 3:27:45 - loss: 3.3605 - acc: 0.0625 - top_k_categorical_accuracy: 0.2411
+22/82 [=======>......................] - ETA: 3:24:28 - loss: 3.3555 - acc: 0.0653 - top_k_categorical_accuracy: 0.2500
+23/82 [=======>......................] - ETA: 3:21:12 - loss: 3.3522 - acc: 0.0666 - top_k_categorical_accuracy: 0.2500
+24/82 [=======>......................] - ETA: 3:17:52 - loss: 3.3521 - acc: 0.0677 - top_k_categorical_accuracy: 0.2513
+25/82 [========>.....................] - ETA: 3:14:32 - loss: 3.3480 - acc: 0.0663 - top_k_categorical_accuracy: 0.2537
+26/82 [========>.....................] - ETA: 3:11:16 - loss: 3.3482 - acc: 0.0661 - top_k_categorical_accuracy: 0.2548
+27/82 [========>.....................] - ETA: 3:07:47 - loss: 3.3483 - acc: 0.0660 - top_k_categorical_accuracy: 0.2546
+28/82 [=========>....................] - ETA: 3:04:20 - loss: 3.3478 - acc: 0.0681 - top_k_categorical_accuracy: 0.2567
+29/82 [=========>....................] - ETA: 3:00:51 - loss: 3.3460 - acc: 0.0690 - top_k_categorical_accuracy: 0.2554
+30/82 [=========>....................] - ETA: 2:57:27 - loss: 3.3426 - acc: 0.0708 - top_k_categorical_accuracy: 0.2562
+31/82 [==========>...................] - ETA: 2:54:00 - loss: 3.3455 - acc: 0.0706 - top_k_categorical_accuracy: 0.2530
+32/82 [==========>...................] - ETA: 2:50:34 - loss: 3.3425 - acc: 0.0693 - top_k_categorical_accuracy: 0.2568
+33/82 [===========>..................] - ETA: 2:47:08 - loss: 3.3407 - acc: 0.0672 - top_k_categorical_accuracy: 0.2595
+34/82 [===========>..................] - ETA: 2:43:46 - loss: 3.3397 - acc: 0.0680 - top_k_categorical_accuracy: 0.2601
+35/82 [===========>..................] - ETA: 2:40:20 - loss: 3.3423 - acc: 0.0679 - top_k_categorical_accuracy: 0.2580
+36/82 [============>.................] - ETA: 2:36:55 - loss: 3.3419 - acc: 0.0677 - top_k_categorical_accuracy: 0.2613
+37/82 [============>.................] - ETA: 2:33:30 - loss: 3.3415 - acc: 0.0667 - top_k_categorical_accuracy: 0.2618
+38/82 [============>.................] - ETA: 2:30:05 - loss: 3.3398 - acc: 0.0683 - top_k_categorical_accuracy: 0.2632
+39/82 [=============>................] - ETA: 2:26:39 - loss: 3.3387 - acc: 0.0681 - top_k_categorical_accuracy: 0.2620
+40/82 [=============>................] - ETA: 2:23:16 - loss: 3.3393 - acc: 0.0680 - top_k_categorical_accuracy: 0.2617
+41/82 [==============>...............] - ETA: 2:19:54 - loss: 3.3406 - acc: 0.0671 - top_k_categorical_accuracy: 0.2607
+42/82 [==============>...............] - ETA: 2:16:32 - loss: 3.3407 - acc: 0.0662 - top_k_categorical_accuracy: 0.2589
+43/82 [==============>...............] - ETA: 2:13:08 - loss: 3.3415 - acc: 0.0661 - top_k_categorical_accuracy: 0.2565
+44/82 [===============>..............] - ETA: 2:09:41 - loss: 3.3400 - acc: 0.0661 - top_k_categorical_accuracy: 0.2592
+45/82 [===============>..............] - ETA: 2:06:16 - loss: 3.3421 - acc: 0.0653 - top_k_categorical_accuracy: 0.2569
+46/82 [===============>..............] - ETA: 2:02:50 - loss: 3.3414 - acc: 0.0652 - top_k_categorical_accuracy: 0.2568
+47/82 [================>.............] - ETA: 1:59:24 - loss: 3.3395 - acc: 0.0645 - top_k_categorical_accuracy: 0.2573
+48/82 [================>.............] - ETA: 1:56:00 - loss: 3.3396 - acc: 0.0638 - top_k_categorical_accuracy: 0.2578
+49/82 [================>.............] - ETA: 1:52:35 - loss: 3.3387 - acc: 0.0644 - top_k_categorical_accuracy: 0.2577
+50/82 [=================>............] - ETA: 1:49:08 - loss: 3.3390 - acc: 0.0631 - top_k_categorical_accuracy: 0.2569
+51/82 [=================>............] - ETA: 1:45:43 - loss: 3.3387 - acc: 0.0637 - top_k_categorical_accuracy: 0.2567
+52/82 [==================>...........] - ETA: 1:42:17 - loss: 3.3388 - acc: 0.0631 - top_k_categorical_accuracy: 0.2572
+53/82 [==================>...........] - ETA: 1:38:51 - loss: 3.3375 - acc: 0.0637 - top_k_categorical_accuracy: 0.2583
+54/82 [==================>...........] - ETA: 1:35:26 - loss: 3.3379 - acc: 0.0631 - top_k_categorical_accuracy: 0.2564
+55/82 [===================>..........] - ETA: 1:31:59 - loss: 3.3363 - acc: 0.0625 - top_k_categorical_accuracy: 0.2580
+56/82 [===================>..........] - ETA: 1:28:34 - loss: 3.3376 - acc: 0.0625 - top_k_categorical_accuracy: 0.2573
+57/82 [===================>..........] - ETA: 1:25:11 - loss: 3.3375 - acc: 0.0625 - top_k_categorical_accuracy: 0.2577
+58/82 [====================>.........] - ETA: 1:21:47 - loss: 3.3365 - acc: 0.0636 - top_k_categorical_accuracy: 0.2586
+59/82 [====================>.........] - ETA: 1:18:23 - loss: 3.3364 - acc: 0.0646 - top_k_categorical_accuracy: 0.2590
+60/82 [====================>.........] - ETA: 1:14:59 - loss: 3.3354 - acc: 0.0656 - top_k_categorical_accuracy: 0.2630
+61/82 [=====================>........] - ETA: 1:11:34 - loss: 3.3357 - acc: 0.0666 - top_k_categorical_accuracy: 0.2618
+62/82 [=====================>........] - ETA: 1:08:08 - loss: 3.3357 - acc: 0.0665 - top_k_categorical_accuracy: 0.2616
+63/82 [======================>.......] - ETA: 1:04:44 - loss: 3.3351 - acc: 0.0670 - top_k_categorical_accuracy: 0.2604
+64/82 [======================>.......] - ETA: 1:01:20 - loss: 3.3334 - acc: 0.0679 - top_k_categorical_accuracy: 0.2607
+65/82 [======================>.......] - ETA: 57:55 - loss: 3.3339 - acc: 0.0673 - top_k_categorical_accuracy: 0.2611  
+66/82 [=======================>......] - ETA: 54:31 - loss: 3.3344 - acc: 0.0672 - top_k_categorical_accuracy: 0.2609
+67/82 [=======================>......] - ETA: 51:06 - loss: 3.3329 - acc: 0.0690 - top_k_categorical_accuracy: 0.2626
+68/82 [=======================>......] - ETA: 47:41 - loss: 3.3321 - acc: 0.0685 - top_k_categorical_accuracy: 0.2633
+69/82 [========================>.....] - ETA: 44:17 - loss: 3.3308 - acc: 0.0697 - top_k_categorical_accuracy: 0.2654
+70/82 [========================>.....] - ETA: 40:53 - loss: 3.3299 - acc: 0.0701 - top_k_categorical_accuracy: 0.2647
+71/82 [========================>.....] - ETA: 37:28 - loss: 3.3295 - acc: 0.0704 - top_k_categorical_accuracy: 0.2650
+72/82 [=========================>....] - ETA: 34:03 - loss: 3.3277 - acc: 0.0712 - top_k_categorical_accuracy: 0.2648
+73/82 [=========================>....] - ETA: 30:39 - loss: 3.3237 - acc: 0.0745 - top_k_categorical_accuracy: 0.2688
+74/82 [==========================>...] - ETA: 27:14 - loss: 3.3205 - acc: 0.0760 - top_k_categorical_accuracy: 0.2711
+75/82 [==========================>...] - ETA: 23:49 - loss: 3.3172 - acc: 0.0771 - top_k_categorical_accuracy: 0.2725
+76/82 [==========================>...] - ETA: 20:25 - loss: 3.3175 - acc: 0.0777 - top_k_categorical_accuracy: 0.2734
+77/82 [===========================>..] - ETA: 17:01 - loss: 3.3147 - acc: 0.0775 - top_k_categorical_accuracy: 0.2752
+78/82 [===========================>..] - ETA: 13:37 - loss: 3.3103 - acc: 0.0793 - top_k_categorical_accuracy: 0.2768
+79/82 [===========================>..] - ETA: 10:13 - loss: 3.3078 - acc: 0.0807 - top_k_categorical_accuracy: 0.2797
+80/82 [============================>.] - ETA: 6:48 - loss: 3.3061 - acc: 0.0816 - top_k_categorical_accuracy: 0.2809 
+81/82 [============================>.] - ETA: 3:24 - loss: 3.3027 - acc: 0.0814 - top_k_categorical_accuracy: 0.2824
+82/82 [==============================] - 17542s 214s/step - loss: 3.2986 - acc: 0.0819 - top_k_categorical_accuracy: 0.2847 - val_loss: 3.1258 - val_acc: 0.1219 - val_top_k_categorical_accuracy: 0.3992
+
+Epoch 00003: val_loss improved from 3.37287 to 3.12580, saving model to data/checkpoints/c3d-images.003-3.126.hdf5
+Epoch 4/1000
+
+ 1/82 [..............................] - ETA: 4:34:42 - loss: 3.2879 - acc: 0.1250 - top_k_categorical_accuracy: 0.3750
+ 2/82 [..............................] - ETA: 4:31:21 - loss: 3.1840 - acc: 0.1406 - top_k_categorical_accuracy: 0.4062
+ 3/82 [>.............................] - ETA: 4:28:15 - loss: 3.2168 - acc: 0.1250 - top_k_categorical_accuracy: 0.3958
+ 4/82 [>.............................] - ETA: 4:24:55 - loss: 3.1902 - acc: 0.1328 - top_k_categorical_accuracy: 0.3750
+ 5/82 [>.............................] - ETA: 4:21:07 - loss: 3.1516 - acc: 0.1375 - top_k_categorical_accuracy: 0.4062
+ 6/82 [=>............................] - ETA: 4:18:01 - loss: 3.1433 - acc: 0.1406 - top_k_categorical_accuracy: 0.4062
+ 7/82 [=>............................] - ETA: 4:14:48 - loss: 3.1640 - acc: 0.1295 - top_k_categorical_accuracy: 0.3884
+ 8/82 [=>............................] - ETA: 4:11:52 - loss: 3.1357 - acc: 0.1445 - top_k_categorical_accuracy: 0.4062
+ 9/82 [==>...........................] - ETA: 4:08:39 - loss: 3.1026 - acc: 0.1528 - top_k_categorical_accuracy: 0.4201
+10/82 [==>...........................] - ETA: 4:05:07 - loss: 3.0995 - acc: 0.1562 - top_k_categorical_accuracy: 0.4094
+11/82 [===>..........................] - ETA: 4:01:43 - loss: 3.0800 - acc: 0.1534 - top_k_categorical_accuracy: 0.4176
+12/82 [===>..........................] - ETA: 3:58:21 - loss: 3.0914 - acc: 0.1510 - top_k_categorical_accuracy: 0.4115
+13/82 [===>..........................] - ETA: 3:54:49 - loss: 3.0785 - acc: 0.1514 - top_k_categorical_accuracy: 0.4159
+14/82 [====>.........................] - ETA: 3:51:26 - loss: 3.0861 - acc: 0.1473 - top_k_categorical_accuracy: 0.4062
+15/82 [====>.........................] - ETA: 3:48:01 - loss: 3.0923 - acc: 0.1479 - top_k_categorical_accuracy: 0.3979
+16/82 [====>.........................] - ETA: 3:44:25 - loss: 3.0928 - acc: 0.1484 - top_k_categorical_accuracy: 0.4004
+17/82 [=====>........................] - ETA: 3:41:09 - loss: 3.0813 - acc: 0.1489 - top_k_categorical_accuracy: 0.4044
+18/82 [=====>........................] - ETA: 3:37:39 - loss: 3.0709 - acc: 0.1510 - top_k_categorical_accuracy: 0.4062
+19/82 [=====>........................] - ETA: 3:34:10 - loss: 3.0714 - acc: 0.1497 - top_k_categorical_accuracy: 0.4062
+20/82 [======>.......................] - ETA: 3:30:46 - loss: 3.0784 - acc: 0.1453 - top_k_categorical_accuracy: 0.4062
+21/82 [======>.......................] - ETA: 3:27:23 - loss: 3.0708 - acc: 0.1458 - top_k_categorical_accuracy: 0.4122
+22/82 [=======>......................] - ETA: 3:24:07 - loss: 3.0676 - acc: 0.1449 - top_k_categorical_accuracy: 0.4162
+23/82 [=======>......................] - ETA: 3:20:42 - loss: 3.0741 - acc: 0.1399 - top_k_categorical_accuracy: 0.4090
+24/82 [=======>......................] - ETA: 3:17:14 - loss: 3.0785 - acc: 0.1367 - top_k_categorical_accuracy: 0.4076
+25/82 [========>.....................] - ETA: 3:13:50 - loss: 3.0822 - acc: 0.1400 - top_k_categorical_accuracy: 0.4088
+26/82 [========>.....................] - ETA: 3:10:31 - loss: 3.0761 - acc: 0.1406 - top_k_categorical_accuracy: 0.4135
+27/82 [========>.....................] - ETA: 3:07:08 - loss: 3.0804 - acc: 0.1400 - top_k_categorical_accuracy: 0.4120
+28/82 [=========>....................] - ETA: 3:03:45 - loss: 3.0815 - acc: 0.1406 - top_k_categorical_accuracy: 0.4163
+29/82 [=========>....................] - ETA: 3:00:19 - loss: 3.0795 - acc: 0.1412 - top_k_categorical_accuracy: 0.4203
+30/82 [=========>....................] - ETA: 2:56:56 - loss: 3.0800 - acc: 0.1385 - top_k_categorical_accuracy: 0.4188
+31/82 [==========>...................] - ETA: 2:53:32 - loss: 3.0777 - acc: 0.1361 - top_k_categorical_accuracy: 0.4214
+32/82 [==========>...................] - ETA: 2:50:09 - loss: 3.0729 - acc: 0.1406 - top_k_categorical_accuracy: 0.4248
+33/82 [===========>..................] - ETA: 2:46:43 - loss: 3.0731 - acc: 0.1420 - top_k_categorical_accuracy: 0.4233
+34/82 [===========>..................] - ETA: 2:43:21 - loss: 3.0706 - acc: 0.1415 - top_k_categorical_accuracy: 0.4265
+35/82 [===========>..................] - ETA: 2:39:54 - loss: 3.0724 - acc: 0.1384 - top_k_categorical_accuracy: 0.4250
+36/82 [============>.................] - ETA: 2:36:32 - loss: 3.0739 - acc: 0.1380 - top_k_categorical_accuracy: 0.4236
+37/82 [============>.................] - ETA: 2:33:10 - loss: 3.0669 - acc: 0.1410 - top_k_categorical_accuracy: 0.4248
+38/82 [============>.................] - ETA: 2:29:43 - loss: 3.0675 - acc: 0.1414 - top_k_categorical_accuracy: 0.4260
+39/82 [=============>................] - ETA: 2:26:18 - loss: 3.0650 - acc: 0.1418 - top_k_categorical_accuracy: 0.4303
+40/82 [=============>................] - ETA: 2:22:52 - loss: 3.0673 - acc: 0.1430 - top_k_categorical_accuracy: 0.4305
+41/82 [==============>...............] - ETA: 2:19:26 - loss: 3.0609 - acc: 0.1418 - top_k_categorical_accuracy: 0.4352
+42/82 [==============>...............] - ETA: 2:16:03 - loss: 3.0628 - acc: 0.1406 - top_k_categorical_accuracy: 0.4345
+43/82 [==============>...............] - ETA: 2:12:40 - loss: 3.0711 - acc: 0.1381 - top_k_categorical_accuracy: 0.4302
+44/82 [===============>..............] - ETA: 2:09:18 - loss: 3.0769 - acc: 0.1364 - top_k_categorical_accuracy: 0.4283
+45/82 [===============>..............] - ETA: 2:05:55 - loss: 3.0722 - acc: 0.1375 - top_k_categorical_accuracy: 0.4299
+46/82 [===============>..............] - ETA: 2:02:31 - loss: 3.0699 - acc: 0.1379 - top_k_categorical_accuracy: 0.4307
+47/82 [================>.............] - ETA: 1:59:08 - loss: 3.0683 - acc: 0.1383 - top_k_categorical_accuracy: 0.4309
+48/82 [================>.............] - ETA: 1:55:43 - loss: 3.0696 - acc: 0.1367 - top_k_categorical_accuracy: 0.4297
+49/82 [================>.............] - ETA: 1:52:21 - loss: 3.0712 - acc: 0.1339 - top_k_categorical_accuracy: 0.4286
+50/82 [=================>............] - ETA: 1:48:57 - loss: 3.0751 - acc: 0.1331 - top_k_categorical_accuracy: 0.4263
+51/82 [=================>............] - ETA: 1:45:33 - loss: 3.0749 - acc: 0.1342 - top_k_categorical_accuracy: 0.4277
+52/82 [==================>...........] - ETA: 1:42:09 - loss: 3.0711 - acc: 0.1346 - top_k_categorical_accuracy: 0.4297
+53/82 [==================>...........] - ETA: 1:38:43 - loss: 3.0719 - acc: 0.1333 - top_k_categorical_accuracy: 0.4287
+54/82 [==================>...........] - ETA: 1:35:19 - loss: 3.0707 - acc: 0.1319 - top_k_categorical_accuracy: 0.4300
+55/82 [===================>..........] - ETA: 1:31:56 - loss: 3.0686 - acc: 0.1330 - top_k_categorical_accuracy: 0.4307
+56/82 [===================>..........] - ETA: 1:28:32 - loss: 3.0714 - acc: 0.1306 - top_k_categorical_accuracy: 0.4286
+57/82 [===================>..........] - ETA: 1:25:08 - loss: 3.0718 - acc: 0.1299 - top_k_categorical_accuracy: 0.4287
+58/82 [====================>.........] - ETA: 1:21:43 - loss: 3.0686 - acc: 0.1315 - top_k_categorical_accuracy: 0.4305
+59/82 [====================>.........] - ETA: 1:18:19 - loss: 3.0696 - acc: 0.1303 - top_k_categorical_accuracy: 0.4306
+60/82 [====================>.........] - ETA: 1:14:55 - loss: 3.0676 - acc: 0.1313 - top_k_categorical_accuracy: 0.4307
+61/82 [=====================>........] - ETA: 1:11:32 - loss: 3.0641 - acc: 0.1317 - top_k_categorical_accuracy: 0.4319
+62/82 [=====================>........] - ETA: 1:08:08 - loss: 3.0607 - acc: 0.1326 - top_k_categorical_accuracy: 0.4330
+63/82 [======================>.......] - ETA: 1:04:44 - loss: 3.0588 - acc: 0.1334 - top_k_categorical_accuracy: 0.4335
+64/82 [======================>.......] - ETA: 1:01:20 - loss: 3.0588 - acc: 0.1353 - top_k_categorical_accuracy: 0.4336
+65/82 [======================>.......] - ETA: 57:55 - loss: 3.0545 - acc: 0.1365 - top_k_categorical_accuracy: 0.4351  
+66/82 [=======================>......] - ETA: 54:31 - loss: 3.0551 - acc: 0.1364 - top_k_categorical_accuracy: 0.4337
+67/82 [=======================>......] - ETA: 51:06 - loss: 3.0508 - acc: 0.1371 - top_k_categorical_accuracy: 0.4356
+68/82 [=======================>......] - ETA: 47:42 - loss: 3.0548 - acc: 0.1360 - top_k_categorical_accuracy: 0.4338
+69/82 [========================>.....] - ETA: 44:18 - loss: 3.0518 - acc: 0.1363 - top_k_categorical_accuracy: 0.4352
+70/82 [========================>.....] - ETA: 40:52 - loss: 3.0483 - acc: 0.1362 - top_k_categorical_accuracy: 0.4371
+71/82 [========================>.....] - ETA: 37:28 - loss: 3.0490 - acc: 0.1364 - top_k_categorical_accuracy: 0.4366
+72/82 [=========================>....] - ETA: 34:04 - loss: 3.0461 - acc: 0.1363 - top_k_categorical_accuracy: 0.4379
+73/82 [=========================>....] - ETA: 30:39 - loss: 3.0418 - acc: 0.1374 - top_k_categorical_accuracy: 0.4384
+74/82 [==========================>...] - ETA: 27:15 - loss: 3.0416 - acc: 0.1368 - top_k_categorical_accuracy: 0.4379
+75/82 [==========================>...] - ETA: 23:50 - loss: 3.0377 - acc: 0.1375 - top_k_categorical_accuracy: 0.4396
+76/82 [==========================>...] - ETA: 20:26 - loss: 3.0341 - acc: 0.1377 - top_k_categorical_accuracy: 0.4408
+77/82 [===========================>..] - ETA: 17:01 - loss: 3.0307 - acc: 0.1384 - top_k_categorical_accuracy: 0.4424
+78/82 [===========================>..] - ETA: 13:37 - loss: 3.0275 - acc: 0.1398 - top_k_categorical_accuracy: 0.4439
+79/82 [===========================>..] - ETA: 10:13 - loss: 3.0265 - acc: 0.1392 - top_k_categorical_accuracy: 0.4450
+80/82 [============================>.] - ETA: 6:48 - loss: 3.0244 - acc: 0.1398 - top_k_categorical_accuracy: 0.4457 
+81/82 [============================>.] - ETA: 3:24 - loss: 3.0207 - acc: 0.1408 - top_k_categorical_accuracy: 0.4475
+82/82 [==============================] - 17548s 214s/step - loss: 3.0185 - acc: 0.1421 - top_k_categorical_accuracy: 0.4474 - val_loss: 2.8959 - val_acc: 0.1531 - val_top_k_categorical_accuracy: 0.5055
+
+Epoch 00004: val_loss improved from 3.12580 to 2.89592, saving model to data/checkpoints/c3d-images.004-2.896.hdf5
+Epoch 5/1000
+
+ 1/82 [..............................] - ETA: 4:36:39 - loss: 2.6816 - acc: 0.1562 - top_k_categorical_accuracy: 0.6250
+ 2/82 [..............................] - ETA: 4:32:33 - loss: 2.7905 - acc: 0.1250 - top_k_categorical_accuracy: 0.5469
+ 3/82 [>.............................] - ETA: 4:28:15 - loss: 2.8565 - acc: 0.1354 - top_k_categorical_accuracy: 0.5104
+ 4/82 [>.............................] - ETA: 4:25:20 - loss: 2.9088 - acc: 0.1328 - top_k_categorical_accuracy: 0.4766
+ 5/82 [>.............................] - ETA: 4:21:47 - loss: 2.9572 - acc: 0.1313 - top_k_categorical_accuracy: 0.4625
+ 6/82 [=>............................] - ETA: 4:18:43 - loss: 2.9778 - acc: 0.1302 - top_k_categorical_accuracy: 0.4323
+ 7/82 [=>............................] - ETA: 4:15:14 - loss: 2.9417 - acc: 0.1473 - top_k_categorical_accuracy: 0.4554
+ 8/82 [=>............................] - ETA: 4:12:15 - loss: 2.8970 - acc: 0.1641 - top_k_categorical_accuracy: 0.4766
+ 9/82 [==>...........................] - ETA: 4:08:49 - loss: 2.8908 - acc: 0.1597 - top_k_categorical_accuracy: 0.4792
+10/82 [==>...........................] - ETA: 4:05:12 - loss: 2.8528 - acc: 0.1719 - top_k_categorical_accuracy: 0.5062
+11/82 [===>..........................] - ETA: 4:02:06 - loss: 2.8552 - acc: 0.1761 - top_k_categorical_accuracy: 0.5028
+12/82 [===>..........................] - ETA: 3:58:44 - loss: 2.8653 - acc: 0.1745 - top_k_categorical_accuracy: 0.4974
+13/82 [===>..........................] - ETA: 3:55:29 - loss: 2.8694 - acc: 0.1731 - top_k_categorical_accuracy: 0.4976
+14/82 [====>.........................] - ETA: 3:52:02 - loss: 2.8837 - acc: 0.1652 - top_k_categorical_accuracy: 0.4978
+15/82 [====>.........................] - ETA: 3:48:28 - loss: 2.8792 - acc: 0.1625 - top_k_categorical_accuracy: 0.5083
+16/82 [====>.........................] - ETA: 3:45:08 - loss: 2.8808 - acc: 0.1602 - top_k_categorical_accuracy: 0.5039
+17/82 [=====>........................] - ETA: 3:41:48 - loss: 2.8669 - acc: 0.1636 - top_k_categorical_accuracy: 0.5110
+18/82 [=====>........................] - ETA: 3:38:19 - loss: 2.8754 - acc: 0.1597 - top_k_categorical_accuracy: 0.5087
+19/82 [=====>........................] - ETA: 3:34:55 - loss: 2.8877 - acc: 0.1562 - top_k_categorical_accuracy: 0.5033
+20/82 [======>.......................] - ETA: 3:31:27 - loss: 2.8786 - acc: 0.1578 - top_k_categorical_accuracy: 0.5078
+21/82 [======>.......................] - ETA: 3:28:05 - loss: 2.8824 - acc: 0.1562 - top_k_categorical_accuracy: 0.5074
+22/82 [=======>......................] - ETA: 3:24:38 - loss: 2.8721 - acc: 0.1591 - top_k_categorical_accuracy: 0.5085
+23/82 [=======>......................] - ETA: 3:21:13 - loss: 2.8653 - acc: 0.1617 - top_k_categorical_accuracy: 0.5109
+24/82 [=======>......................] - ETA: 3:17:51 - loss: 2.8688 - acc: 0.1615 - top_k_categorical_accuracy: 0.5104
+25/82 [========>.....................] - ETA: 3:14:22 - loss: 2.8628 - acc: 0.1650 - top_k_categorical_accuracy: 0.5100
+26/82 [========>.....................] - ETA: 3:11:00 - loss: 2.8501 - acc: 0.1695 - top_k_categorical_accuracy: 0.5144
+27/82 [========>.....................] - ETA: 3:07:34 - loss: 2.8400 - acc: 0.1748 - top_k_categorical_accuracy: 0.5197
+28/82 [=========>....................] - ETA: 3:04:10 - loss: 2.8466 - acc: 0.1719 - top_k_categorical_accuracy: 0.5134
+29/82 [=========>....................] - ETA: 3:00:47 - loss: 2.8514 - acc: 0.1713 - top_k_categorical_accuracy: 0.5140
+30/82 [=========>....................] - ETA: 2:57:24 - loss: 2.8453 - acc: 0.1698 - top_k_categorical_accuracy: 0.5156
+31/82 [==========>...................] - ETA: 2:54:03 - loss: 2.8429 - acc: 0.1673 - top_k_categorical_accuracy: 0.5171
+32/82 [==========>...................] - ETA: 2:50:36 - loss: 2.8507 - acc: 0.1670 - top_k_categorical_accuracy: 0.5146
+33/82 [===========>..................] - ETA: 2:47:07 - loss: 2.8517 - acc: 0.1705 - top_k_categorical_accuracy: 0.5133
+34/82 [===========>..................] - ETA: 2:43:37 - loss: 2.8580 - acc: 0.1700 - top_k_categorical_accuracy: 0.5092
+35/82 [===========>..................] - ETA: 2:40:11 - loss: 2.8586 - acc: 0.1688 - top_k_categorical_accuracy: 0.5098
+36/82 [============>.................] - ETA: 2:36:45 - loss: 2.8516 - acc: 0.1693 - top_k_categorical_accuracy: 0.5148
+37/82 [============>.................] - ETA: 2:33:20 - loss: 2.8498 - acc: 0.1706 - top_k_categorical_accuracy: 0.5118
+38/82 [============>.................] - ETA: 2:29:54 - loss: 2.8343 - acc: 0.1752 - top_k_categorical_accuracy: 0.5181
+39/82 [=============>................] - ETA: 2:26:28 - loss: 2.8371 - acc: 0.1731 - top_k_categorical_accuracy: 0.5176
+40/82 [=============>................] - ETA: 2:23:04 - loss: 2.8347 - acc: 0.1727 - top_k_categorical_accuracy: 0.5195
+41/82 [==============>...............] - ETA: 2:19:38 - loss: 2.8292 - acc: 0.1745 - top_k_categorical_accuracy: 0.5221
+42/82 [==============>...............] - ETA: 2:16:15 - loss: 2.8318 - acc: 0.1763 - top_k_categorical_accuracy: 0.5216
+43/82 [==============>...............] - ETA: 2:12:50 - loss: 2.8257 - acc: 0.1773 - top_k_categorical_accuracy: 0.5247
+44/82 [===============>..............] - ETA: 2:09:26 - loss: 2.8214 - acc: 0.1783 - top_k_categorical_accuracy: 0.5277
+45/82 [===============>..............] - ETA: 2:06:02 - loss: 2.8317 - acc: 0.1757 - top_k_categorical_accuracy: 0.5243
+46/82 [===============>..............] - ETA: 2:02:38 - loss: 2.8366 - acc: 0.1732 - top_k_categorical_accuracy: 0.5224
+47/82 [================>.............] - ETA: 1:59:14 - loss: 2.8350 - acc: 0.1722 - top_k_categorical_accuracy: 0.5226
+48/82 [================>.............] - ETA: 1:55:50 - loss: 2.8266 - acc: 0.1764 - top_k_categorical_accuracy: 0.5267
+49/82 [================>.............] - ETA: 1:52:28 - loss: 2.8238 - acc: 0.1779 - top_k_categorical_accuracy: 0.5274
+50/82 [=================>............] - ETA: 1:49:03 - loss: 2.8308 - acc: 0.1769 - top_k_categorical_accuracy: 0.5225
+51/82 [=================>............] - ETA: 1:45:38 - loss: 2.8369 - acc: 0.1752 - top_k_categorical_accuracy: 0.5208
+52/82 [==================>...........] - ETA: 1:42:13 - loss: 2.8376 - acc: 0.1761 - top_k_categorical_accuracy: 0.5198
+53/82 [==================>...........] - ETA: 1:38:47 - loss: 2.8427 - acc: 0.1745 - top_k_categorical_accuracy: 0.5159
+54/82 [==================>...........] - ETA: 1:35:21 - loss: 2.8404 - acc: 0.1771 - top_k_categorical_accuracy: 0.5174
+55/82 [===================>..........] - ETA: 1:31:56 - loss: 2.8380 - acc: 0.1773 - top_k_categorical_accuracy: 0.5193
+56/82 [===================>..........] - ETA: 1:28:32 - loss: 2.8338 - acc: 0.1797 - top_k_categorical_accuracy: 0.5223
+57/82 [===================>..........] - ETA: 1:25:07 - loss: 2.8280 - acc: 0.1804 - top_k_categorical_accuracy: 0.5247
+58/82 [====================>.........] - ETA: 1:21:42 - loss: 2.8250 - acc: 0.1805 - top_k_categorical_accuracy: 0.5259
+59/82 [====================>.........] - ETA: 1:18:18 - loss: 2.8193 - acc: 0.1822 - top_k_categorical_accuracy: 0.5270
+60/82 [====================>.........] - ETA: 1:14:53 - loss: 2.8230 - acc: 0.1812 - top_k_categorical_accuracy: 0.5250
+61/82 [=====================>........] - ETA: 1:11:29 - loss: 2.8185 - acc: 0.1824 - top_k_categorical_accuracy: 0.5266
+62/82 [=====================>........] - ETA: 1:08:04 - loss: 2.8179 - acc: 0.1825 - top_k_categorical_accuracy: 0.5262
+63/82 [======================>.......] - ETA: 1:04:40 - loss: 2.8178 - acc: 0.1830 - top_k_categorical_accuracy: 0.5258
+64/82 [======================>.......] - ETA: 1:01:15 - loss: 2.8154 - acc: 0.1836 - top_k_categorical_accuracy: 0.5278
+65/82 [======================>.......] - ETA: 57:51 - loss: 2.8148 - acc: 0.1856 - top_k_categorical_accuracy: 0.5284  
+66/82 [=======================>......] - ETA: 54:28 - loss: 2.8139 - acc: 0.1870 - top_k_categorical_accuracy: 0.5279
+67/82 [=======================>......] - ETA: 51:03 - loss: 2.8104 - acc: 0.1870 - top_k_categorical_accuracy: 0.5303
+68/82 [=======================>......] - ETA: 47:39 - loss: 2.8089 - acc: 0.1870 - top_k_categorical_accuracy: 0.5303
+69/82 [========================>.....] - ETA: 44:15 - loss: 2.8072 - acc: 0.1880 - top_k_categorical_accuracy: 0.5308
+70/82 [========================>.....] - ETA: 40:50 - loss: 2.8097 - acc: 0.1862 - top_k_categorical_accuracy: 0.5308
+71/82 [========================>.....] - ETA: 37:26 - loss: 2.8042 - acc: 0.1875 - top_k_categorical_accuracy: 0.5335
+72/82 [=========================>....] - ETA: 34:02 - loss: 2.8023 - acc: 0.1884 - top_k_categorical_accuracy: 0.5330
+73/82 [=========================>....] - ETA: 30:38 - loss: 2.8060 - acc: 0.1862 - top_k_categorical_accuracy: 0.5317
+74/82 [==========================>...] - ETA: 27:13 - loss: 2.8028 - acc: 0.1871 - top_k_categorical_accuracy: 0.5329
+75/82 [==========================>...] - ETA: 23:49 - loss: 2.7996 - acc: 0.1879 - top_k_categorical_accuracy: 0.5342
+76/82 [==========================>...] - ETA: 20:25 - loss: 2.7979 - acc: 0.1891 - top_k_categorical_accuracy: 0.5341
+77/82 [===========================>..] - ETA: 17:01 - loss: 2.7963 - acc: 0.1899 - top_k_categorical_accuracy: 0.5357
+78/82 [===========================>..] - ETA: 13:37 - loss: 2.7950 - acc: 0.1895 - top_k_categorical_accuracy: 0.5357
+79/82 [===========================>..] - ETA: 10:12 - loss: 2.7936 - acc: 0.1895 - top_k_categorical_accuracy: 0.5368
+80/82 [============================>.] - ETA: 6:48 - loss: 2.7905 - acc: 0.1906 - top_k_categorical_accuracy: 0.5379 
+81/82 [============================>.] - ETA: 3:24 - loss: 2.7943 - acc: 0.1898 - top_k_categorical_accuracy: 0.5378
+82/82 [==============================] - 17548s 214s/step - loss: 2.7895 - acc: 0.1917 - top_k_categorical_accuracy: 0.5393 - val_loss: 2.6782 - val_acc: 0.2352 - val_top_k_categorical_accuracy: 0.5727
+
+Epoch 00005: val_loss improved from 2.89592 to 2.67821, saving model to data/checkpoints/c3d-images.005-2.678.hdf5
+Epoch 6/1000
+
+ 1/82 [..............................] - ETA: 4:30:50 - loss: 2.6374 - acc: 0.2188 - top_k_categorical_accuracy: 0.5625
+ 2/82 [..............................] - ETA: 4:30:40 - loss: 2.6624 - acc: 0.2031 - top_k_categorical_accuracy: 0.5625
+ 3/82 [>.............................] - ETA: 4:28:32 - loss: 2.6495 - acc: 0.2292 - top_k_categorical_accuracy: 0.5729
+ 4/82 [>.............................] - ETA: 4:25:37 - loss: 2.5823 - acc: 0.2500 - top_k_categorical_accuracy: 0.6016
+ 5/82 [>.............................] - ETA: 4:22:35 - loss: 2.5819 - acc: 0.2375 - top_k_categorical_accuracy: 0.6250
+ 6/82 [=>............................] - ETA: 4:18:33 - loss: 2.6065 - acc: 0.2240 - top_k_categorical_accuracy: 0.6146
+ 7/82 [=>............................] - ETA: 4:15:14 - loss: 2.5782 - acc: 0.2232 - top_k_categorical_accuracy: 0.6295
+ 8/82 [=>............................] - ETA: 4:12:06 - loss: 2.5678 - acc: 0.2188 - top_k_categorical_accuracy: 0.6406
+ 9/82 [==>...........................] - ETA: 4:08:49 - loss: 2.5658 - acc: 0.2222 - top_k_categorical_accuracy: 0.6319
+10/82 [==>...........................] - ETA: 4:05:10 - loss: 2.5354 - acc: 0.2313 - top_k_categorical_accuracy: 0.6375
+11/82 [===>..........................] - ETA: 4:01:44 - loss: 2.5367 - acc: 0.2358 - top_k_categorical_accuracy: 0.6364
+12/82 [===>..........................] - ETA: 3:58:15 - loss: 2.5200 - acc: 0.2500 - top_k_categorical_accuracy: 0.6328
+13/82 [===>..........................] - ETA: 3:54:45 - loss: 2.5312 - acc: 0.2476 - top_k_categorical_accuracy: 0.6274
+14/82 [====>.........................] - ETA: 3:51:13 - loss: 2.5221 - acc: 0.2522 - top_k_categorical_accuracy: 0.6295
+15/82 [====>.........................] - ETA: 3:47:52 - loss: 2.5368 - acc: 0.2542 - top_k_categorical_accuracy: 0.6208
+16/82 [====>.........................] - ETA: 3:44:35 - loss: 2.5444 - acc: 0.2539 - top_k_categorical_accuracy: 0.6172
+17/82 [=====>........................] - ETA: 3:41:09 - loss: 2.5363 - acc: 0.2574 - top_k_categorical_accuracy: 0.6213
+18/82 [=====>........................] - ETA: 3:37:44 - loss: 2.5555 - acc: 0.2552 - top_k_categorical_accuracy: 0.6163
+19/82 [=====>........................] - ETA: 3:34:18 - loss: 2.5358 - acc: 0.2549 - top_k_categorical_accuracy: 0.6234
+20/82 [======>.......................] - ETA: 3:30:56 - loss: 2.5362 - acc: 0.2609 - top_k_categorical_accuracy: 0.6219
+21/82 [======>.......................] - ETA: 3:27:29 - loss: 2.5413 - acc: 0.2589 - top_k_categorical_accuracy: 0.6190
+22/82 [=======>......................] - ETA: 3:24:08 - loss: 2.5445 - acc: 0.2585 - top_k_categorical_accuracy: 0.6222
+23/82 [=======>......................] - ETA: 3:20:40 - loss: 2.5455 - acc: 0.2609 - top_k_categorical_accuracy: 0.6236
+24/82 [=======>......................] - ETA: 3:17:12 - loss: 2.5311 - acc: 0.2656 - top_k_categorical_accuracy: 0.6276
+25/82 [========>.....................] - ETA: 3:13:49 - loss: 2.5344 - acc: 0.2650 - top_k_categorical_accuracy: 0.6275
+26/82 [========>.....................] - ETA: 3:10:25 - loss: 2.5385 - acc: 0.2596 - top_k_categorical_accuracy: 0.6298
+27/82 [========>.....................] - ETA: 3:07:00 - loss: 2.5359 - acc: 0.2593 - top_k_categorical_accuracy: 0.6273
+28/82 [=========>....................] - ETA: 3:03:37 - loss: 2.5453 - acc: 0.2567 - top_k_categorical_accuracy: 0.6250
+29/82 [=========>....................] - ETA: 3:00:10 - loss: 2.5441 - acc: 0.2575 - top_k_categorical_accuracy: 0.6218
+30/82 [=========>....................] - ETA: 2:56:46 - loss: 2.5358 - acc: 0.2625 - top_k_categorical_accuracy: 0.6240
+31/82 [==========>...................] - ETA: 2:53:20 - loss: 2.5387 - acc: 0.2581 - top_k_categorical_accuracy: 0.6230
+32/82 [==========>...................] - ETA: 2:49:52 - loss: 2.5432 - acc: 0.2568 - top_k_categorical_accuracy: 0.6201
+33/82 [===========>..................] - ETA: 2:46:30 - loss: 2.5531 - acc: 0.2528 - top_k_categorical_accuracy: 0.6193
+34/82 [===========>..................] - ETA: 2:43:10 - loss: 2.5536 - acc: 0.2518 - top_k_categorical_accuracy: 0.6186
+35/82 [===========>..................] - ETA: 2:39:48 - loss: 2.5633 - acc: 0.2509 - top_k_categorical_accuracy: 0.6152
+36/82 [============>.................] - ETA: 2:36:22 - loss: 2.5577 - acc: 0.2535 - top_k_categorical_accuracy: 0.6146
+37/82 [============>.................] - ETA: 2:32:56 - loss: 2.5581 - acc: 0.2542 - top_k_categorical_accuracy: 0.6140
+38/82 [============>.................] - ETA: 2:29:35 - loss: 2.5640 - acc: 0.2549 - top_k_categorical_accuracy: 0.6110
+39/82 [=============>................] - ETA: 2:26:09 - loss: 2.5601 - acc: 0.2548 - top_k_categorical_accuracy: 0.6130
+40/82 [=============>................] - ETA: 2:22:45 - loss: 2.5622 - acc: 0.2570 - top_k_categorical_accuracy: 0.6109
+41/82 [==============>...............] - ETA: 2:19:22 - loss: 2.5548 - acc: 0.2599 - top_k_categorical_accuracy: 0.6128
+42/82 [==============>...............] - ETA: 2:15:58 - loss: 2.5579 - acc: 0.2574 - top_k_categorical_accuracy: 0.6138
+43/82 [==============>...............] - ETA: 2:12:33 - loss: 2.5586 - acc: 0.2565 - top_k_categorical_accuracy: 0.6119
+44/82 [===============>..............] - ETA: 2:09:09 - loss: 2.5586 - acc: 0.2557 - top_k_categorical_accuracy: 0.6129
+45/82 [===============>..............] - ETA: 2:05:45 - loss: 2.5612 - acc: 0.2549 - top_k_categorical_accuracy: 0.6125
+46/82 [===============>..............] - ETA: 2:02:21 - loss: 2.5610 - acc: 0.2534 - top_k_categorical_accuracy: 0.6128
+47/82 [================>.............] - ETA: 1:58:55 - loss: 2.5573 - acc: 0.2573 - top_k_categorical_accuracy: 0.6150
+48/82 [================>.............] - ETA: 1:55:31 - loss: 2.5542 - acc: 0.2598 - top_k_categorical_accuracy: 0.6146
+49/82 [================>.............] - ETA: 1:52:07 - loss: 2.5542 - acc: 0.2615 - top_k_categorical_accuracy: 0.6148
+50/82 [=================>............] - ETA: 1:48:43 - loss: 2.5487 - acc: 0.2612 - top_k_categorical_accuracy: 0.6169
+51/82 [=================>............] - ETA: 1:45:20 - loss: 2.5462 - acc: 0.2623 - top_k_categorical_accuracy: 0.6183
+52/82 [==================>...........] - ETA: 1:41:57 - loss: 2.5460 - acc: 0.2602 - top_k_categorical_accuracy: 0.6190
+53/82 [==================>...........] - ETA: 1:38:33 - loss: 2.5465 - acc: 0.2583 - top_k_categorical_accuracy: 0.6209
+54/82 [==================>...........] - ETA: 1:35:09 - loss: 2.5413 - acc: 0.2610 - top_k_categorical_accuracy: 0.6209
+55/82 [===================>..........] - ETA: 1:31:45 - loss: 2.5358 - acc: 0.2608 - top_k_categorical_accuracy: 0.6227
+56/82 [===================>..........] - ETA: 1:28:21 - loss: 2.5298 - acc: 0.2628 - top_k_categorical_accuracy: 0.6244
+57/82 [===================>..........] - ETA: 1:24:57 - loss: 2.5308 - acc: 0.2648 - top_k_categorical_accuracy: 0.6239
+58/82 [====================>.........] - ETA: 1:21:33 - loss: 2.5302 - acc: 0.2640 - top_k_categorical_accuracy: 0.6261
+59/82 [====================>.........] - ETA: 1:18:09 - loss: 2.5268 - acc: 0.2643 - top_k_categorical_accuracy: 0.6276
+60/82 [====================>.........] - ETA: 1:14:46 - loss: 2.5251 - acc: 0.2646 - top_k_categorical_accuracy: 0.6297
+61/82 [=====================>........] - ETA: 1:11:21 - loss: 2.5231 - acc: 0.2659 - top_k_categorical_accuracy: 0.6301
+62/82 [=====================>........] - ETA: 1:07:57 - loss: 2.5199 - acc: 0.2676 - top_k_categorical_accuracy: 0.6321
+63/82 [======================>.......] - ETA: 1:04:33 - loss: 2.5141 - acc: 0.2703 - top_k_categorical_accuracy: 0.6339
+64/82 [======================>.......] - ETA: 1:01:09 - loss: 2.5075 - acc: 0.2729 - top_k_categorical_accuracy: 0.6348
+65/82 [======================>.......] - ETA: 57:45 - loss: 2.5058 - acc: 0.2726 - top_k_categorical_accuracy: 0.6346  
+66/82 [=======================>......] - ETA: 54:21 - loss: 2.4981 - acc: 0.2741 - top_k_categorical_accuracy: 0.6378
+67/82 [=======================>......] - ETA: 50:57 - loss: 2.4925 - acc: 0.2752 - top_k_categorical_accuracy: 0.6376
+68/82 [=======================>......] - ETA: 47:33 - loss: 2.4917 - acc: 0.2757 - top_k_categorical_accuracy: 0.6388
+69/82 [========================>.....] - ETA: 44:10 - loss: 2.4919 - acc: 0.2763 - top_k_categorical_accuracy: 0.6409
+70/82 [========================>.....] - ETA: 40:46 - loss: 2.4873 - acc: 0.2763 - top_k_categorical_accuracy: 0.6433
+71/82 [========================>.....] - ETA: 37:22 - loss: 2.4832 - acc: 0.2777 - top_k_categorical_accuracy: 0.6448
+72/82 [=========================>....] - ETA: 33:59 - loss: 2.4759 - acc: 0.2799 - top_k_categorical_accuracy: 0.6467
+73/82 [=========================>....] - ETA: 30:35 - loss: 2.4692 - acc: 0.2812 - top_k_categorical_accuracy: 0.6485
+74/82 [==========================>...] - ETA: 27:11 - loss: 2.4699 - acc: 0.2817 - top_k_categorical_accuracy: 0.6482
+75/82 [==========================>...] - ETA: 23:47 - loss: 2.4672 - acc: 0.2821 - top_k_categorical_accuracy: 0.6496
+76/82 [==========================>...] - ETA: 20:23 - loss: 2.4622 - acc: 0.2841 - top_k_categorical_accuracy: 0.6517
+77/82 [===========================>..] - ETA: 16:59 - loss: 2.4606 - acc: 0.2845 - top_k_categorical_accuracy: 0.6530
+78/82 [===========================>..] - ETA: 13:35 - loss: 2.4608 - acc: 0.2833 - top_k_categorical_accuracy: 0.6530
+79/82 [===========================>..] - ETA: 10:11 - loss: 2.4629 - acc: 0.2828 - top_k_categorical_accuracy: 0.6527
+80/82 [============================>.] - ETA: 6:47 - loss: 2.4582 - acc: 0.2836 - top_k_categorical_accuracy: 0.6543 
+81/82 [============================>.] - ETA: 3:24 - loss: 2.4585 - acc: 0.2832 - top_k_categorical_accuracy: 0.6543
+82/82 [==============================] - 17684s 216s/step - loss: 2.4617 - acc: 0.2809 - top_k_categorical_accuracy: 0.6540 - val_loss: 2.4811 - val_acc: 0.2648 - val_top_k_categorical_accuracy: 0.6531
+
+Epoch 00006: val_loss improved from 2.67821 to 2.48110, saving model to data/checkpoints/c3d-images.006-2.481.hdf5
+Epoch 7/1000
+
+ 1/82 [..............................] - ETA: 5:03:02 - loss: 2.7272 - acc: 0.1562 - top_k_categorical_accuracy: 0.5000
+ 2/82 [..............................] - ETA: 4:58:22 - loss: 2.4026 - acc: 0.2656 - top_k_categorical_accuracy: 0.6406
+ 3/82 [>.............................] - ETA: 4:55:43 - loss: 2.4363 - acc: 0.2604 - top_k_categorical_accuracy: 0.6458
+ 4/82 [>.............................] - ETA: 4:51:30 - loss: 2.4157 - acc: 0.2734 - top_k_categorical_accuracy: 0.6484
+ 5/82 [>.............................] - ETA: 4:47:20 - loss: 2.3373 - acc: 0.3063 - top_k_categorical_accuracy: 0.6625
+ 6/82 [=>............................] - ETA: 4:43:09 - loss: 2.3189 - acc: 0.3021 - top_k_categorical_accuracy: 0.6875
+ 7/82 [=>............................] - ETA: 4:38:57 - loss: 2.3230 - acc: 0.3036 - top_k_categorical_accuracy: 0.6875
+ 8/82 [=>............................] - ETA: 4:34:33 - loss: 2.3422 - acc: 0.2930 - top_k_categorical_accuracy: 0.6758
+ 9/82 [==>...........................] - ETA: 4:30:47 - loss: 2.3309 - acc: 0.3056 - top_k_categorical_accuracy: 0.6771
+10/82 [==>...........................] - ETA: 4:26:52 - loss: 2.3388 - acc: 0.3094 - top_k_categorical_accuracy: 0.6656
+11/82 [===>..........................] - ETA: 4:23:06 - loss: 2.3339 - acc: 0.3267 - top_k_categorical_accuracy: 0.6733
+12/82 [===>..........................] - ETA: 4:19:33 - loss: 2.3445 - acc: 0.3281 - top_k_categorical_accuracy: 0.6745
+13/82 [===>..........................] - ETA: 4:15:41 - loss: 2.3358 - acc: 0.3438 - top_k_categorical_accuracy: 0.6779
+14/82 [====>.........................] - ETA: 4:11:53 - loss: 2.3508 - acc: 0.3348 - top_k_categorical_accuracy: 0.6808
+15/82 [====>.........................] - ETA: 4:08:04 - loss: 2.3711 - acc: 0.3292 - top_k_categorical_accuracy: 0.6687
+16/82 [====>.........................] - ETA: 4:03:58 - loss: 2.3703 - acc: 0.3262 - top_k_categorical_accuracy: 0.6680
+17/82 [=====>........................] - ETA: 3:59:52 - loss: 2.3620 - acc: 0.3235 - top_k_categorical_accuracy: 0.6691
+18/82 [=====>........................] - ETA: 3:55:53 - loss: 2.3571 - acc: 0.3281 - top_k_categorical_accuracy: 0.6701
+19/82 [=====>........................] - ETA: 3:51:51 - loss: 2.3619 - acc: 0.3322 - top_k_categorical_accuracy: 0.6727
+20/82 [======>.......................] - ETA: 3:48:14 - loss: 2.3514 - acc: 0.3406 - top_k_categorical_accuracy: 0.6750
+21/82 [======>.......................] - ETA: 3:44:31 - loss: 2.3371 - acc: 0.3438 - top_k_categorical_accuracy: 0.6845
+22/82 [=======>......................] - ETA: 3:40:51 - loss: 2.3413 - acc: 0.3438 - top_k_categorical_accuracy: 0.6818
+23/82 [=======>......................] - ETA: 3:37:06 - loss: 2.3263 - acc: 0.3451 - top_k_categorical_accuracy: 0.6861
+24/82 [=======>......................] - ETA: 3:33:25 - loss: 2.3395 - acc: 0.3398 - top_k_categorical_accuracy: 0.6836
+25/82 [========>.....................] - ETA: 3:29:50 - loss: 2.3403 - acc: 0.3387 - top_k_categorical_accuracy: 0.6863
+26/82 [========>.....................] - ETA: 3:26:12 - loss: 2.3405 - acc: 0.3389 - top_k_categorical_accuracy: 0.6839
+27/82 [========>.....................] - ETA: 3:22:34 - loss: 2.3458 - acc: 0.3380 - top_k_categorical_accuracy: 0.6817
+28/82 [=========>....................] - ETA: 3:18:51 - loss: 2.3265 - acc: 0.3438 - top_k_categorical_accuracy: 0.6864
+29/82 [=========>....................] - ETA: 3:15:10 - loss: 2.3291 - acc: 0.3384 - top_k_categorical_accuracy: 0.6886
+30/82 [=========>....................] - ETA: 3:11:30 - loss: 2.3288 - acc: 0.3365 - top_k_categorical_accuracy: 0.6885
+31/82 [==========>...................] - ETA: 3:07:49 - loss: 2.3367 - acc: 0.3337 - top_k_categorical_accuracy: 0.6845
+32/82 [==========>...................] - ETA: 3:04:10 - loss: 2.3291 - acc: 0.3359 - top_k_categorical_accuracy: 0.6865
+33/82 [===========>..................] - ETA: 3:00:30 - loss: 2.3284 - acc: 0.3362 - top_k_categorical_accuracy: 0.6856
+34/82 [===========>..................] - ETA: 2:56:42 - loss: 2.3270 - acc: 0.3346 - top_k_categorical_accuracy: 0.6847
+35/82 [===========>..................] - ETA: 2:52:57 - loss: 2.3251 - acc: 0.3321 - top_k_categorical_accuracy: 0.6848
+36/82 [============>.................] - ETA: 2:49:11 - loss: 2.3372 - acc: 0.3264 - top_k_categorical_accuracy: 0.6849
+37/82 [============>.................] - ETA: 2:45:25 - loss: 2.3346 - acc: 0.3277 - top_k_categorical_accuracy: 0.6858
+38/82 [============>.................] - ETA: 2:41:43 - loss: 2.3402 - acc: 0.3248 - top_k_categorical_accuracy: 0.6875
+39/82 [=============>................] - ETA: 2:38:04 - loss: 2.3330 - acc: 0.3261 - top_k_categorical_accuracy: 0.6891
+40/82 [=============>................] - ETA: 2:34:24 - loss: 2.3331 - acc: 0.3242 - top_k_categorical_accuracy: 0.6898
+41/82 [==============>...............] - ETA: 2:30:45 - loss: 2.3267 - acc: 0.3247 - top_k_categorical_accuracy: 0.6905
+42/82 [==============>...............] - ETA: 2:27:05 - loss: 2.3248 - acc: 0.3259 - top_k_categorical_accuracy: 0.6905
+43/82 [==============>...............] - ETA: 2:23:26 - loss: 2.3206 - acc: 0.3278 - top_k_categorical_accuracy: 0.6926
+44/82 [===============>..............] - ETA: 2:19:46 - loss: 2.3145 - acc: 0.3331 - top_k_categorical_accuracy: 0.6939
+45/82 [===============>..............] - ETA: 2:16:06 - loss: 2.3126 - acc: 0.3326 - top_k_categorical_accuracy: 0.6965
+46/82 [===============>..............] - ETA: 2:12:27 - loss: 2.3149 - acc: 0.3308 - top_k_categorical_accuracy: 0.6957
+47/82 [================>.............] - ETA: 2:08:49 - loss: 2.3164 - acc: 0.3291 - top_k_categorical_accuracy: 0.6955
+48/82 [================>.............] - ETA: 2:05:10 - loss: 2.3134 - acc: 0.3314 - top_k_categorical_accuracy: 0.6973
+49/82 [================>.............] - ETA: 2:01:31 - loss: 2.3144 - acc: 0.3335 - top_k_categorical_accuracy: 0.6990
+50/82 [=================>............] - ETA: 1:57:51 - loss: 2.3124 - acc: 0.3337 - top_k_categorical_accuracy: 0.7019
+51/82 [=================>............] - ETA: 1:54:08 - loss: 2.3150 - acc: 0.3315 - top_k_categorical_accuracy: 0.7004
+52/82 [==================>...........] - ETA: 1:50:25 - loss: 2.3133 - acc: 0.3329 - top_k_categorical_accuracy: 0.7001
+53/82 [==================>...........] - ETA: 1:46:42 - loss: 2.3144 - acc: 0.3314 - top_k_categorical_accuracy: 0.6999
+54/82 [==================>...........] - ETA: 1:42:59 - loss: 2.3130 - acc: 0.3316 - top_k_categorical_accuracy: 0.6997
+55/82 [===================>..........] - ETA: 1:39:19 - loss: 2.3181 - acc: 0.3335 - top_k_categorical_accuracy: 0.7000
+56/82 [===================>..........] - ETA: 1:35:39 - loss: 2.3190 - acc: 0.3315 - top_k_categorical_accuracy: 0.7015
+57/82 [===================>..........] - ETA: 1:31:59 - loss: 2.3183 - acc: 0.3328 - top_k_categorical_accuracy: 0.7012
+58/82 [====================>.........] - ETA: 1:28:18 - loss: 2.3154 - acc: 0.3330 - top_k_categorical_accuracy: 0.7026
+59/82 [====================>.........] - ETA: 1:24:38 - loss: 2.3126 - acc: 0.3353 - top_k_categorical_accuracy: 0.7018
+60/82 [====================>.........] - ETA: 1:20:58 - loss: 2.3182 - acc: 0.3344 - top_k_categorical_accuracy: 0.7000
+61/82 [=====================>........] - ETA: 1:17:17 - loss: 2.3157 - acc: 0.3345 - top_k_categorical_accuracy: 0.6998
+62/82 [=====================>........] - ETA: 1:13:37 - loss: 2.3133 - acc: 0.3347 - top_k_categorical_accuracy: 0.7006
+63/82 [======================>.......] - ETA: 1:09:57 - loss: 2.3129 - acc: 0.3348 - top_k_categorical_accuracy: 0.7009
+64/82 [======================>.......] - ETA: 1:06:16 - loss: 2.3129 - acc: 0.3345 - top_k_categorical_accuracy: 0.7002
+65/82 [======================>.......] - ETA: 1:02:31 - loss: 2.3096 - acc: 0.3346 - top_k_categorical_accuracy: 0.7005
+66/82 [=======================>......] - ETA: 58:46 - loss: 2.3112 - acc: 0.3352 - top_k_categorical_accuracy: 0.6984  
+67/82 [=======================>......] - ETA: 55:03 - loss: 2.3149 - acc: 0.3340 - top_k_categorical_accuracy: 0.6968
+68/82 [=======================>......] - ETA: 51:23 - loss: 2.3130 - acc: 0.3346 - top_k_categorical_accuracy: 0.6972
+69/82 [========================>.....] - ETA: 47:43 - loss: 2.3092 - acc: 0.3361 - top_k_categorical_accuracy: 0.6979
+70/82 [========================>.....] - ETA: 44:03 - loss: 2.3123 - acc: 0.3339 - top_k_categorical_accuracy: 0.6987
+71/82 [========================>.....] - ETA: 40:23 - loss: 2.3091 - acc: 0.3332 - top_k_categorical_accuracy: 0.6998
+72/82 [=========================>....] - ETA: 36:44 - loss: 2.3076 - acc: 0.3338 - top_k_categorical_accuracy: 0.7005
+73/82 [=========================>....] - ETA: 33:04 - loss: 2.3080 - acc: 0.3326 - top_k_categorical_accuracy: 0.7008
+74/82 [==========================>...] - ETA: 29:24 - loss: 2.3089 - acc: 0.3336 - top_k_categorical_accuracy: 0.6997
+75/82 [==========================>...] - ETA: 25:44 - loss: 2.3081 - acc: 0.3342 - top_k_categorical_accuracy: 0.7008
+76/82 [==========================>...] - ETA: 22:04 - loss: 2.3035 - acc: 0.3368 - top_k_categorical_accuracy: 0.7015
+77/82 [===========================>..] - ETA: 18:25 - loss: 2.3065 - acc: 0.3360 - top_k_categorical_accuracy: 0.7001
+78/82 [===========================>..] - ETA: 14:46 - loss: 2.3064 - acc: 0.3361 - top_k_categorical_accuracy: 0.7007
+79/82 [===========================>..] - ETA: 11:06 - loss: 2.3039 - acc: 0.3362 - top_k_categorical_accuracy: 0.7017
+80/82 [============================>.] - ETA: 7:25 - loss: 2.3002 - acc: 0.3379 - top_k_categorical_accuracy: 0.7020 
+81/82 [============================>.] - ETA: 3:43 - loss: 2.3034 - acc: 0.3368 - top_k_categorical_accuracy: 0.7002
+82/82 [==============================] - 19372s 236s/step - loss: 2.3054 - acc: 0.3354 - top_k_categorical_accuracy: 0.6997 - val_loss: 2.3346 - val_acc: 0.3023 - val_top_k_categorical_accuracy: 0.6758
+
+Epoch 00007: val_loss improved from 2.48110 to 2.33458, saving model to data/checkpoints/c3d-images.007-2.335.hdf5
+Epoch 8/1000
+
+ 1/82 [..............................] - ETA: 5:38:43 - loss: 2.3555 - acc: 0.2500 - top_k_categorical_accuracy: 0.8125
+ 2/82 [..............................] - ETA: 5:38:37 - loss: 2.4295 - acc: 0.2188 - top_k_categorical_accuracy: 0.7031
+ 3/82 [>.............................] - ETA: 5:35:09 - loss: 2.3523 - acc: 0.2500 - top_k_categorical_accuracy: 0.7083
+ 4/82 [>.............................] - ETA: 5:31:33 - loss: 2.3190 - acc: 0.2656 - top_k_categorical_accuracy: 0.7188
+ 5/82 [>.............................] - ETA: 5:27:28 - loss: 2.3432 - acc: 0.2750 - top_k_categorical_accuracy: 0.7125
+ 6/82 [=>............................] - ETA: 5:23:13 - loss: 2.2833 - acc: 0.2760 - top_k_categorical_accuracy: 0.7240
+ 7/82 [=>............................] - ETA: 5:19:02 - loss: 2.1933 - acc: 0.3170 - top_k_categorical_accuracy: 0.7500
+ 8/82 [=>............................] - ETA: 5:14:34 - loss: 2.1613 - acc: 0.3164 - top_k_categorical_accuracy: 0.7539
+ 9/82 [==>...........................] - ETA: 5:10:18 - loss: 2.1649 - acc: 0.3333 - top_k_categorical_accuracy: 0.7500
+10/82 [==>...........................] - ETA: 5:06:07 - loss: 2.1574 - acc: 0.3344 - top_k_categorical_accuracy: 0.7562
+11/82 [===>..........................] - ETA: 5:01:59 - loss: 2.1402 - acc: 0.3466 - top_k_categorical_accuracy: 0.7614
+12/82 [===>..........................] - ETA: 4:57:43 - loss: 2.1293 - acc: 0.3490 - top_k_categorical_accuracy: 0.7708
+13/82 [===>..........................] - ETA: 4:53:03 - loss: 2.1347 - acc: 0.3438 - top_k_categorical_accuracy: 0.7644
+14/82 [====>.........................] - ETA: 4:48:20 - loss: 2.1155 - acc: 0.3504 - top_k_categorical_accuracy: 0.7701
+15/82 [====>.........................] - ETA: 4:43:41 - loss: 2.1377 - acc: 0.3417 - top_k_categorical_accuracy: 0.7583
+16/82 [====>.........................] - ETA: 4:39:18 - loss: 2.1349 - acc: 0.3438 - top_k_categorical_accuracy: 0.7598
+17/82 [=====>........................] - ETA: 4:35:11 - loss: 2.1244 - acc: 0.3474 - top_k_categorical_accuracy: 0.7610
+18/82 [=====>........................] - ETA: 4:31:09 - loss: 2.1170 - acc: 0.3524 - top_k_categorical_accuracy: 0.7656
+19/82 [=====>........................] - ETA: 4:26:58 - loss: 2.1286 - acc: 0.3520 - top_k_categorical_accuracy: 0.7615
+20/82 [======>.......................] - ETA: 4:22:48 - loss: 2.1267 - acc: 0.3563 - top_k_categorical_accuracy: 0.7625
+21/82 [======>.......................] - ETA: 4:18:39 - loss: 2.1390 - acc: 0.3542 - top_k_categorical_accuracy: 0.7589
+22/82 [=======>......................] - ETA: 4:14:29 - loss: 2.1297 - acc: 0.3580 - top_k_categorical_accuracy: 0.7571
+23/82 [=======>......................] - ETA: 4:10:16 - loss: 2.1192 - acc: 0.3628 - top_k_categorical_accuracy: 0.7595
+24/82 [=======>......................] - ETA: 4:06:02 - loss: 2.1158 - acc: 0.3607 - top_k_categorical_accuracy: 0.7630
+25/82 [========>.....................] - ETA: 4:01:47 - loss: 2.1109 - acc: 0.3600 - top_k_categorical_accuracy: 0.7625
+26/82 [========>.....................] - ETA: 3:57:33 - loss: 2.1183 - acc: 0.3594 - top_k_categorical_accuracy: 0.7608
+27/82 [========>.....................] - ETA: 3:53:25 - loss: 2.1173 - acc: 0.3588 - top_k_categorical_accuracy: 0.7616
+28/82 [=========>....................] - ETA: 3:49:06 - loss: 2.1219 - acc: 0.3560 - top_k_categorical_accuracy: 0.7623
+29/82 [=========>....................] - ETA: 3:44:45 - loss: 2.1169 - acc: 0.3588 - top_k_categorical_accuracy: 0.7608
+30/82 [=========>....................] - ETA: 3:40:22 - loss: 2.1075 - acc: 0.3615 - top_k_categorical_accuracy: 0.7625
+31/82 [==========>...................] - ETA: 3:36:02 - loss: 2.1084 - acc: 0.3619 - top_k_categorical_accuracy: 0.7611
+32/82 [==========>...................] - ETA: 3:31:52 - loss: 2.1009 - acc: 0.3643 - top_k_categorical_accuracy: 0.7617
+33/82 [===========>..................] - ETA: 3:27:49 - loss: 2.1247 - acc: 0.3608 - top_k_categorical_accuracy: 0.7547
+34/82 [===========>..................] - ETA: 3:23:44 - loss: 2.1315 - acc: 0.3566 - top_k_categorical_accuracy: 0.7546
+35/82 [===========>..................] - ETA: 3:19:37 - loss: 2.1199 - acc: 0.3598 - top_k_categorical_accuracy: 0.7598
+36/82 [============>.................] - ETA: 3:15:32 - loss: 2.1285 - acc: 0.3550 - top_k_categorical_accuracy: 0.7595
+37/82 [============>.................] - ETA: 3:11:20 - loss: 2.1341 - acc: 0.3556 - top_k_categorical_accuracy: 0.7593
+38/82 [============>.................] - ETA: 3:07:05 - loss: 2.1323 - acc: 0.3602 - top_k_categorical_accuracy: 0.7582
+39/82 [=============>................] - ETA: 3:02:50 - loss: 2.1296 - acc: 0.3598 - top_k_categorical_accuracy: 0.7580
+40/82 [=============>................] - ETA: 2:58:35 - loss: 2.1215 - acc: 0.3586 - top_k_categorical_accuracy: 0.7602
+41/82 [==============>...............] - ETA: 2:54:21 - loss: 2.1162 - acc: 0.3613 - top_k_categorical_accuracy: 0.7614
+42/82 [==============>...............] - ETA: 2:50:08 - loss: 2.1148 - acc: 0.3609 - top_k_categorical_accuracy: 0.7612
+43/82 [==============>...............] - ETA: 2:45:50 - loss: 2.1192 - acc: 0.3583 - top_k_categorical_accuracy: 0.7594
+44/82 [===============>..............] - ETA: 2:41:32 - loss: 2.1125 - acc: 0.3608 - top_k_categorical_accuracy: 0.7607
+45/82 [===============>..............] - ETA: 2:37:13 - loss: 2.1079 - acc: 0.3632 - top_k_categorical_accuracy: 0.7618
+46/82 [===============>..............] - ETA: 2:32:55 - loss: 2.1145 - acc: 0.3601 - top_k_categorical_accuracy: 0.7582
+47/82 [================>.............] - ETA: 2:28:42 - loss: 2.1060 - acc: 0.3624 - top_k_categorical_accuracy: 0.7613
+48/82 [================>.............] - ETA: 2:24:29 - loss: 2.1069 - acc: 0.3639 - top_k_categorical_accuracy: 0.7630
+49/82 [================>.............] - ETA: 2:20:15 - loss: 2.1135 - acc: 0.3635 - top_k_categorical_accuracy: 0.7621
+50/82 [=================>............] - ETA: 2:16:01 - loss: 2.1075 - acc: 0.3675 - top_k_categorical_accuracy: 0.7606
+51/82 [=================>............] - ETA: 2:11:47 - loss: 2.1074 - acc: 0.3664 - top_k_categorical_accuracy: 0.7623
+52/82 [==================>...........] - ETA: 2:07:33 - loss: 2.1136 - acc: 0.3648 - top_k_categorical_accuracy: 0.7620
+53/82 [==================>...........] - ETA: 2:03:17 - loss: 2.1091 - acc: 0.3679 - top_k_categorical_accuracy: 0.7612
+54/82 [==================>...........] - ETA: 1:59:03 - loss: 2.1083 - acc: 0.3686 - top_k_categorical_accuracy: 0.7616
+55/82 [===================>..........] - ETA: 1:54:50 - loss: 2.1126 - acc: 0.3676 - top_k_categorical_accuracy: 0.7608
+56/82 [===================>..........] - ETA: 1:50:39 - loss: 2.1141 - acc: 0.3672 - top_k_categorical_accuracy: 0.7584
+57/82 [===================>..........] - ETA: 1:46:27 - loss: 2.1127 - acc: 0.3673 - top_k_categorical_accuracy: 0.7588
+58/82 [====================>.........] - ETA: 1:42:13 - loss: 2.1118 - acc: 0.3691 - top_k_categorical_accuracy: 0.7597
+59/82 [====================>.........] - ETA: 1:37:58 - loss: 2.1010 - acc: 0.3739 - top_k_categorical_accuracy: 0.7622
+60/82 [====================>.........] - ETA: 1:33:43 - loss: 2.1063 - acc: 0.3719 - top_k_categorical_accuracy: 0.7615
+61/82 [=====================>........] - ETA: 1:29:29 - loss: 2.1069 - acc: 0.3719 - top_k_categorical_accuracy: 0.7618
+62/82 [=====================>........] - ETA: 1:25:16 - loss: 2.1023 - acc: 0.3720 - top_k_categorical_accuracy: 0.7626
+63/82 [======================>.......] - ETA: 1:21:03 - loss: 2.1053 - acc: 0.3695 - top_k_categorical_accuracy: 0.7619
+64/82 [======================>.......] - ETA: 1:16:48 - loss: 2.1041 - acc: 0.3691 - top_k_categorical_accuracy: 0.7612
+65/82 [======================>.......] - ETA: 1:12:32 - loss: 2.1010 - acc: 0.3716 - top_k_categorical_accuracy: 0.7611
+66/82 [=======================>......] - ETA: 1:08:12 - loss: 2.0980 - acc: 0.3722 - top_k_categorical_accuracy: 0.7628
+67/82 [=======================>......] - ETA: 1:03:52 - loss: 2.0950 - acc: 0.3727 - top_k_categorical_accuracy: 0.7631
+68/82 [=======================>......] - ETA: 59:33 - loss: 2.0952 - acc: 0.3727 - top_k_categorical_accuracy: 0.7633  
+69/82 [========================>.....] - ETA: 55:14 - loss: 2.0968 - acc: 0.3723 - top_k_categorical_accuracy: 0.7622
+70/82 [========================>.....] - ETA: 50:56 - loss: 2.0992 - acc: 0.3714 - top_k_categorical_accuracy: 0.7612
+71/82 [========================>.....] - ETA: 46:39 - loss: 2.0951 - acc: 0.3724 - top_k_categorical_accuracy: 0.7628
+72/82 [=========================>....] - ETA: 42:22 - loss: 2.0978 - acc: 0.3715 - top_k_categorical_accuracy: 0.7609
+73/82 [=========================>....] - ETA: 38:06 - loss: 2.1013 - acc: 0.3699 - top_k_categorical_accuracy: 0.7611
+74/82 [==========================>...] - ETA: 33:51 - loss: 2.0991 - acc: 0.3712 - top_k_categorical_accuracy: 0.7614
+75/82 [==========================>...] - ETA: 29:36 - loss: 2.1006 - acc: 0.3708 - top_k_categorical_accuracy: 0.7608
+76/82 [==========================>...] - ETA: 25:21 - loss: 2.0980 - acc: 0.3725 - top_k_categorical_accuracy: 0.7603
+77/82 [===========================>..] - ETA: 21:06 - loss: 2.1042 - acc: 0.3709 - top_k_categorical_accuracy: 0.7593
+78/82 [===========================>..] - ETA: 16:52 - loss: 2.1056 - acc: 0.3702 - top_k_categorical_accuracy: 0.7600
+79/82 [===========================>..] - ETA: 12:38 - loss: 2.1102 - acc: 0.3687 - top_k_categorical_accuracy: 0.7595
+80/82 [============================>.] - ETA: 8:25 - loss: 2.1109 - acc: 0.3676 - top_k_categorical_accuracy: 0.7590 
+81/82 [============================>.] - ETA: 4:12 - loss: 2.1181 - acc: 0.3657 - top_k_categorical_accuracy: 0.7585
+82/82 [==============================] - 21651s 264s/step - loss: 2.1175 - acc: 0.3662 - top_k_categorical_accuracy: 0.7584 - val_loss: 2.3326 - val_acc: 0.3055 - val_top_k_categorical_accuracy: 0.6625
+
+Epoch 00008: val_loss improved from 2.33458 to 2.33263, saving model to data/checkpoints/c3d-images.008-2.333.hdf5
+Epoch 9/1000
+
+ 1/82 [..............................] - ETA: 5:20:16 - loss: 2.1362 - acc: 0.3438 - top_k_categorical_accuracy: 0.7812
+ 2/82 [..............................] - ETA: 5:17:17 - loss: 1.9827 - acc: 0.4219 - top_k_categorical_accuracy: 0.8438
+ 3/82 [>.............................] - ETA: 5:14:29 - loss: 1.9187 - acc: 0.4271 - top_k_categorical_accuracy: 0.8542
+ 4/82 [>.............................] - ETA: 5:11:13 - loss: 1.8814 - acc: 0.4688 - top_k_categorical_accuracy: 0.8516
+ 5/82 [>.............................] - ETA: 5:07:08 - loss: 1.9424 - acc: 0.4313 - top_k_categorical_accuracy: 0.8250
+ 6/82 [=>............................] - ETA: 5:02:57 - loss: 1.9580 - acc: 0.4271 - top_k_categorical_accuracy: 0.8125
+ 7/82 [=>............................] - ETA: 4:58:38 - loss: 1.9915 - acc: 0.4107 - top_k_categorical_accuracy: 0.7946
+ 8/82 [=>............................] - ETA: 4:54:48 - loss: 2.0098 - acc: 0.4062 - top_k_categorical_accuracy: 0.7812
+ 9/82 [==>...........................] - ETA: 4:50:43 - loss: 2.0206 - acc: 0.3993 - top_k_categorical_accuracy: 0.7743
+10/82 [==>...........................] - ETA: 4:46:29 - loss: 1.9949 - acc: 0.4000 - top_k_categorical_accuracy: 0.7906
+11/82 [===>..........................] - ETA: 4:42:13 - loss: 1.9996 - acc: 0.4034 - top_k_categorical_accuracy: 0.8040
+12/82 [===>..........................] - ETA: 4:38:10 - loss: 1.9969 - acc: 0.4089 - top_k_categorical_accuracy: 0.7995
+13/82 [===>..........................] - ETA: 4:34:21 - loss: 2.0188 - acc: 0.3990 - top_k_categorical_accuracy: 0.7981
+14/82 [====>.........................] - ETA: 4:30:26 - loss: 2.0528 - acc: 0.3906 - top_k_categorical_accuracy: 0.7857
+15/82 [====>.........................] - ETA: 4:26:32 - loss: 2.0390 - acc: 0.4021 - top_k_categorical_accuracy: 0.7854
+16/82 [====>.........................] - ETA: 4:22:44 - loss: 2.0259 - acc: 0.4062 - top_k_categorical_accuracy: 0.7812
+17/82 [=====>........................] - ETA: 4:18:45 - loss: 2.0137 - acc: 0.4118 - top_k_categorical_accuracy: 0.7849
+18/82 [=====>........................] - ETA: 4:14:51 - loss: 2.0067 - acc: 0.4115 - top_k_categorical_accuracy: 0.7865
+19/82 [=====>........................] - ETA: 4:10:55 - loss: 1.9888 - acc: 0.4161 - top_k_categorical_accuracy: 0.7911
+20/82 [======>.......................] - ETA: 4:06:59 - loss: 2.0032 - acc: 0.4031 - top_k_categorical_accuracy: 0.7891
+21/82 [======>.......................] - ETA: 4:02:58 - loss: 2.0122 - acc: 0.4033 - top_k_categorical_accuracy: 0.7872
+22/82 [=======>......................] - ETA: 3:59:00 - loss: 2.0146 - acc: 0.4006 - top_k_categorical_accuracy: 0.7827
+23/82 [=======>......................] - ETA: 3:55:00 - loss: 1.9986 - acc: 0.4049 - top_k_categorical_accuracy: 0.7867
+24/82 [=======>......................] - ETA: 3:50:59 - loss: 1.9944 - acc: 0.4023 - top_k_categorical_accuracy: 0.7904
+25/82 [========>.....................] - ETA: 3:47:08 - loss: 2.0085 - acc: 0.3962 - top_k_categorical_accuracy: 0.7863
+26/82 [========>.....................] - ETA: 3:43:06 - loss: 2.0223 - acc: 0.3882 - top_k_categorical_accuracy: 0.7825
+27/82 [========>.....................] - ETA: 3:39:03 - loss: 2.0163 - acc: 0.3900 - top_k_categorical_accuracy: 0.7836
+28/82 [=========>....................] - ETA: 3:35:07 - loss: 2.0147 - acc: 0.3929 - top_k_categorical_accuracy: 0.7846
+29/82 [=========>....................] - ETA: 3:31:08 - loss: 2.0091 - acc: 0.3966 - top_k_categorical_accuracy: 0.7845
+30/82 [=========>....................] - ETA: 3:27:06 - loss: 2.0121 - acc: 0.3948 - top_k_categorical_accuracy: 0.7823
+31/82 [==========>...................] - ETA: 3:23:07 - loss: 2.0076 - acc: 0.3952 - top_k_categorical_accuracy: 0.7843
+32/82 [==========>...................] - ETA: 3:19:07 - loss: 2.0000 - acc: 0.3975 - top_k_categorical_accuracy: 0.7852
+33/82 [===========>..................] - ETA: 3:15:09 - loss: 2.0043 - acc: 0.3968 - top_k_categorical_accuracy: 0.7822
+34/82 [===========>..................] - ETA: 3:11:12 - loss: 1.9913 - acc: 0.4044 - top_k_categorical_accuracy: 0.7840
+35/82 [===========>..................] - ETA: 3:07:14 - loss: 1.9861 - acc: 0.4071 - top_k_categorical_accuracy: 0.7848
+36/82 [============>.................] - ETA: 3:03:17 - loss: 1.9905 - acc: 0.4062 - top_k_categorical_accuracy: 0.7839
+37/82 [============>.................] - ETA: 2:59:22 - loss: 1.9938 - acc: 0.4062 - top_k_categorical_accuracy: 0.7812
+38/82 [============>.................] - ETA: 2:55:23 - loss: 1.9962 - acc: 0.4046 - top_k_categorical_accuracy: 0.7812
+39/82 [=============>................] - ETA: 2:51:27 - loss: 1.9982 - acc: 0.4014 - top_k_categorical_accuracy: 0.7812
+40/82 [=============>................] - ETA: 2:47:29 - loss: 1.9954 - acc: 0.4023 - top_k_categorical_accuracy: 0.7805
+41/82 [==============>...............] - ETA: 2:43:30 - loss: 1.9925 - acc: 0.4040 - top_k_categorical_accuracy: 0.7820
+42/82 [==============>...............] - ETA: 2:39:30 - loss: 1.9886 - acc: 0.4055 - top_k_categorical_accuracy: 0.7812
+43/82 [==============>...............] - ETA: 2:35:29 - loss: 1.9768 - acc: 0.4099 - top_k_categorical_accuracy: 0.7834
+44/82 [===============>..............] - ETA: 2:31:29 - loss: 1.9757 - acc: 0.4084 - top_k_categorical_accuracy: 0.7848
+45/82 [===============>..............] - ETA: 2:27:30 - loss: 1.9621 - acc: 0.4118 - top_k_categorical_accuracy: 0.7875
+46/82 [===============>..............] - ETA: 2:23:32 - loss: 1.9671 - acc: 0.4062 - top_k_categorical_accuracy: 0.7860
+47/82 [================>.............] - ETA: 2:19:33 - loss: 1.9674 - acc: 0.4049 - top_k_categorical_accuracy: 0.7852
+48/82 [================>.............] - ETA: 2:15:33 - loss: 1.9713 - acc: 0.4017 - top_k_categorical_accuracy: 0.7858
+49/82 [================>.............] - ETA: 2:11:35 - loss: 1.9660 - acc: 0.4056 - top_k_categorical_accuracy: 0.7864
+50/82 [=================>............] - ETA: 2:07:40 - loss: 1.9695 - acc: 0.4044 - top_k_categorical_accuracy: 0.7869
+51/82 [=================>............] - ETA: 2:03:53 - loss: 1.9621 - acc: 0.4062 - top_k_categorical_accuracy: 0.7904
+52/82 [==================>...........] - ETA: 2:00:05 - loss: 1.9706 - acc: 0.4056 - top_k_categorical_accuracy: 0.7879
+53/82 [==================>...........] - ETA: 1:56:18 - loss: 1.9762 - acc: 0.4021 - top_k_categorical_accuracy: 0.7854
+54/82 [==================>...........] - ETA: 1:52:31 - loss: 1.9722 - acc: 0.4016 - top_k_categorical_accuracy: 0.7865
+55/82 [===================>..........] - ETA: 1:48:41 - loss: 1.9700 - acc: 0.4040 - top_k_categorical_accuracy: 0.7881
+56/82 [===================>..........] - ETA: 1:44:51 - loss: 1.9699 - acc: 0.4029 - top_k_categorical_accuracy: 0.7879
+57/82 [===================>..........] - ETA: 1:40:58 - loss: 1.9645 - acc: 0.4057 - top_k_categorical_accuracy: 0.7878
+58/82 [====================>.........] - ETA: 1:37:04 - loss: 1.9698 - acc: 0.4046 - top_k_categorical_accuracy: 0.7866
+59/82 [====================>.........] - ETA: 1:33:09 - loss: 1.9729 - acc: 0.4010 - top_k_categorical_accuracy: 0.7860
+60/82 [====================>.........] - ETA: 1:29:14 - loss: 1.9661 - acc: 0.4031 - top_k_categorical_accuracy: 0.7880
+61/82 [=====================>........] - ETA: 1:25:18 - loss: 1.9669 - acc: 0.4042 - top_k_categorical_accuracy: 0.7874
+62/82 [=====================>........] - ETA: 1:21:20 - loss: 1.9687 - acc: 0.4047 - top_k_categorical_accuracy: 0.7873
+63/82 [======================>.......] - ETA: 1:17:21 - loss: 1.9683 - acc: 0.4033 - top_k_categorical_accuracy: 0.7882
+64/82 [======================>.......] - ETA: 1:13:20 - loss: 1.9683 - acc: 0.4033 - top_k_categorical_accuracy: 0.7891
+65/82 [======================>.......] - ETA: 1:09:19 - loss: 1.9657 - acc: 0.4038 - top_k_categorical_accuracy: 0.7899
+66/82 [=======================>......] - ETA: 1:05:19 - loss: 1.9668 - acc: 0.4039 - top_k_categorical_accuracy: 0.7902
+67/82 [=======================>......] - ETA: 1:01:18 - loss: 1.9660 - acc: 0.4044 - top_k_categorical_accuracy: 0.7920
+68/82 [=======================>......] - ETA: 57:17 - loss: 1.9654 - acc: 0.4053 - top_k_categorical_accuracy: 0.7909  
+69/82 [========================>.....] - ETA: 53:15 - loss: 1.9635 - acc: 0.4053 - top_k_categorical_accuracy: 0.7912
+70/82 [========================>.....] - ETA: 49:12 - loss: 1.9649 - acc: 0.4067 - top_k_categorical_accuracy: 0.7911
+71/82 [========================>.....] - ETA: 45:09 - loss: 1.9644 - acc: 0.4067 - top_k_categorical_accuracy: 0.7914
+72/82 [=========================>....] - ETA: 41:05 - loss: 1.9631 - acc: 0.4089 - top_k_categorical_accuracy: 0.7921
+73/82 [=========================>....] - ETA: 37:01 - loss: 1.9688 - acc: 0.4080 - top_k_categorical_accuracy: 0.7902
+74/82 [==========================>...] - ETA: 32:56 - loss: 1.9659 - acc: 0.4101 - top_k_categorical_accuracy: 0.7897
+75/82 [==========================>...] - ETA: 28:50 - loss: 1.9664 - acc: 0.4113 - top_k_categorical_accuracy: 0.7908
+76/82 [==========================>...] - ETA: 24:44 - loss: 1.9682 - acc: 0.4100 - top_k_categorical_accuracy: 0.7911
+77/82 [===========================>..] - ETA: 20:38 - loss: 1.9678 - acc: 0.4103 - top_k_categorical_accuracy: 0.7898
+78/82 [===========================>..] - ETA: 16:31 - loss: 1.9664 - acc: 0.4119 - top_k_categorical_accuracy: 0.7889
+79/82 [===========================>..] - ETA: 12:23 - loss: 1.9677 - acc: 0.4122 - top_k_categorical_accuracy: 0.7892
+80/82 [============================>.] - ETA: 8:16 - loss: 1.9696 - acc: 0.4125 - top_k_categorical_accuracy: 0.7895 
+81/82 [============================>.] - ETA: 4:08 - loss: 1.9687 - acc: 0.4124 - top_k_categorical_accuracy: 0.7905
+82/82 [==============================] - 21538s 263s/step - loss: 1.9697 - acc: 0.4120 - top_k_categorical_accuracy: 0.7900 - val_loss: 2.2071 - val_acc: 0.3445 - val_top_k_categorical_accuracy: 0.7078
+
+Epoch 00009: val_loss improved from 2.33263 to 2.20713, saving model to data/checkpoints/c3d-images.009-2.207.hdf5
+Epoch 10/1000
+
+ 1/82 [..............................] - ETA: 5:56:42 - loss: 1.9666 - acc: 0.4062 - top_k_categorical_accuracy: 0.8125
+ 2/82 [..............................] - ETA: 5:52:15 - loss: 1.9107 - acc: 0.4375 - top_k_categorical_accuracy: 0.8281
+ 3/82 [>.............................] - ETA: 5:48:04 - loss: 1.9034 - acc: 0.4583 - top_k_categorical_accuracy: 0.8229
+ 4/82 [>.............................] - ETA: 5:43:38 - loss: 1.8945 - acc: 0.4688 - top_k_categorical_accuracy: 0.8203
+ 5/82 [>.............................] - ETA: 5:36:53 - loss: 1.9132 - acc: 0.4375 - top_k_categorical_accuracy: 0.8250
+ 6/82 [=>............................] - ETA: 5:30:27 - loss: 1.9302 - acc: 0.4271 - top_k_categorical_accuracy: 0.8229
+ 7/82 [=>............................] - ETA: 5:24:53 - loss: 1.9532 - acc: 0.4152 - top_k_categorical_accuracy: 0.7991
+ 8/82 [=>............................] - ETA: 5:19:53 - loss: 1.9031 - acc: 0.4375 - top_k_categorical_accuracy: 0.8047
+ 9/82 [==>...........................] - ETA: 5:15:07 - loss: 1.8853 - acc: 0.4549 - top_k_categorical_accuracy: 0.8125
+10/82 [==>...........................] - ETA: 5:10:54 - loss: 1.8828 - acc: 0.4437 - top_k_categorical_accuracy: 0.8125
+11/82 [===>..........................] - ETA: 5:06:51 - loss: 1.8847 - acc: 0.4290 - top_k_categorical_accuracy: 0.8153
+12/82 [===>..........................] - ETA: 5:02:32 - loss: 1.8708 - acc: 0.4323 - top_k_categorical_accuracy: 0.8203
+13/82 [===>..........................] - ETA: 4:58:15 - loss: 1.8752 - acc: 0.4303 - top_k_categorical_accuracy: 0.8149
+14/82 [====>.........................] - ETA: 4:53:52 - loss: 1.8540 - acc: 0.4375 - top_k_categorical_accuracy: 0.8192
+15/82 [====>.........................] - ETA: 4:49:24 - loss: 1.8949 - acc: 0.4250 - top_k_categorical_accuracy: 0.8083
+16/82 [====>.........................] - ETA: 4:45:08 - loss: 1.9169 - acc: 0.4199 - top_k_categorical_accuracy: 0.8066
+17/82 [=====>........................] - ETA: 4:40:55 - loss: 1.8848 - acc: 0.4246 - top_k_categorical_accuracy: 0.8180
+18/82 [=====>........................] - ETA: 4:36:41 - loss: 1.8808 - acc: 0.4288 - top_k_categorical_accuracy: 0.8160
+19/82 [=====>........................] - ETA: 4:32:21 - loss: 1.8552 - acc: 0.4391 - top_k_categorical_accuracy: 0.8224
+20/82 [======>.......................] - ETA: 4:27:47 - loss: 1.8383 - acc: 0.4422 - top_k_categorical_accuracy: 0.8250
+21/82 [======>.......................] - ETA: 4:23:10 - loss: 1.8402 - acc: 0.4405 - top_k_categorical_accuracy: 0.8274
+22/82 [=======>......................] - ETA: 4:18:38 - loss: 1.8386 - acc: 0.4418 - top_k_categorical_accuracy: 0.8281
+23/82 [=======>......................] - ETA: 4:14:15 - loss: 1.8370 - acc: 0.4402 - top_k_categorical_accuracy: 0.8261
+24/82 [=======>......................] - ETA: 4:09:55 - loss: 1.8262 - acc: 0.4440 - top_k_categorical_accuracy: 0.8294
+25/82 [========>.....................] - ETA: 4:05:38 - loss: 1.8124 - acc: 0.4525 - top_k_categorical_accuracy: 0.8313
+26/82 [========>.....................] - ETA: 4:01:20 - loss: 1.8080 - acc: 0.4519 - top_k_categorical_accuracy: 0.8305
+27/82 [========>.....................] - ETA: 3:57:02 - loss: 1.8169 - acc: 0.4468 - top_k_categorical_accuracy: 0.8287
+28/82 [=========>....................] - ETA: 3:52:44 - loss: 1.8267 - acc: 0.4453 - top_k_categorical_accuracy: 0.8270
+29/82 [=========>....................] - ETA: 3:48:25 - loss: 1.8284 - acc: 0.4440 - top_k_categorical_accuracy: 0.8287
+30/82 [=========>....................] - ETA: 3:44:10 - loss: 1.8233 - acc: 0.4437 - top_k_categorical_accuracy: 0.8313
+31/82 [==========>...................] - ETA: 3:39:52 - loss: 1.8217 - acc: 0.4466 - top_k_categorical_accuracy: 0.8286
+32/82 [==========>...................] - ETA: 3:35:34 - loss: 1.8254 - acc: 0.4453 - top_k_categorical_accuracy: 0.8291
+33/82 [===========>..................] - ETA: 3:31:18 - loss: 1.8377 - acc: 0.4432 - top_k_categorical_accuracy: 0.8239
+34/82 [===========>..................] - ETA: 3:26:58 - loss: 1.8433 - acc: 0.4412 - top_k_categorical_accuracy: 0.8235
+35/82 [===========>..................] - ETA: 3:22:33 - loss: 1.8373 - acc: 0.4437 - top_k_categorical_accuracy: 0.8250
+36/82 [============>.................] - ETA: 3:18:09 - loss: 1.8357 - acc: 0.4444 - top_k_categorical_accuracy: 0.8247
+37/82 [============>.................] - ETA: 3:13:44 - loss: 1.8360 - acc: 0.4451 - top_k_categorical_accuracy: 0.8218
+38/82 [============>.................] - ETA: 3:09:22 - loss: 1.8260 - acc: 0.4465 - top_k_categorical_accuracy: 0.8232
+39/82 [=============>................] - ETA: 3:05:05 - loss: 1.8176 - acc: 0.4495 - top_k_categorical_accuracy: 0.8245
+40/82 [=============>................] - ETA: 3:00:47 - loss: 1.8165 - acc: 0.4492 - top_k_categorical_accuracy: 0.8258
+41/82 [==============>...............] - ETA: 2:56:29 - loss: 1.8159 - acc: 0.4520 - top_k_categorical_accuracy: 0.8239
+42/82 [==============>...............] - ETA: 2:52:14 - loss: 1.8170 - acc: 0.4509 - top_k_categorical_accuracy: 0.8244
+43/82 [==============>...............] - ETA: 2:47:57 - loss: 1.8284 - acc: 0.4455 - top_k_categorical_accuracy: 0.8219
+44/82 [===============>..............] - ETA: 2:43:39 - loss: 1.8348 - acc: 0.4460 - top_k_categorical_accuracy: 0.8196
+45/82 [===============>..............] - ETA: 2:39:21 - loss: 1.8235 - acc: 0.4514 - top_k_categorical_accuracy: 0.8208
+46/82 [===============>..............] - ETA: 2:35:04 - loss: 1.8232 - acc: 0.4524 - top_k_categorical_accuracy: 0.8207
+47/82 [================>.............] - ETA: 2:30:46 - loss: 1.8184 - acc: 0.4535 - top_k_categorical_accuracy: 0.8225
+48/82 [================>.............] - ETA: 2:26:28 - loss: 1.8202 - acc: 0.4518 - top_k_categorical_accuracy: 0.8236
+49/82 [================>.............] - ETA: 2:22:10 - loss: 1.8162 - acc: 0.4522 - top_k_categorical_accuracy: 0.8253
+50/82 [=================>............] - ETA: 2:17:48 - loss: 1.8096 - acc: 0.4550 - top_k_categorical_accuracy: 0.8263
+51/82 [=================>............] - ETA: 2:13:26 - loss: 1.8028 - acc: 0.4583 - top_k_categorical_accuracy: 0.8272
+52/82 [==================>...........] - ETA: 2:09:05 - loss: 1.7990 - acc: 0.4597 - top_k_categorical_accuracy: 0.8263
+53/82 [==================>...........] - ETA: 2:04:45 - loss: 1.8005 - acc: 0.4593 - top_k_categorical_accuracy: 0.8267
+54/82 [==================>...........] - ETA: 2:00:29 - loss: 1.8002 - acc: 0.4578 - top_k_categorical_accuracy: 0.8264
+55/82 [===================>..........] - ETA: 1:56:11 - loss: 1.8030 - acc: 0.4585 - top_k_categorical_accuracy: 0.8261
+56/82 [===================>..........] - ETA: 1:51:54 - loss: 1.8048 - acc: 0.4576 - top_k_categorical_accuracy: 0.8253
+57/82 [===================>..........] - ETA: 1:47:37 - loss: 1.8019 - acc: 0.4589 - top_k_categorical_accuracy: 0.8257
+58/82 [====================>.........] - ETA: 1:43:19 - loss: 1.8021 - acc: 0.4580 - top_k_categorical_accuracy: 0.8244
+59/82 [====================>.........] - ETA: 1:39:01 - loss: 1.7995 - acc: 0.4582 - top_k_categorical_accuracy: 0.8247
+60/82 [====================>.........] - ETA: 1:34:43 - loss: 1.7976 - acc: 0.4583 - top_k_categorical_accuracy: 0.8255
+61/82 [=====================>........] - ETA: 1:30:25 - loss: 1.7948 - acc: 0.4600 - top_k_categorical_accuracy: 0.8248
+62/82 [=====================>........] - ETA: 1:26:07 - loss: 1.7901 - acc: 0.4597 - top_k_categorical_accuracy: 0.8256
+63/82 [======================>.......] - ETA: 1:21:49 - loss: 1.7929 - acc: 0.4563 - top_k_categorical_accuracy: 0.8254
+64/82 [======================>.......] - ETA: 1:17:31 - loss: 1.7920 - acc: 0.4575 - top_k_categorical_accuracy: 0.8247
+65/82 [======================>.......] - ETA: 1:13:11 - loss: 1.7929 - acc: 0.4572 - top_k_categorical_accuracy: 0.8240
+66/82 [=======================>......] - ETA: 1:08:52 - loss: 1.7897 - acc: 0.4574 - top_k_categorical_accuracy: 0.8243
+67/82 [=======================>......] - ETA: 1:04:32 - loss: 1.7865 - acc: 0.4585 - top_k_categorical_accuracy: 0.8246
+68/82 [=======================>......] - ETA: 1:00:14 - loss: 1.7875 - acc: 0.4586 - top_k_categorical_accuracy: 0.8240
+69/82 [========================>.....] - ETA: 55:57 - loss: 1.7858 - acc: 0.4583 - top_k_categorical_accuracy: 0.8256  
+70/82 [========================>.....] - ETA: 51:39 - loss: 1.7843 - acc: 0.4589 - top_k_categorical_accuracy: 0.8268
+71/82 [========================>.....] - ETA: 47:20 - loss: 1.7814 - acc: 0.4604 - top_k_categorical_accuracy: 0.8266
+72/82 [=========================>....] - ETA: 43:02 - loss: 1.7824 - acc: 0.4583 - top_k_categorical_accuracy: 0.8255
+73/82 [=========================>....] - ETA: 38:44 - loss: 1.7801 - acc: 0.4589 - top_k_categorical_accuracy: 0.8262
+74/82 [==========================>...] - ETA: 34:26 - loss: 1.7815 - acc: 0.4569 - top_k_categorical_accuracy: 0.8252
+75/82 [==========================>...] - ETA: 30:08 - loss: 1.7760 - acc: 0.4587 - top_k_categorical_accuracy: 0.8275
+76/82 [==========================>...] - ETA: 25:50 - loss: 1.7767 - acc: 0.4593 - top_k_categorical_accuracy: 0.8273
+77/82 [===========================>..] - ETA: 21:31 - loss: 1.7733 - acc: 0.4598 - top_k_categorical_accuracy: 0.8287
+78/82 [===========================>..] - ETA: 17:13 - loss: 1.7715 - acc: 0.4615 - top_k_categorical_accuracy: 0.8285
+79/82 [===========================>..] - ETA: 12:55 - loss: 1.7690 - acc: 0.4620 - top_k_categorical_accuracy: 0.8283
+80/82 [============================>.] - ETA: 8:36 - loss: 1.7689 - acc: 0.4621 - top_k_categorical_accuracy: 0.8285 
+81/82 [============================>.] - ETA: 4:18 - loss: 1.7703 - acc: 0.4633 - top_k_categorical_accuracy: 0.8283
+82/82 [==============================] - 22113s 270s/step - loss: 1.7731 - acc: 0.4611 - top_k_categorical_accuracy: 0.8281 - val_loss: 2.2286 - val_acc: 0.3422 - val_top_k_categorical_accuracy: 0.7281
+
+Epoch 00010: val_loss did not improve from 2.20713
+Epoch 11/1000
+
+ 1/82 [..............................] - ETA: 5:22:04 - loss: 1.8376 - acc: 0.4688 - top_k_categorical_accuracy: 0.7812
+ 2/82 [..............................] - ETA: 5:19:15 - loss: 1.6983 - acc: 0.5000 - top_k_categorical_accuracy: 0.8438
+ 3/82 [>.............................] - ETA: 5:15:17 - loss: 1.7643 - acc: 0.4896 - top_k_categorical_accuracy: 0.8333
+ 4/82 [>.............................] - ETA: 5:10:54 - loss: 1.7656 - acc: 0.4844 - top_k_categorical_accuracy: 0.8125
+ 5/82 [>.............................] - ETA: 5:07:27 - loss: 1.8132 - acc: 0.4625 - top_k_categorical_accuracy: 0.8000
+ 6/82 [=>............................] - ETA: 5:03:33 - loss: 1.8891 - acc: 0.4375 - top_k_categorical_accuracy: 0.8021
+ 7/82 [=>............................] - ETA: 4:59:20 - loss: 1.8559 - acc: 0.4330 - top_k_categorical_accuracy: 0.8170
+ 8/82 [=>............................] - ETA: 4:55:26 - loss: 1.8172 - acc: 0.4375 - top_k_categorical_accuracy: 0.8281
+ 9/82 [==>...........................] - ETA: 4:51:49 - loss: 1.8202 - acc: 0.4444 - top_k_categorical_accuracy: 0.8299
+10/82 [==>...........................] - ETA: 4:48:09 - loss: 1.7979 - acc: 0.4500 - top_k_categorical_accuracy: 0.8344
+11/82 [===>..........................] - ETA: 4:44:26 - loss: 1.7775 - acc: 0.4489 - top_k_categorical_accuracy: 0.8409
+12/82 [===>..........................] - ETA: 4:40:28 - loss: 1.7986 - acc: 0.4479 - top_k_categorical_accuracy: 0.8333
+13/82 [===>..........................] - ETA: 4:36:28 - loss: 1.7828 - acc: 0.4495 - top_k_categorical_accuracy: 0.8365
+14/82 [====>.........................] - ETA: 4:32:22 - loss: 1.7733 - acc: 0.4531 - top_k_categorical_accuracy: 0.8415
+15/82 [====>.........................] - ETA: 4:28:15 - loss: 1.7761 - acc: 0.4500 - top_k_categorical_accuracy: 0.8438
+16/82 [====>.........................] - ETA: 4:24:22 - loss: 1.7969 - acc: 0.4434 - top_k_categorical_accuracy: 0.8398
+17/82 [=====>........................] - ETA: 4:20:16 - loss: 1.7931 - acc: 0.4430 - top_k_categorical_accuracy: 0.8456
+18/82 [=====>........................] - ETA: 4:16:14 - loss: 1.7921 - acc: 0.4410 - top_k_categorical_accuracy: 0.8420
+19/82 [=====>........................] - ETA: 4:12:09 - loss: 1.7961 - acc: 0.4375 - top_k_categorical_accuracy: 0.8405
+20/82 [======>.......................] - ETA: 4:08:10 - loss: 1.7951 - acc: 0.4375 - top_k_categorical_accuracy: 0.8391
+21/82 [======>.......................] - ETA: 4:04:09 - loss: 1.7977 - acc: 0.4435 - top_k_categorical_accuracy: 0.8363
+22/82 [=======>......................] - ETA: 4:00:06 - loss: 1.7923 - acc: 0.4403 - top_k_categorical_accuracy: 0.8381
+23/82 [=======>......................] - ETA: 3:56:04 - loss: 1.7813 - acc: 0.4484 - top_k_categorical_accuracy: 0.8383
+24/82 [=======>......................] - ETA: 3:52:01 - loss: 1.7655 - acc: 0.4544 - top_k_categorical_accuracy: 0.8411
+25/82 [========>.....................] - ETA: 3:48:04 - loss: 1.7701 - acc: 0.4525 - top_k_categorical_accuracy: 0.8387
+26/82 [========>.....................] - ETA: 3:44:03 - loss: 1.7592 - acc: 0.4579 - top_k_categorical_accuracy: 0.8401
+27/82 [========>.....................] - ETA: 3:40:10 - loss: 1.7576 - acc: 0.4583 - top_k_categorical_accuracy: 0.8414
+28/82 [=========>....................] - ETA: 3:36:09 - loss: 1.7563 - acc: 0.4576 - top_k_categorical_accuracy: 0.8382
+29/82 [=========>....................] - ETA: 3:32:08 - loss: 1.7527 - acc: 0.4612 - top_k_categorical_accuracy: 0.8416
+30/82 [=========>....................] - ETA: 3:28:08 - loss: 1.7578 - acc: 0.4615 - top_k_categorical_accuracy: 0.8365
+31/82 [==========>...................] - ETA: 3:24:11 - loss: 1.7597 - acc: 0.4627 - top_k_categorical_accuracy: 0.8347
+32/82 [==========>...................] - ETA: 3:20:11 - loss: 1.7657 - acc: 0.4600 - top_k_categorical_accuracy: 0.8320
+33/82 [===========>..................] - ETA: 3:16:09 - loss: 1.7558 - acc: 0.4631 - top_k_categorical_accuracy: 0.8333
+34/82 [===========>..................] - ETA: 3:12:10 - loss: 1.7472 - acc: 0.4678 - top_k_categorical_accuracy: 0.8346
+35/82 [===========>..................] - ETA: 3:08:06 - loss: 1.7481 - acc: 0.4670 - top_k_categorical_accuracy: 0.8357
+36/82 [============>.................] - ETA: 3:04:06 - loss: 1.7539 - acc: 0.4661 - top_k_categorical_accuracy: 0.8342
+37/82 [============>.................] - ETA: 3:00:07 - loss: 1.7484 - acc: 0.4662 - top_k_categorical_accuracy: 0.8361
+38/82 [============>.................] - ETA: 2:56:05 - loss: 1.7446 - acc: 0.4704 - top_k_categorical_accuracy: 0.8363
+39/82 [=============>................] - ETA: 2:52:03 - loss: 1.7516 - acc: 0.4696 - top_k_categorical_accuracy: 0.8349
+40/82 [=============>................] - ETA: 2:48:01 - loss: 1.7639 - acc: 0.4688 - top_k_categorical_accuracy: 0.8344
+41/82 [==============>...............] - ETA: 2:44:02 - loss: 1.7653 - acc: 0.4695 - top_k_categorical_accuracy: 0.8338
+42/82 [==============>...............] - ETA: 2:40:04 - loss: 1.7663 - acc: 0.4688 - top_k_categorical_accuracy: 0.8348
+43/82 [==============>...............] - ETA: 2:36:05 - loss: 1.7664 - acc: 0.4680 - top_k_categorical_accuracy: 0.8358
+44/82 [===============>..............] - ETA: 2:32:05 - loss: 1.7610 - acc: 0.4680 - top_k_categorical_accuracy: 0.8366
+45/82 [===============>..............] - ETA: 2:28:08 - loss: 1.7504 - acc: 0.4701 - top_k_categorical_accuracy: 0.8396
+46/82 [===============>..............] - ETA: 2:24:09 - loss: 1.7464 - acc: 0.4721 - top_k_categorical_accuracy: 0.8404
+47/82 [================>.............] - ETA: 2:20:08 - loss: 1.7499 - acc: 0.4707 - top_k_categorical_accuracy: 0.8398
+48/82 [================>.............] - ETA: 2:16:05 - loss: 1.7391 - acc: 0.4733 - top_k_categorical_accuracy: 0.8405
+49/82 [================>.............] - ETA: 2:12:03 - loss: 1.7303 - acc: 0.4751 - top_k_categorical_accuracy: 0.8406
+50/82 [=================>............] - ETA: 2:08:02 - loss: 1.7299 - acc: 0.4763 - top_k_categorical_accuracy: 0.8394
+51/82 [=================>............] - ETA: 2:04:02 - loss: 1.7323 - acc: 0.4755 - top_k_categorical_accuracy: 0.8395
+52/82 [==================>...........] - ETA: 2:00:02 - loss: 1.7287 - acc: 0.4754 - top_k_categorical_accuracy: 0.8395
+53/82 [==================>...........] - ETA: 1:56:03 - loss: 1.7330 - acc: 0.4735 - top_k_categorical_accuracy: 0.8367
+54/82 [==================>...........] - ETA: 1:52:01 - loss: 1.7359 - acc: 0.4716 - top_k_categorical_accuracy: 0.8374
+55/82 [===================>..........] - ETA: 1:48:00 - loss: 1.7310 - acc: 0.4739 - top_k_categorical_accuracy: 0.8392
+56/82 [===================>..........] - ETA: 1:44:01 - loss: 1.7268 - acc: 0.4749 - top_k_categorical_accuracy: 0.8387
+57/82 [===================>..........] - ETA: 1:40:02 - loss: 1.7234 - acc: 0.4764 - top_k_categorical_accuracy: 0.8405
+58/82 [====================>.........] - ETA: 1:36:03 - loss: 1.7153 - acc: 0.4790 - top_k_categorical_accuracy: 0.8411
+59/82 [====================>.........] - ETA: 1:32:03 - loss: 1.7104 - acc: 0.4804 - top_k_categorical_accuracy: 0.8422
+60/82 [====================>.........] - ETA: 1:28:02 - loss: 1.7042 - acc: 0.4823 - top_k_categorical_accuracy: 0.8427
+61/82 [=====================>........] - ETA: 1:24:02 - loss: 1.7041 - acc: 0.4836 - top_k_categorical_accuracy: 0.8432
+62/82 [=====================>........] - ETA: 1:20:01 - loss: 1.7037 - acc: 0.4859 - top_k_categorical_accuracy: 0.8438
+63/82 [======================>.......] - ETA: 1:16:01 - loss: 1.6980 - acc: 0.4876 - top_k_categorical_accuracy: 0.8452
+64/82 [======================>.......] - ETA: 1:12:01 - loss: 1.6951 - acc: 0.4888 - top_k_categorical_accuracy: 0.8452
+65/82 [======================>.......] - ETA: 1:08:01 - loss: 1.6910 - acc: 0.4904 - top_k_categorical_accuracy: 0.8457
+66/82 [=======================>......] - ETA: 1:04:00 - loss: 1.6939 - acc: 0.4901 - top_k_categorical_accuracy: 0.8452
+67/82 [=======================>......] - ETA: 59:59 - loss: 1.6949 - acc: 0.4893 - top_k_categorical_accuracy: 0.8447  
+68/82 [=======================>......] - ETA: 55:59 - loss: 1.6885 - acc: 0.4917 - top_k_categorical_accuracy: 0.8460
+69/82 [========================>.....] - ETA: 52:00 - loss: 1.6819 - acc: 0.4941 - top_k_categorical_accuracy: 0.8465
+70/82 [========================>.....] - ETA: 48:00 - loss: 1.6844 - acc: 0.4946 - top_k_categorical_accuracy: 0.8464
+71/82 [========================>.....] - ETA: 44:00 - loss: 1.6836 - acc: 0.4938 - top_k_categorical_accuracy: 0.8473
+72/82 [=========================>....] - ETA: 40:00 - loss: 1.6841 - acc: 0.4944 - top_k_categorical_accuracy: 0.8477
+73/82 [=========================>....] - ETA: 36:01 - loss: 1.6840 - acc: 0.4949 - top_k_categorical_accuracy: 0.8472
+74/82 [==========================>...] - ETA: 32:00 - loss: 1.6817 - acc: 0.4949 - top_k_categorical_accuracy: 0.8480
+75/82 [==========================>...] - ETA: 28:00 - loss: 1.6856 - acc: 0.4954 - top_k_categorical_accuracy: 0.8467
+76/82 [==========================>...] - ETA: 24:00 - loss: 1.6811 - acc: 0.4975 - top_k_categorical_accuracy: 0.8475
+77/82 [===========================>..] - ETA: 20:00 - loss: 1.6782 - acc: 0.4976 - top_k_categorical_accuracy: 0.8478
+78/82 [===========================>..] - ETA: 16:00 - loss: 1.6742 - acc: 0.4988 - top_k_categorical_accuracy: 0.8478
+79/82 [===========================>..] - ETA: 12:00 - loss: 1.6746 - acc: 0.4992 - top_k_categorical_accuracy: 0.8481
+80/82 [============================>.] - ETA: 8:00 - loss: 1.6771 - acc: 0.4973 - top_k_categorical_accuracy: 0.8480 
+81/82 [============================>.] - ETA: 4:00 - loss: 1.6766 - acc: 0.4969 - top_k_categorical_accuracy: 0.8492
+82/82 [==============================] - 20633s 252s/step - loss: 1.6741 - acc: 0.4973 - top_k_categorical_accuracy: 0.8506 - val_loss: 2.2404 - val_acc: 0.3133 - val_top_k_categorical_accuracy: 0.7398
+
+Epoch 00011: val_loss did not improve from 2.20713
+Epoch 12/1000
+
+ 1/82 [..............................] - ETA: 5:26:14 - loss: 1.3010 - acc: 0.5938 - top_k_categorical_accuracy: 0.9375
+ 2/82 [..............................] - ETA: 5:22:02 - loss: 1.3837 - acc: 0.5781 - top_k_categorical_accuracy: 0.9219
+ 3/82 [>.............................] - ETA: 5:17:40 - loss: 1.4810 - acc: 0.5521 - top_k_categorical_accuracy: 0.9167
+ 4/82 [>.............................] - ETA: 5:13:59 - loss: 1.5466 - acc: 0.5156 - top_k_categorical_accuracy: 0.8828
+ 5/82 [>.............................] - ETA: 5:09:45 - loss: 1.6344 - acc: 0.5062 - top_k_categorical_accuracy: 0.8625
+ 6/82 [=>............................] - ETA: 5:04:46 - loss: 1.6700 - acc: 0.5000 - top_k_categorical_accuracy: 0.8438
+ 7/82 [=>............................] - ETA: 5:00:34 - loss: 1.6739 - acc: 0.5000 - top_k_categorical_accuracy: 0.8348
+ 8/82 [=>............................] - ETA: 4:56:22 - loss: 1.6594 - acc: 0.5039 - top_k_categorical_accuracy: 0.8398
+ 9/82 [==>...........................] - ETA: 4:52:10 - loss: 1.6254 - acc: 0.5104 - top_k_categorical_accuracy: 0.8542
+10/82 [==>...........................] - ETA: 4:48:01 - loss: 1.6325 - acc: 0.5062 - top_k_categorical_accuracy: 0.8500
+11/82 [===>..........................] - ETA: 4:43:28 - loss: 1.5968 - acc: 0.5085 - top_k_categorical_accuracy: 0.8580
+12/82 [===>..........................] - ETA: 4:39:29 - loss: 1.6163 - acc: 0.4974 - top_k_categorical_accuracy: 0.8620
+13/82 [===>..........................] - ETA: 4:35:38 - loss: 1.6236 - acc: 0.4952 - top_k_categorical_accuracy: 0.8630
+14/82 [====>.........................] - ETA: 4:31:41 - loss: 1.5828 - acc: 0.5089 - top_k_categorical_accuracy: 0.8728
+15/82 [====>.........................] - ETA: 4:27:42 - loss: 1.5939 - acc: 0.5125 - top_k_categorical_accuracy: 0.8688
+16/82 [====>.........................] - ETA: 4:23:53 - loss: 1.6107 - acc: 0.5215 - top_k_categorical_accuracy: 0.8633
+17/82 [=====>........................] - ETA: 4:20:07 - loss: 1.6227 - acc: 0.5202 - top_k_categorical_accuracy: 0.8603
+18/82 [=====>........................] - ETA: 4:16:14 - loss: 1.6254 - acc: 0.5174 - top_k_categorical_accuracy: 0.8611
+19/82 [=====>........................] - ETA: 4:12:17 - loss: 1.6310 - acc: 0.5132 - top_k_categorical_accuracy: 0.8569
+20/82 [======>.......................] - ETA: 4:08:11 - loss: 1.6025 - acc: 0.5219 - top_k_categorical_accuracy: 0.8625
+21/82 [======>.......................] - ETA: 4:04:15 - loss: 1.5805 - acc: 0.5342 - top_k_categorical_accuracy: 0.8661
+22/82 [=======>......................] - ETA: 4:00:11 - loss: 1.5753 - acc: 0.5398 - top_k_categorical_accuracy: 0.8679
+23/82 [=======>......................] - ETA: 3:56:01 - loss: 1.5566 - acc: 0.5448 - top_k_categorical_accuracy: 0.8723
+24/82 [=======>......................] - ETA: 3:52:01 - loss: 1.5662 - acc: 0.5430 - top_k_categorical_accuracy: 0.8724
+25/82 [========>.....................] - ETA: 3:47:56 - loss: 1.5684 - acc: 0.5400 - top_k_categorical_accuracy: 0.8738
+26/82 [========>.....................] - ETA: 3:44:02 - loss: 1.5643 - acc: 0.5397 - top_k_categorical_accuracy: 0.8774
+27/82 [========>.....................] - ETA: 3:39:59 - loss: 1.5653 - acc: 0.5394 - top_k_categorical_accuracy: 0.8773
+28/82 [=========>....................] - ETA: 3:36:01 - loss: 1.5735 - acc: 0.5368 - top_k_categorical_accuracy: 0.8750
+29/82 [=========>....................] - ETA: 3:31:57 - loss: 1.5622 - acc: 0.5377 - top_k_categorical_accuracy: 0.8772
+30/82 [=========>....................] - ETA: 3:27:58 - loss: 1.5546 - acc: 0.5385 - top_k_categorical_accuracy: 0.8792
+31/82 [==========>...................] - ETA: 3:24:01 - loss: 1.5603 - acc: 0.5373 - top_k_categorical_accuracy: 0.8790
+32/82 [==========>...................] - ETA: 3:20:02 - loss: 1.5601 - acc: 0.5381 - top_k_categorical_accuracy: 0.8779
+33/82 [===========>..................] - ETA: 3:16:06 - loss: 1.5654 - acc: 0.5350 - top_k_categorical_accuracy: 0.8778
+34/82 [===========>..................] - ETA: 3:12:10 - loss: 1.5772 - acc: 0.5322 - top_k_categorical_accuracy: 0.8750
+35/82 [===========>..................] - ETA: 3:08:13 - loss: 1.5791 - acc: 0.5312 - top_k_categorical_accuracy: 0.8741
+36/82 [============>.................] - ETA: 3:04:12 - loss: 1.5730 - acc: 0.5321 - top_k_categorical_accuracy: 0.8767
+37/82 [============>.................] - ETA: 3:00:05 - loss: 1.5616 - acc: 0.5338 - top_k_categorical_accuracy: 0.8775
+38/82 [============>.................] - ETA: 2:56:05 - loss: 1.5550 - acc: 0.5321 - top_k_categorical_accuracy: 0.8791
+39/82 [=============>................] - ETA: 2:52:05 - loss: 1.5573 - acc: 0.5329 - top_k_categorical_accuracy: 0.8766
+40/82 [=============>................] - ETA: 2:48:03 - loss: 1.5655 - acc: 0.5297 - top_k_categorical_accuracy: 0.8766
+41/82 [==============>...............] - ETA: 2:44:04 - loss: 1.5656 - acc: 0.5274 - top_k_categorical_accuracy: 0.8758
+42/82 [==============>...............] - ETA: 2:40:06 - loss: 1.5733 - acc: 0.5253 - top_k_categorical_accuracy: 0.8750
+43/82 [==============>...............] - ETA: 2:36:04 - loss: 1.5652 - acc: 0.5247 - top_k_categorical_accuracy: 0.8772
+44/82 [===============>..............] - ETA: 2:32:03 - loss: 1.5667 - acc: 0.5234 - top_k_categorical_accuracy: 0.8764
+45/82 [===============>..............] - ETA: 2:28:01 - loss: 1.5648 - acc: 0.5236 - top_k_categorical_accuracy: 0.8757
+46/82 [===============>..............] - ETA: 2:24:01 - loss: 1.5679 - acc: 0.5245 - top_k_categorical_accuracy: 0.8750
+47/82 [================>.............] - ETA: 2:20:02 - loss: 1.5671 - acc: 0.5246 - top_k_categorical_accuracy: 0.8763
+48/82 [================>.............] - ETA: 2:16:04 - loss: 1.5592 - acc: 0.5247 - top_k_categorical_accuracy: 0.8776
+49/82 [================>.............] - ETA: 2:12:05 - loss: 1.5575 - acc: 0.5249 - top_k_categorical_accuracy: 0.8769
+50/82 [=================>............] - ETA: 2:08:04 - loss: 1.5567 - acc: 0.5250 - top_k_categorical_accuracy: 0.8769
+51/82 [=================>............] - ETA: 2:04:03 - loss: 1.5524 - acc: 0.5276 - top_k_categorical_accuracy: 0.8775
+52/82 [==================>...........] - ETA: 2:00:03 - loss: 1.5509 - acc: 0.5270 - top_k_categorical_accuracy: 0.8786
+53/82 [==================>...........] - ETA: 1:56:03 - loss: 1.5529 - acc: 0.5271 - top_k_categorical_accuracy: 0.8791
+54/82 [==================>...........] - ETA: 1:52:04 - loss: 1.5586 - acc: 0.5272 - top_k_categorical_accuracy: 0.8767
+55/82 [===================>..........] - ETA: 1:48:04 - loss: 1.5575 - acc: 0.5273 - top_k_categorical_accuracy: 0.8784
+56/82 [===================>..........] - ETA: 1:44:03 - loss: 1.5572 - acc: 0.5251 - top_k_categorical_accuracy: 0.8789
+57/82 [===================>..........] - ETA: 1:40:03 - loss: 1.5545 - acc: 0.5241 - top_k_categorical_accuracy: 0.8794
+58/82 [====================>.........] - ETA: 1:36:02 - loss: 1.5545 - acc: 0.5232 - top_k_categorical_accuracy: 0.8798
+59/82 [====================>.........] - ETA: 1:32:02 - loss: 1.5482 - acc: 0.5238 - top_k_categorical_accuracy: 0.8808
+60/82 [====================>.........] - ETA: 1:28:02 - loss: 1.5483 - acc: 0.5245 - top_k_categorical_accuracy: 0.8802
+61/82 [=====================>........] - ETA: 1:24:01 - loss: 1.5519 - acc: 0.5261 - top_k_categorical_accuracy: 0.8796
+62/82 [=====================>........] - ETA: 1:20:02 - loss: 1.5533 - acc: 0.5252 - top_k_categorical_accuracy: 0.8800
+63/82 [======================>.......] - ETA: 1:16:03 - loss: 1.5485 - acc: 0.5268 - top_k_categorical_accuracy: 0.8805
+64/82 [======================>.......] - ETA: 1:12:03 - loss: 1.5462 - acc: 0.5278 - top_k_categorical_accuracy: 0.8799
+65/82 [======================>.......] - ETA: 1:08:04 - loss: 1.5417 - acc: 0.5284 - top_k_categorical_accuracy: 0.8798
+66/82 [=======================>......] - ETA: 1:04:03 - loss: 1.5373 - acc: 0.5294 - top_k_categorical_accuracy: 0.8807
+67/82 [=======================>......] - ETA: 1:00:02 - loss: 1.5353 - acc: 0.5308 - top_k_categorical_accuracy: 0.8811
+68/82 [=======================>......] - ETA: 56:02 - loss: 1.5327 - acc: 0.5299 - top_k_categorical_accuracy: 0.8824  
+69/82 [========================>.....] - ETA: 52:02 - loss: 1.5309 - acc: 0.5308 - top_k_categorical_accuracy: 0.8818
+70/82 [========================>.....] - ETA: 48:02 - loss: 1.5352 - acc: 0.5312 - top_k_categorical_accuracy: 0.8804
+71/82 [========================>.....] - ETA: 44:02 - loss: 1.5395 - acc: 0.5304 - top_k_categorical_accuracy: 0.8798
+72/82 [=========================>....] - ETA: 40:01 - loss: 1.5415 - acc: 0.5295 - top_k_categorical_accuracy: 0.8789
+73/82 [=========================>....] - ETA: 36:01 - loss: 1.5367 - acc: 0.5304 - top_k_categorical_accuracy: 0.8793
+74/82 [==========================>...] - ETA: 32:01 - loss: 1.5380 - acc: 0.5300 - top_k_categorical_accuracy: 0.8788
+75/82 [==========================>...] - ETA: 28:00 - loss: 1.5357 - acc: 0.5300 - top_k_categorical_accuracy: 0.8792
+76/82 [==========================>...] - ETA: 24:00 - loss: 1.5365 - acc: 0.5300 - top_k_categorical_accuracy: 0.8791
+77/82 [===========================>..] - ETA: 20:00 - loss: 1.5394 - acc: 0.5292 - top_k_categorical_accuracy: 0.8782
+78/82 [===========================>..] - ETA: 16:00 - loss: 1.5388 - acc: 0.5304 - top_k_categorical_accuracy: 0.8786
+79/82 [===========================>..] - ETA: 12:00 - loss: 1.5396 - acc: 0.5301 - top_k_categorical_accuracy: 0.8770
+80/82 [============================>.] - ETA: 8:00 - loss: 1.5389 - acc: 0.5305 - top_k_categorical_accuracy: 0.8770 
+81/82 [============================>.] - ETA: 4:00 - loss: 1.5401 - acc: 0.5297 - top_k_categorical_accuracy: 0.8769
+82/82 [==============================] - 20649s 252s/step - loss: 1.5392 - acc: 0.5309 - top_k_categorical_accuracy: 0.8780 - val_loss: 2.1495 - val_acc: 0.3836 - val_top_k_categorical_accuracy: 0.7391
+
+Epoch 00012: val_loss improved from 2.20713 to 2.14949, saving model to data/checkpoints/c3d-images.012-2.149.hdf5
+Epoch 13/1000
+
+ 1/82 [..............................] - ETA: 5:23:37 - loss: 1.3221 - acc: 0.5938 - top_k_categorical_accuracy: 0.9062
+ 2/82 [..............................] - ETA: 5:20:26 - loss: 1.3876 - acc: 0.5781 - top_k_categorical_accuracy: 0.9219
+ 3/82 [>.............................] - ETA: 5:15:18 - loss: 1.4439 - acc: 0.5729 - top_k_categorical_accuracy: 0.9062
+ 4/82 [>.............................] - ETA: 5:11:14 - loss: 1.4913 - acc: 0.5625 - top_k_categorical_accuracy: 0.8828
+ 5/82 [>.............................] - ETA: 5:08:00 - loss: 1.5480 - acc: 0.5312 - top_k_categorical_accuracy: 0.8625
+ 6/82 [=>............................] - ETA: 5:03:26 - loss: 1.4646 - acc: 0.5625 - top_k_categorical_accuracy: 0.8802
+ 7/82 [=>............................] - ETA: 4:59:29 - loss: 1.4653 - acc: 0.5580 - top_k_categorical_accuracy: 0.8839
+ 8/82 [=>............................] - ETA: 4:55:53 - loss: 1.5048 - acc: 0.5547 - top_k_categorical_accuracy: 0.8789
+ 9/82 [==>...........................] - ETA: 4:52:02 - loss: 1.5278 - acc: 0.5451 - top_k_categorical_accuracy: 0.8854
+10/82 [==>...........................] - ETA: 4:48:17 - loss: 1.5931 - acc: 0.5094 - top_k_categorical_accuracy: 0.8781
+11/82 [===>..........................] - ETA: 4:44:21 - loss: 1.6089 - acc: 0.5057 - top_k_categorical_accuracy: 0.8750
+12/82 [===>..........................] - ETA: 4:40:13 - loss: 1.6129 - acc: 0.5026 - top_k_categorical_accuracy: 0.8750
+13/82 [===>..........................] - ETA: 4:36:08 - loss: 1.5696 - acc: 0.5192 - top_k_categorical_accuracy: 0.8822
+14/82 [====>.........................] - ETA: 4:32:00 - loss: 1.5855 - acc: 0.5112 - top_k_categorical_accuracy: 0.8817
+15/82 [====>.........................] - ETA: 4:28:00 - loss: 1.5780 - acc: 0.5188 - top_k_categorical_accuracy: 0.8812
+16/82 [====>.........................] - ETA: 4:23:54 - loss: 1.5776 - acc: 0.5195 - top_k_categorical_accuracy: 0.8848
+17/82 [=====>........................] - ETA: 4:19:50 - loss: 1.5580 - acc: 0.5276 - top_k_categorical_accuracy: 0.8824
+18/82 [=====>........................] - ETA: 4:15:48 - loss: 1.5501 - acc: 0.5260 - top_k_categorical_accuracy: 0.8854
+19/82 [=====>........................] - ETA: 4:11:48 - loss: 1.5286 - acc: 0.5296 - top_k_categorical_accuracy: 0.8898
+20/82 [======>.......................] - ETA: 4:07:54 - loss: 1.5117 - acc: 0.5359 - top_k_categorical_accuracy: 0.8953
+21/82 [======>.......................] - ETA: 4:03:50 - loss: 1.5186 - acc: 0.5372 - top_k_categorical_accuracy: 0.8943
+22/82 [=======>......................] - ETA: 3:59:52 - loss: 1.5017 - acc: 0.5455 - top_k_categorical_accuracy: 0.8963
+23/82 [=======>......................] - ETA: 3:55:55 - loss: 1.5106 - acc: 0.5462 - top_k_categorical_accuracy: 0.8954
+24/82 [=======>......................] - ETA: 3:51:59 - loss: 1.5070 - acc: 0.5443 - top_k_categorical_accuracy: 0.8932
+25/82 [========>.....................] - ETA: 3:48:02 - loss: 1.4931 - acc: 0.5500 - top_k_categorical_accuracy: 0.8938
+26/82 [========>.....................] - ETA: 3:44:11 - loss: 1.5128 - acc: 0.5457 - top_k_categorical_accuracy: 0.8870
+27/82 [========>.....................] - ETA: 3:40:08 - loss: 1.5100 - acc: 0.5451 - top_k_categorical_accuracy: 0.8889
+28/82 [=========>....................] - ETA: 3:36:00 - loss: 1.5109 - acc: 0.5446 - top_k_categorical_accuracy: 0.8873
+29/82 [=========>....................] - ETA: 3:31:59 - loss: 1.5115 - acc: 0.5431 - top_k_categorical_accuracy: 0.8858
+30/82 [=========>....................] - ETA: 3:27:54 - loss: 1.5044 - acc: 0.5437 - top_k_categorical_accuracy: 0.8885
+31/82 [==========>...................] - ETA: 3:23:53 - loss: 1.5050 - acc: 0.5423 - top_k_categorical_accuracy: 0.8861
+32/82 [==========>...................] - ETA: 3:19:55 - loss: 1.5048 - acc: 0.5420 - top_k_categorical_accuracy: 0.8857
+33/82 [===========>..................] - ETA: 3:15:49 - loss: 1.5022 - acc: 0.5398 - top_k_categorical_accuracy: 0.8854
+34/82 [===========>..................] - ETA: 3:11:48 - loss: 1.4965 - acc: 0.5432 - top_k_categorical_accuracy: 0.8869
+35/82 [===========>..................] - ETA: 3:07:48 - loss: 1.4996 - acc: 0.5429 - top_k_categorical_accuracy: 0.8857
+36/82 [============>.................] - ETA: 3:03:47 - loss: 1.4989 - acc: 0.5434 - top_k_categorical_accuracy: 0.8863
+37/82 [============>.................] - ETA: 2:59:48 - loss: 1.4929 - acc: 0.5448 - top_k_categorical_accuracy: 0.8885
+38/82 [============>.................] - ETA: 2:55:51 - loss: 1.4892 - acc: 0.5444 - top_k_categorical_accuracy: 0.8906
+39/82 [=============>................] - ETA: 2:51:55 - loss: 1.4876 - acc: 0.5465 - top_k_categorical_accuracy: 0.8902
+40/82 [=============>................] - ETA: 2:47:56 - loss: 1.4867 - acc: 0.5477 - top_k_categorical_accuracy: 0.8891
+41/82 [==============>...............] - ETA: 2:43:58 - loss: 1.4971 - acc: 0.5434 - top_k_categorical_accuracy: 0.8880
+42/82 [==============>...............] - ETA: 2:39:57 - loss: 1.4969 - acc: 0.5446 - top_k_categorical_accuracy: 0.8876
+43/82 [==============>...............] - ETA: 2:35:53 - loss: 1.4937 - acc: 0.5451 - top_k_categorical_accuracy: 0.8888
+44/82 [===============>..............] - ETA: 2:31:51 - loss: 1.5004 - acc: 0.5440 - top_k_categorical_accuracy: 0.8892
+45/82 [===============>..............] - ETA: 2:27:53 - loss: 1.5035 - acc: 0.5417 - top_k_categorical_accuracy: 0.8882
+46/82 [===============>..............] - ETA: 2:23:52 - loss: 1.4951 - acc: 0.5455 - top_k_categorical_accuracy: 0.8893
+47/82 [================>.............] - ETA: 2:19:53 - loss: 1.4929 - acc: 0.5459 - top_k_categorical_accuracy: 0.8883
+48/82 [================>.............] - ETA: 2:15:54 - loss: 1.4866 - acc: 0.5475 - top_k_categorical_accuracy: 0.8887
+49/82 [================>.............] - ETA: 2:11:53 - loss: 1.4868 - acc: 0.5466 - top_k_categorical_accuracy: 0.8897
+50/82 [=================>............] - ETA: 2:07:52 - loss: 1.4849 - acc: 0.5475 - top_k_categorical_accuracy: 0.8906
+51/82 [=================>............] - ETA: 2:03:52 - loss: 1.4767 - acc: 0.5490 - top_k_categorical_accuracy: 0.8928
+52/82 [==================>...........] - ETA: 1:59:53 - loss: 1.4885 - acc: 0.5457 - top_k_categorical_accuracy: 0.8906
+53/82 [==================>...........] - ETA: 1:55:53 - loss: 1.4954 - acc: 0.5419 - top_k_categorical_accuracy: 0.8892
+54/82 [==================>...........] - ETA: 1:51:54 - loss: 1.5011 - acc: 0.5394 - top_k_categorical_accuracy: 0.8883
+55/82 [===================>..........] - ETA: 1:47:55 - loss: 1.4985 - acc: 0.5409 - top_k_categorical_accuracy: 0.8864
+56/82 [===================>..........] - ETA: 1:43:56 - loss: 1.4938 - acc: 0.5419 - top_k_categorical_accuracy: 0.8878
+57/82 [===================>..........] - ETA: 1:39:57 - loss: 1.4946 - acc: 0.5428 - top_k_categorical_accuracy: 0.8876
+58/82 [====================>.........] - ETA: 1:35:56 - loss: 1.5011 - acc: 0.5409 - top_k_categorical_accuracy: 0.8852
+59/82 [====================>.........] - ETA: 1:31:55 - loss: 1.5004 - acc: 0.5413 - top_k_categorical_accuracy: 0.8856
+60/82 [====================>.........] - ETA: 1:27:55 - loss: 1.4992 - acc: 0.5422 - top_k_categorical_accuracy: 0.8865
+61/82 [=====================>........] - ETA: 1:23:55 - loss: 1.5033 - acc: 0.5405 - top_k_categorical_accuracy: 0.8852
+62/82 [=====================>........] - ETA: 1:19:56 - loss: 1.5022 - acc: 0.5398 - top_k_categorical_accuracy: 0.8851
+63/82 [======================>.......] - ETA: 1:15:56 - loss: 1.4978 - acc: 0.5417 - top_k_categorical_accuracy: 0.8854
+64/82 [======================>.......] - ETA: 1:11:56 - loss: 1.4914 - acc: 0.5430 - top_k_categorical_accuracy: 0.8857
+65/82 [======================>.......] - ETA: 1:07:56 - loss: 1.4862 - acc: 0.5442 - top_k_categorical_accuracy: 0.8870
+66/82 [=======================>......] - ETA: 1:03:57 - loss: 1.4879 - acc: 0.5426 - top_k_categorical_accuracy: 0.8873
+67/82 [=======================>......] - ETA: 59:57 - loss: 1.4879 - acc: 0.5420 - top_k_categorical_accuracy: 0.8876  
+68/82 [=======================>......] - ETA: 55:57 - loss: 1.4863 - acc: 0.5427 - top_k_categorical_accuracy: 0.8874
+69/82 [========================>.....] - ETA: 51:57 - loss: 1.4830 - acc: 0.5435 - top_k_categorical_accuracy: 0.8872
+70/82 [========================>.....] - ETA: 47:58 - loss: 1.4772 - acc: 0.5442 - top_k_categorical_accuracy: 0.8871
+71/82 [========================>.....] - ETA: 43:59 - loss: 1.4757 - acc: 0.5445 - top_k_categorical_accuracy: 0.8878
+72/82 [=========================>....] - ETA: 39:58 - loss: 1.4738 - acc: 0.5451 - top_k_categorical_accuracy: 0.8885
+73/82 [=========================>....] - ETA: 35:58 - loss: 1.4716 - acc: 0.5454 - top_k_categorical_accuracy: 0.8891
+74/82 [==========================>...] - ETA: 31:58 - loss: 1.4713 - acc: 0.5469 - top_k_categorical_accuracy: 0.8894
+75/82 [==========================>...] - ETA: 27:59 - loss: 1.4702 - acc: 0.5471 - top_k_categorical_accuracy: 0.8896
+76/82 [==========================>...] - ETA: 23:59 - loss: 1.4679 - acc: 0.5469 - top_k_categorical_accuracy: 0.8902
+77/82 [===========================>..] - ETA: 19:59 - loss: 1.4633 - acc: 0.5487 - top_k_categorical_accuracy: 0.8908
+78/82 [===========================>..] - ETA: 15:59 - loss: 1.4651 - acc: 0.5481 - top_k_categorical_accuracy: 0.8902
+79/82 [===========================>..] - ETA: 11:59 - loss: 1.4647 - acc: 0.5483 - top_k_categorical_accuracy: 0.8900
+80/82 [============================>.] - ETA: 7:59 - loss: 1.4678 - acc: 0.5477 - top_k_categorical_accuracy: 0.8902 
+81/82 [============================>.] - ETA: 3:59 - loss: 1.4709 - acc: 0.5482 - top_k_categorical_accuracy: 0.8893
+82/82 [==============================] - 20641s 252s/step - loss: 1.4676 - acc: 0.5499 - top_k_categorical_accuracy: 0.8899 - val_loss: 2.2065 - val_acc: 0.3836 - val_top_k_categorical_accuracy: 0.7297
+
+Epoch 00013: val_loss did not improve from 2.14949
+Epoch 14/1000
+
+ 1/82 [..............................] - ETA: 5:27:47 - loss: 1.5910 - acc: 0.5000 - top_k_categorical_accuracy: 0.8125
+ 2/82 [..............................] - ETA: 5:19:32 - loss: 1.3406 - acc: 0.5312 - top_k_categorical_accuracy: 0.8750
+ 3/82 [>.............................] - ETA: 5:14:19 - loss: 1.2344 - acc: 0.5625 - top_k_categorical_accuracy: 0.9167
+ 4/82 [>.............................] - ETA: 5:10:55 - loss: 1.2344 - acc: 0.5703 - top_k_categorical_accuracy: 0.9297
+ 5/82 [>.............................] - ETA: 5:06:41 - loss: 1.1944 - acc: 0.5687 - top_k_categorical_accuracy: 0.9375
+ 6/82 [=>............................] - ETA: 5:02:42 - loss: 1.1871 - acc: 0.5833 - top_k_categorical_accuracy: 0.9323
+ 7/82 [=>............................] - ETA: 4:58:17 - loss: 1.1806 - acc: 0.5982 - top_k_categorical_accuracy: 0.9286
+ 8/82 [=>............................] - ETA: 4:54:31 - loss: 1.1879 - acc: 0.5938 - top_k_categorical_accuracy: 0.9258
+ 9/82 [==>...........................] - ETA: 4:50:22 - loss: 1.2383 - acc: 0.5833 - top_k_categorical_accuracy: 0.9167
+10/82 [==>...........................] - ETA: 4:46:20 - loss: 1.2315 - acc: 0.5906 - top_k_categorical_accuracy: 0.9187
+11/82 [===>..........................] - ETA: 4:42:31 - loss: 1.2370 - acc: 0.5938 - top_k_categorical_accuracy: 0.9205
+12/82 [===>..........................] - ETA: 4:38:30 - loss: 1.2420 - acc: 0.5964 - top_k_categorical_accuracy: 0.9245
+13/82 [===>..........................] - ETA: 4:34:44 - loss: 1.2805 - acc: 0.5986 - top_k_categorical_accuracy: 0.9159
+14/82 [====>.........................] - ETA: 4:30:58 - loss: 1.2832 - acc: 0.6004 - top_k_categorical_accuracy: 0.9107
+15/82 [====>.........................] - ETA: 4:27:15 - loss: 1.3021 - acc: 0.5917 - top_k_categorical_accuracy: 0.9083
+16/82 [====>.........................] - ETA: 4:23:22 - loss: 1.3293 - acc: 0.5801 - top_k_categorical_accuracy: 0.9023
+17/82 [=====>........................] - ETA: 4:19:29 - loss: 1.3406 - acc: 0.5754 - top_k_categorical_accuracy: 0.9062
+18/82 [=====>........................] - ETA: 4:15:31 - loss: 1.3323 - acc: 0.5764 - top_k_categorical_accuracy: 0.9080
+19/82 [=====>........................] - ETA: 4:11:23 - loss: 1.3304 - acc: 0.5806 - top_k_categorical_accuracy: 0.9079
+20/82 [======>.......................] - ETA: 4:07:30 - loss: 1.3464 - acc: 0.5797 - top_k_categorical_accuracy: 0.9031
+21/82 [======>.......................] - ETA: 4:03:26 - loss: 1.3449 - acc: 0.5804 - top_k_categorical_accuracy: 0.9048
+22/82 [=======>......................] - ETA: 3:59:23 - loss: 1.3428 - acc: 0.5824 - top_k_categorical_accuracy: 0.9048
+23/82 [=======>......................] - ETA: 3:55:23 - loss: 1.3373 - acc: 0.5829 - top_k_categorical_accuracy: 0.9062
+24/82 [=======>......................] - ETA: 3:51:26 - loss: 1.3478 - acc: 0.5820 - top_k_categorical_accuracy: 0.9049
+25/82 [========>.....................] - ETA: 3:47:21 - loss: 1.3470 - acc: 0.5813 - top_k_categorical_accuracy: 0.9038
+26/82 [========>.....................] - ETA: 3:43:21 - loss: 1.3461 - acc: 0.5841 - top_k_categorical_accuracy: 0.9026
+27/82 [========>.....................] - ETA: 3:39:23 - loss: 1.3435 - acc: 0.5833 - top_k_categorical_accuracy: 0.9051
+28/82 [=========>....................] - ETA: 3:35:17 - loss: 1.3366 - acc: 0.5837 - top_k_categorical_accuracy: 0.9062
+29/82 [=========>....................] - ETA: 3:31:20 - loss: 1.3278 - acc: 0.5862 - top_k_categorical_accuracy: 0.9062
+30/82 [=========>....................] - ETA: 3:27:23 - loss: 1.3254 - acc: 0.5844 - top_k_categorical_accuracy: 0.9083
+31/82 [==========>...................] - ETA: 3:23:25 - loss: 1.3217 - acc: 0.5847 - top_k_categorical_accuracy: 0.9083
+32/82 [==========>...................] - ETA: 3:19:27 - loss: 1.3167 - acc: 0.5898 - top_k_categorical_accuracy: 0.9062
+33/82 [===========>..................] - ETA: 3:15:29 - loss: 1.3151 - acc: 0.5909 - top_k_categorical_accuracy: 0.9062
+34/82 [===========>..................] - ETA: 3:11:30 - loss: 1.3250 - acc: 0.5855 - top_k_categorical_accuracy: 0.9072
+35/82 [===========>..................] - ETA: 3:07:31 - loss: 1.3324 - acc: 0.5839 - top_k_categorical_accuracy: 0.9098
+36/82 [============>.................] - ETA: 3:03:31 - loss: 1.3285 - acc: 0.5877 - top_k_categorical_accuracy: 0.9080
+37/82 [============>.................] - ETA: 2:59:33 - loss: 1.3325 - acc: 0.5845 - top_k_categorical_accuracy: 0.9062
+38/82 [============>.................] - ETA: 2:55:37 - loss: 1.3289 - acc: 0.5855 - top_k_categorical_accuracy: 0.9062
+39/82 [=============>................] - ETA: 2:51:36 - loss: 1.3268 - acc: 0.5873 - top_k_categorical_accuracy: 0.9046
+40/82 [=============>................] - ETA: 2:47:36 - loss: 1.3225 - acc: 0.5867 - top_k_categorical_accuracy: 0.9062
+41/82 [==============>...............] - ETA: 2:43:38 - loss: 1.3178 - acc: 0.5884 - top_k_categorical_accuracy: 0.9070
+42/82 [==============>...............] - ETA: 2:39:38 - loss: 1.3168 - acc: 0.5915 - top_k_categorical_accuracy: 0.9077
+43/82 [==============>...............] - ETA: 2:35:39 - loss: 1.3236 - acc: 0.5894 - top_k_categorical_accuracy: 0.9048
+44/82 [===============>..............] - ETA: 2:31:39 - loss: 1.3244 - acc: 0.5895 - top_k_categorical_accuracy: 0.9055
+45/82 [===============>..............] - ETA: 2:27:41 - loss: 1.3311 - acc: 0.5889 - top_k_categorical_accuracy: 0.9042
+46/82 [===============>..............] - ETA: 2:23:44 - loss: 1.3291 - acc: 0.5870 - top_k_categorical_accuracy: 0.9062
+47/82 [================>.............] - ETA: 2:19:47 - loss: 1.3262 - acc: 0.5878 - top_k_categorical_accuracy: 0.9076
+48/82 [================>.............] - ETA: 2:15:47 - loss: 1.3314 - acc: 0.5866 - top_k_categorical_accuracy: 0.9062
+49/82 [================>.............] - ETA: 2:11:47 - loss: 1.3293 - acc: 0.5874 - top_k_categorical_accuracy: 0.9075
+50/82 [=================>............] - ETA: 2:07:47 - loss: 1.3253 - acc: 0.5875 - top_k_categorical_accuracy: 0.9075
+51/82 [=================>............] - ETA: 2:03:48 - loss: 1.3251 - acc: 0.5876 - top_k_categorical_accuracy: 0.9081
+52/82 [==================>...........] - ETA: 1:59:48 - loss: 1.3252 - acc: 0.5895 - top_k_categorical_accuracy: 0.9075
+53/82 [==================>...........] - ETA: 1:55:49 - loss: 1.3237 - acc: 0.5896 - top_k_categorical_accuracy: 0.9068
+54/82 [==================>...........] - ETA: 1:51:48 - loss: 1.3226 - acc: 0.5903 - top_k_categorical_accuracy: 0.9051
+55/82 [===================>..........] - ETA: 1:47:48 - loss: 1.3280 - acc: 0.5898 - top_k_categorical_accuracy: 0.9040
+56/82 [===================>..........] - ETA: 1:43:48 - loss: 1.3211 - acc: 0.5921 - top_k_categorical_accuracy: 0.9046
+57/82 [===================>..........] - ETA: 1:39:48 - loss: 1.3186 - acc: 0.5927 - top_k_categorical_accuracy: 0.9052
+58/82 [====================>.........] - ETA: 1:35:51 - loss: 1.3186 - acc: 0.5932 - top_k_categorical_accuracy: 0.9046
+59/82 [====================>.........] - ETA: 1:31:51 - loss: 1.3157 - acc: 0.5943 - top_k_categorical_accuracy: 0.9057
+60/82 [====================>.........] - ETA: 1:27:51 - loss: 1.3084 - acc: 0.5958 - top_k_categorical_accuracy: 0.9073
+61/82 [=====================>........] - ETA: 1:23:53 - loss: 1.3028 - acc: 0.5973 - top_k_categorical_accuracy: 0.9078
+62/82 [=====================>........] - ETA: 1:19:53 - loss: 1.3036 - acc: 0.5973 - top_k_categorical_accuracy: 0.9068
+63/82 [======================>.......] - ETA: 1:15:54 - loss: 1.3042 - acc: 0.5977 - top_k_categorical_accuracy: 0.9072
+64/82 [======================>.......] - ETA: 1:11:54 - loss: 1.3028 - acc: 0.5986 - top_k_categorical_accuracy: 0.9072
+65/82 [======================>.......] - ETA: 1:07:54 - loss: 1.3042 - acc: 0.5995 - top_k_categorical_accuracy: 0.9062
+66/82 [=======================>......] - ETA: 1:03:54 - loss: 1.2969 - acc: 0.6018 - top_k_categorical_accuracy: 0.9062
+67/82 [=======================>......] - ETA: 59:55 - loss: 1.2938 - acc: 0.6035 - top_k_categorical_accuracy: 0.9058  
+68/82 [=======================>......] - ETA: 55:55 - loss: 1.2938 - acc: 0.6039 - top_k_categorical_accuracy: 0.9058
+69/82 [========================>.....] - ETA: 51:55 - loss: 1.2904 - acc: 0.6055 - top_k_categorical_accuracy: 0.9058
+70/82 [========================>.....] - ETA: 47:56 - loss: 1.2864 - acc: 0.6058 - top_k_categorical_accuracy: 0.9071
+71/82 [========================>.....] - ETA: 43:56 - loss: 1.2895 - acc: 0.6043 - top_k_categorical_accuracy: 0.9071
+72/82 [=========================>....] - ETA: 39:57 - loss: 1.2911 - acc: 0.6042 - top_k_categorical_accuracy: 0.9071
+73/82 [=========================>....] - ETA: 35:57 - loss: 1.2955 - acc: 0.6032 - top_k_categorical_accuracy: 0.9071
+74/82 [==========================>...] - ETA: 31:58 - loss: 1.2879 - acc: 0.6052 - top_k_categorical_accuracy: 0.9084
+75/82 [==========================>...] - ETA: 27:58 - loss: 1.2852 - acc: 0.6062 - top_k_categorical_accuracy: 0.9087
+76/82 [==========================>...] - ETA: 23:58 - loss: 1.2812 - acc: 0.6086 - top_k_categorical_accuracy: 0.9091
+77/82 [===========================>..] - ETA: 19:58 - loss: 1.2794 - acc: 0.6104 - top_k_categorical_accuracy: 0.9099
+78/82 [===========================>..] - ETA: 15:59 - loss: 1.2790 - acc: 0.6106 - top_k_categorical_accuracy: 0.9107
+79/82 [===========================>..] - ETA: 11:59 - loss: 1.2780 - acc: 0.6112 - top_k_categorical_accuracy: 0.9106
+80/82 [============================>.] - ETA: 7:59 - loss: 1.2747 - acc: 0.6129 - top_k_categorical_accuracy: 0.9105 
+81/82 [============================>.] - ETA: 3:59 - loss: 1.2724 - acc: 0.6138 - top_k_categorical_accuracy: 0.9109
+82/82 [==============================] - 20630s 252s/step - loss: 1.2695 - acc: 0.6151 - top_k_categorical_accuracy: 0.9108 - val_loss: 2.2546 - val_acc: 0.3750 - val_top_k_categorical_accuracy: 0.7172
+
+Epoch 00014: val_loss did not improve from 2.14949
+Epoch 15/1000
+
+ 1/82 [..............................] - ETA: 5:21:43 - loss: 1.3051 - acc: 0.6562 - top_k_categorical_accuracy: 0.9062
+ 2/82 [..............................] - ETA: 5:19:31 - loss: 1.0629 - acc: 0.7031 - top_k_categorical_accuracy: 0.9219
+ 3/82 [>.............................] - ETA: 5:14:58 - loss: 1.0664 - acc: 0.6771 - top_k_categorical_accuracy: 0.9271
+ 4/82 [>.............................] - ETA: 5:11:50 - loss: 1.0530 - acc: 0.6797 - top_k_categorical_accuracy: 0.9375
+ 5/82 [>.............................] - ETA: 5:07:59 - loss: 1.0705 - acc: 0.6813 - top_k_categorical_accuracy: 0.9313
+ 6/82 [=>............................] - ETA: 5:04:41 - loss: 1.0623 - acc: 0.6719 - top_k_categorical_accuracy: 0.9375
+ 7/82 [=>............................] - ETA: 5:00:48 - loss: 1.0662 - acc: 0.6786 - top_k_categorical_accuracy: 0.9420
+ 8/82 [=>............................] - ETA: 4:57:10 - loss: 1.1170 - acc: 0.6602 - top_k_categorical_accuracy: 0.9375
+ 9/82 [==>...........................] - ETA: 4:53:15 - loss: 1.1070 - acc: 0.6597 - top_k_categorical_accuracy: 0.9444
+10/82 [==>...........................] - ETA: 4:49:13 - loss: 1.1055 - acc: 0.6594 - top_k_categorical_accuracy: 0.9437
+11/82 [===>..........................] - ETA: 4:45:07 - loss: 1.1348 - acc: 0.6534 - top_k_categorical_accuracy: 0.9403
+12/82 [===>..........................] - ETA: 4:41:11 - loss: 1.1653 - acc: 0.6380 - top_k_categorical_accuracy: 0.9323
+13/82 [===>..........................] - ETA: 4:37:04 - loss: 1.1548 - acc: 0.6442 - top_k_categorical_accuracy: 0.9327
+14/82 [====>.........................] - ETA: 4:32:52 - loss: 1.1564 - acc: 0.6518 - top_k_categorical_accuracy: 0.9330
+15/82 [====>.........................] - ETA: 4:28:39 - loss: 1.1645 - acc: 0.6479 - top_k_categorical_accuracy: 0.9313
+16/82 [====>.........................] - ETA: 4:24:34 - loss: 1.1523 - acc: 0.6562 - top_k_categorical_accuracy: 0.9316
+17/82 [=====>........................] - ETA: 4:20:34 - loss: 1.1520 - acc: 0.6581 - top_k_categorical_accuracy: 0.9301
+18/82 [=====>........................] - ETA: 4:16:41 - loss: 1.1596 - acc: 0.6545 - top_k_categorical_accuracy: 0.9288
+19/82 [=====>........................] - ETA: 4:12:30 - loss: 1.1369 - acc: 0.6595 - top_k_categorical_accuracy: 0.9326
+20/82 [======>.......................] - ETA: 4:08:25 - loss: 1.1656 - acc: 0.6500 - top_k_categorical_accuracy: 0.9297
+21/82 [======>.......................] - ETA: 4:04:31 - loss: 1.1771 - acc: 0.6503 - top_k_categorical_accuracy: 0.9271
+22/82 [=======>......................] - ETA: 4:00:38 - loss: 1.1903 - acc: 0.6420 - top_k_categorical_accuracy: 0.9276
+23/82 [=======>......................] - ETA: 3:56:36 - loss: 1.1893 - acc: 0.6386 - top_k_categorical_accuracy: 0.9293
+24/82 [=======>......................] - ETA: 3:52:38 - loss: 1.1794 - acc: 0.6458 - top_k_categorical_accuracy: 0.9284
+25/82 [========>.....................] - ETA: 3:48:35 - loss: 1.1841 - acc: 0.6412 - top_k_categorical_accuracy: 0.9275
+26/82 [========>.....................] - ETA: 3:44:35 - loss: 1.1782 - acc: 0.6442 - top_k_categorical_accuracy: 0.9279
+27/82 [========>.....................] - ETA: 3:40:37 - loss: 1.1871 - acc: 0.6424 - top_k_categorical_accuracy: 0.9259
+28/82 [=========>....................] - ETA: 3:36:31 - loss: 1.1919 - acc: 0.6395 - top_k_categorical_accuracy: 0.9275
+29/82 [=========>....................] - ETA: 3:32:30 - loss: 1.1862 - acc: 0.6390 - top_k_categorical_accuracy: 0.9267
+30/82 [=========>....................] - ETA: 3:28:27 - loss: 1.1835 - acc: 0.6406 - top_k_categorical_accuracy: 0.9281
+31/82 [==========>...................] - ETA: 3:24:31 - loss: 1.2028 - acc: 0.6361 - top_k_categorical_accuracy: 0.9254
+32/82 [==========>...................] - ETA: 3:20:27 - loss: 1.1996 - acc: 0.6348 - top_k_categorical_accuracy: 0.9268
+33/82 [===========>..................] - ETA: 3:16:27 - loss: 1.2016 - acc: 0.6345 - top_k_categorical_accuracy: 0.9271
+34/82 [===========>..................] - ETA: 3:12:28 - loss: 1.2039 - acc: 0.6324 - top_k_categorical_accuracy: 0.9274
+35/82 [===========>..................] - ETA: 3:08:29 - loss: 1.1984 - acc: 0.6348 - top_k_categorical_accuracy: 0.9286
+36/82 [============>.................] - ETA: 3:04:27 - loss: 1.1974 - acc: 0.6337 - top_k_categorical_accuracy: 0.9306
+37/82 [============>.................] - ETA: 3:00:30 - loss: 1.2062 - acc: 0.6301 - top_k_categorical_accuracy: 0.9291
+38/82 [============>.................] - ETA: 2:56:33 - loss: 1.2067 - acc: 0.6283 - top_k_categorical_accuracy: 0.9301
+39/82 [=============>................] - ETA: 2:52:34 - loss: 1.2014 - acc: 0.6322 - top_k_categorical_accuracy: 0.9311
+40/82 [=============>................] - ETA: 2:48:32 - loss: 1.1991 - acc: 0.6320 - top_k_categorical_accuracy: 0.9305
+41/82 [==============>...............] - ETA: 2:44:34 - loss: 1.2011 - acc: 0.6319 - top_k_categorical_accuracy: 0.9306
+42/82 [==============>...............] - ETA: 2:40:33 - loss: 1.2030 - acc: 0.6317 - top_k_categorical_accuracy: 0.9315
+43/82 [==============>...............] - ETA: 2:36:32 - loss: 1.2005 - acc: 0.6337 - top_k_categorical_accuracy: 0.9310
+44/82 [===============>..............] - ETA: 2:32:32 - loss: 1.2046 - acc: 0.6300 - top_k_categorical_accuracy: 0.9304
+45/82 [===============>..............] - ETA: 2:28:31 - loss: 1.2077 - acc: 0.6299 - top_k_categorical_accuracy: 0.9299
+46/82 [===============>..............] - ETA: 2:24:29 - loss: 1.1957 - acc: 0.6338 - top_k_categorical_accuracy: 0.9307
+47/82 [================>.............] - ETA: 2:20:28 - loss: 1.1969 - acc: 0.6330 - top_k_categorical_accuracy: 0.9302
+48/82 [================>.............] - ETA: 2:16:27 - loss: 1.1984 - acc: 0.6315 - top_k_categorical_accuracy: 0.9290
+49/82 [================>.............] - ETA: 2:12:26 - loss: 1.1915 - acc: 0.6327 - top_k_categorical_accuracy: 0.9305
+50/82 [=================>............] - ETA: 2:08:24 - loss: 1.1939 - acc: 0.6312 - top_k_categorical_accuracy: 0.9306
+51/82 [=================>............] - ETA: 2:04:21 - loss: 1.2024 - acc: 0.6293 - top_k_categorical_accuracy: 0.9289
+52/82 [==================>...........] - ETA: 2:00:23 - loss: 1.1986 - acc: 0.6304 - top_k_categorical_accuracy: 0.9303
+53/82 [==================>...........] - ETA: 1:56:24 - loss: 1.1935 - acc: 0.6315 - top_k_categorical_accuracy: 0.9298
+54/82 [==================>...........] - ETA: 1:52:26 - loss: 1.1909 - acc: 0.6325 - top_k_categorical_accuracy: 0.9300
+55/82 [===================>..........] - ETA: 1:48:25 - loss: 1.1912 - acc: 0.6330 - top_k_categorical_accuracy: 0.9301
+56/82 [===================>..........] - ETA: 1:44:23 - loss: 1.1931 - acc: 0.6334 - top_k_categorical_accuracy: 0.9291
+57/82 [===================>..........] - ETA: 1:40:23 - loss: 1.1864 - acc: 0.6365 - top_k_categorical_accuracy: 0.9293
+58/82 [====================>.........] - ETA: 1:36:21 - loss: 1.1873 - acc: 0.6369 - top_k_categorical_accuracy: 0.9294
+59/82 [====================>.........] - ETA: 1:32:19 - loss: 1.1955 - acc: 0.6340 - top_k_categorical_accuracy: 0.9285
+60/82 [====================>.........] - ETA: 1:28:18 - loss: 1.1977 - acc: 0.6323 - top_k_categorical_accuracy: 0.9292
+61/82 [=====================>........] - ETA: 1:24:17 - loss: 1.1902 - acc: 0.6342 - top_k_categorical_accuracy: 0.9303
+62/82 [=====================>........] - ETA: 1:20:16 - loss: 1.1895 - acc: 0.6346 - top_k_categorical_accuracy: 0.9304
+63/82 [======================>.......] - ETA: 1:16:15 - loss: 1.1928 - acc: 0.6354 - top_k_categorical_accuracy: 0.9291
+64/82 [======================>.......] - ETA: 1:12:14 - loss: 1.1907 - acc: 0.6353 - top_k_categorical_accuracy: 0.9297
+65/82 [======================>.......] - ETA: 1:08:14 - loss: 1.1926 - acc: 0.6351 - top_k_categorical_accuracy: 0.9288
+66/82 [=======================>......] - ETA: 1:04:12 - loss: 1.1949 - acc: 0.6340 - top_k_categorical_accuracy: 0.9290
+67/82 [=======================>......] - ETA: 1:00:12 - loss: 1.1904 - acc: 0.6357 - top_k_categorical_accuracy: 0.9291
+68/82 [=======================>......] - ETA: 56:12 - loss: 1.1873 - acc: 0.6356 - top_k_categorical_accuracy: 0.9292  
+69/82 [========================>.....] - ETA: 52:11 - loss: 1.1834 - acc: 0.6354 - top_k_categorical_accuracy: 0.9293
+70/82 [========================>.....] - ETA: 48:10 - loss: 1.1826 - acc: 0.6348 - top_k_categorical_accuracy: 0.9295
+71/82 [========================>.....] - ETA: 44:09 - loss: 1.1812 - acc: 0.6364 - top_k_categorical_accuracy: 0.9305
+72/82 [=========================>....] - ETA: 40:08 - loss: 1.1842 - acc: 0.6363 - top_k_categorical_accuracy: 0.9297
+73/82 [=========================>....] - ETA: 36:08 - loss: 1.1851 - acc: 0.6353 - top_k_categorical_accuracy: 0.9294
+74/82 [==========================>...] - ETA: 32:07 - loss: 1.1828 - acc: 0.6351 - top_k_categorical_accuracy: 0.9291
+75/82 [==========================>...] - ETA: 28:06 - loss: 1.1887 - acc: 0.6346 - top_k_categorical_accuracy: 0.9258
+76/82 [==========================>...] - ETA: 24:05 - loss: 1.1909 - acc: 0.6340 - top_k_categorical_accuracy: 0.9260
+77/82 [===========================>..] - ETA: 20:04 - loss: 1.1877 - acc: 0.6351 - top_k_categorical_accuracy: 0.9265
+78/82 [===========================>..] - ETA: 16:03 - loss: 1.1848 - acc: 0.6366 - top_k_categorical_accuracy: 0.9263
+79/82 [===========================>..] - ETA: 12:02 - loss: 1.1898 - acc: 0.6357 - top_k_categorical_accuracy: 0.9256
+80/82 [============================>.] - ETA: 8:01 - loss: 1.1861 - acc: 0.6363 - top_k_categorical_accuracy: 0.9262 
+81/82 [============================>.] - ETA: 4:00 - loss: 1.1821 - acc: 0.6377 - top_k_categorical_accuracy: 0.9267
+82/82 [==============================] - 20733s 253s/step - loss: 1.1790 - acc: 0.6380 - top_k_categorical_accuracy: 0.9276 - val_loss: 2.2661 - val_acc: 0.3820 - val_top_k_categorical_accuracy: 0.7328
+
+Epoch 00015: val_loss did not improve from 2.14949
+Epoch 16/1000
+
+ 1/82 [..............................] - ETA: 5:23:03 - loss: 1.3694 - acc: 0.5938 - top_k_categorical_accuracy: 0.9062
+ 2/82 [..............................] - ETA: 5:18:03 - loss: 1.3015 - acc: 0.6562 - top_k_categorical_accuracy: 0.9062
+ 3/82 [>.............................] - ETA: 5:14:52 - loss: 1.3775 - acc: 0.6250 - top_k_categorical_accuracy: 0.8750
+ 4/82 [>.............................] - ETA: 5:11:31 - loss: 1.2999 - acc: 0.6406 - top_k_categorical_accuracy: 0.8984
+ 5/82 [>.............................] - ETA: 5:08:11 - loss: 1.3112 - acc: 0.6188 - top_k_categorical_accuracy: 0.8875
+ 6/82 [=>............................] - ETA: 5:04:21 - loss: 1.3016 - acc: 0.6250 - top_k_categorical_accuracy: 0.8906
+ 7/82 [=>............................] - ETA: 5:00:01 - loss: 1.2567 - acc: 0.6473 - top_k_categorical_accuracy: 0.8929
+ 8/82 [=>............................] - ETA: 4:55:55 - loss: 1.2598 - acc: 0.6484 - top_k_categorical_accuracy: 0.8906
+ 9/82 [==>...........................] - ETA: 4:51:39 - loss: 1.3460 - acc: 0.6285 - top_k_categorical_accuracy: 0.8819
+10/82 [==>...........................] - ETA: 4:47:31 - loss: 1.3370 - acc: 0.6250 - top_k_categorical_accuracy: 0.8781
+11/82 [===>..........................] - ETA: 4:43:28 - loss: 1.3267 - acc: 0.6278 - top_k_categorical_accuracy: 0.8778
+12/82 [===>..........................] - ETA: 4:39:48 - loss: 1.3072 - acc: 0.6302 - top_k_categorical_accuracy: 0.8828
+13/82 [===>..........................] - ETA: 4:36:06 - loss: 1.2678 - acc: 0.6298 - top_k_categorical_accuracy: 0.8918
+14/82 [====>.........................] - ETA: 4:32:19 - loss: 1.2639 - acc: 0.6317 - top_k_categorical_accuracy: 0.8951
+15/82 [====>.........................] - ETA: 4:28:31 - loss: 1.2788 - acc: 0.6292 - top_k_categorical_accuracy: 0.8917
+16/82 [====>.........................] - ETA: 4:24:32 - loss: 1.2643 - acc: 0.6348 - top_k_categorical_accuracy: 0.8965
+17/82 [=====>........................] - ETA: 4:20:32 - loss: 1.2473 - acc: 0.6397 - top_k_categorical_accuracy: 0.9007
+18/82 [=====>........................] - ETA: 4:16:31 - loss: 1.2371 - acc: 0.6458 - top_k_categorical_accuracy: 0.9028
+19/82 [=====>........................] - ETA: 4:12:22 - loss: 1.2111 - acc: 0.6546 - top_k_categorical_accuracy: 0.9079
+20/82 [======>.......................] - ETA: 4:08:15 - loss: 1.1981 - acc: 0.6578 - top_k_categorical_accuracy: 0.9109
+21/82 [======>.......................] - ETA: 4:04:21 - loss: 1.2059 - acc: 0.6488 - top_k_categorical_accuracy: 0.9092
+22/82 [=======>......................] - ETA: 4:00:15 - loss: 1.2162 - acc: 0.6364 - top_k_categorical_accuracy: 0.9077
+23/82 [=======>......................] - ETA: 3:56:11 - loss: 1.2012 - acc: 0.6454 - top_k_categorical_accuracy: 0.9103
+24/82 [=======>......................] - ETA: 3:52:10 - loss: 1.2084 - acc: 0.6458 - top_k_categorical_accuracy: 0.9102
+25/82 [========>.....................] - ETA: 3:48:07 - loss: 1.1959 - acc: 0.6500 - top_k_categorical_accuracy: 0.9125
+26/82 [========>.....................] - ETA: 3:44:10 - loss: 1.1950 - acc: 0.6466 - top_k_categorical_accuracy: 0.9135
+27/82 [========>.....................] - ETA: 3:40:12 - loss: 1.1901 - acc: 0.6505 - top_k_categorical_accuracy: 0.9144
+28/82 [=========>....................] - ETA: 3:36:10 - loss: 1.1802 - acc: 0.6551 - top_k_categorical_accuracy: 0.9163
+29/82 [=========>....................] - ETA: 3:32:13 - loss: 1.1947 - acc: 0.6487 - top_k_categorical_accuracy: 0.9127
+30/82 [=========>....................] - ETA: 3:28:13 - loss: 1.1950 - acc: 0.6479 - top_k_categorical_accuracy: 0.9146
+31/82 [==========>...................] - ETA: 3:24:12 - loss: 1.1837 - acc: 0.6512 - top_k_categorical_accuracy: 0.9143
+32/82 [==========>...................] - ETA: 3:20:13 - loss: 1.1819 - acc: 0.6494 - top_k_categorical_accuracy: 0.9141
+33/82 [===========>..................] - ETA: 3:16:12 - loss: 1.1705 - acc: 0.6525 - top_k_categorical_accuracy: 0.9167
+34/82 [===========>..................] - ETA: 3:12:08 - loss: 1.1704 - acc: 0.6498 - top_k_categorical_accuracy: 0.9182
+35/82 [===========>..................] - ETA: 3:08:07 - loss: 1.1751 - acc: 0.6473 - top_k_categorical_accuracy: 0.9179
+36/82 [============>.................] - ETA: 3:04:08 - loss: 1.1642 - acc: 0.6510 - top_k_categorical_accuracy: 0.9193
+37/82 [============>.................] - ETA: 3:00:08 - loss: 1.1576 - acc: 0.6512 - top_k_categorical_accuracy: 0.9215
+38/82 [============>.................] - ETA: 2:56:07 - loss: 1.1618 - acc: 0.6505 - top_k_categorical_accuracy: 0.9202
+39/82 [=============>................] - ETA: 2:52:07 - loss: 1.1701 - acc: 0.6482 - top_k_categorical_accuracy: 0.9191
+40/82 [=============>................] - ETA: 2:48:07 - loss: 1.1707 - acc: 0.6469 - top_k_categorical_accuracy: 0.9203
+41/82 [==============>...............] - ETA: 2:44:07 - loss: 1.1608 - acc: 0.6509 - top_k_categorical_accuracy: 0.9215
+42/82 [==============>...............] - ETA: 2:40:07 - loss: 1.1616 - acc: 0.6510 - top_k_categorical_accuracy: 0.9211
+43/82 [==============>...............] - ETA: 2:36:11 - loss: 1.1564 - acc: 0.6533 - top_k_categorical_accuracy: 0.9215
+44/82 [===============>..............] - ETA: 2:32:13 - loss: 1.1495 - acc: 0.6555 - top_k_categorical_accuracy: 0.9226
+45/82 [===============>..............] - ETA: 2:28:14 - loss: 1.1444 - acc: 0.6576 - top_k_categorical_accuracy: 0.9243
+46/82 [===============>..............] - ETA: 2:24:14 - loss: 1.1340 - acc: 0.6624 - top_k_categorical_accuracy: 0.9253
+47/82 [================>.............] - ETA: 2:20:13 - loss: 1.1358 - acc: 0.6616 - top_k_categorical_accuracy: 0.9249
+48/82 [================>.............] - ETA: 2:16:13 - loss: 1.1312 - acc: 0.6647 - top_k_categorical_accuracy: 0.9258
+49/82 [================>.............] - ETA: 2:12:13 - loss: 1.1289 - acc: 0.6645 - top_k_categorical_accuracy: 0.9267
+50/82 [=================>............] - ETA: 2:08:13 - loss: 1.1293 - acc: 0.6637 - top_k_categorical_accuracy: 0.9269
+51/82 [=================>............] - ETA: 2:04:12 - loss: 1.1264 - acc: 0.6636 - top_k_categorical_accuracy: 0.9271
+52/82 [==================>...........] - ETA: 2:00:10 - loss: 1.1200 - acc: 0.6659 - top_k_categorical_accuracy: 0.9285
+53/82 [==================>...........] - ETA: 1:56:11 - loss: 1.1135 - acc: 0.6686 - top_k_categorical_accuracy: 0.9292
+54/82 [==================>...........] - ETA: 1:52:10 - loss: 1.1139 - acc: 0.6678 - top_k_categorical_accuracy: 0.9294
+55/82 [===================>..........] - ETA: 1:48:09 - loss: 1.1115 - acc: 0.6682 - top_k_categorical_accuracy: 0.9295
+56/82 [===================>..........] - ETA: 1:44:08 - loss: 1.1115 - acc: 0.6669 - top_k_categorical_accuracy: 0.9302
+57/82 [===================>..........] - ETA: 1:40:07 - loss: 1.1109 - acc: 0.6683 - top_k_categorical_accuracy: 0.9298
+58/82 [====================>.........] - ETA: 1:36:08 - loss: 1.1075 - acc: 0.6692 - top_k_categorical_accuracy: 0.9300
+59/82 [====================>.........] - ETA: 1:32:09 - loss: 1.1050 - acc: 0.6695 - top_k_categorical_accuracy: 0.9301
+60/82 [====================>.........] - ETA: 1:28:09 - loss: 1.1073 - acc: 0.6682 - top_k_categorical_accuracy: 0.9302
+61/82 [=====================>........] - ETA: 1:24:09 - loss: 1.1109 - acc: 0.6670 - top_k_categorical_accuracy: 0.9308
+62/82 [=====================>........] - ETA: 1:20:09 - loss: 1.1105 - acc: 0.6678 - top_k_categorical_accuracy: 0.9315
+63/82 [======================>.......] - ETA: 1:16:09 - loss: 1.1090 - acc: 0.6677 - top_k_categorical_accuracy: 0.9315
+64/82 [======================>.......] - ETA: 1:12:09 - loss: 1.1124 - acc: 0.6665 - top_k_categorical_accuracy: 0.9307
+65/82 [======================>.......] - ETA: 1:08:07 - loss: 1.1086 - acc: 0.6678 - top_k_categorical_accuracy: 0.9308
+66/82 [=======================>......] - ETA: 1:04:08 - loss: 1.1065 - acc: 0.6686 - top_k_categorical_accuracy: 0.9309
+67/82 [=======================>......] - ETA: 1:00:07 - loss: 1.1046 - acc: 0.6698 - top_k_categorical_accuracy: 0.9300
+68/82 [=======================>......] - ETA: 56:06 - loss: 1.1002 - acc: 0.6710 - top_k_categorical_accuracy: 0.9311  
+69/82 [========================>.....] - ETA: 52:06 - loss: 1.0994 - acc: 0.6716 - top_k_categorical_accuracy: 0.9303
+70/82 [========================>.....] - ETA: 48:05 - loss: 1.0970 - acc: 0.6728 - top_k_categorical_accuracy: 0.9304
+71/82 [========================>.....] - ETA: 44:04 - loss: 1.0937 - acc: 0.6743 - top_k_categorical_accuracy: 0.9309
+72/82 [=========================>....] - ETA: 40:04 - loss: 1.0880 - acc: 0.6771 - top_k_categorical_accuracy: 0.9314
+73/82 [=========================>....] - ETA: 36:03 - loss: 1.0854 - acc: 0.6772 - top_k_categorical_accuracy: 0.9315
+74/82 [==========================>...] - ETA: 32:02 - loss: 1.0813 - acc: 0.6769 - top_k_categorical_accuracy: 0.9324
+75/82 [==========================>...] - ETA: 28:02 - loss: 1.0784 - acc: 0.6779 - top_k_categorical_accuracy: 0.9329
+76/82 [==========================>...] - ETA: 24:02 - loss: 1.0810 - acc: 0.6768 - top_k_categorical_accuracy: 0.9322
+77/82 [===========================>..] - ETA: 20:02 - loss: 1.0804 - acc: 0.6765 - top_k_categorical_accuracy: 0.9326
+78/82 [===========================>..] - ETA: 16:01 - loss: 1.0814 - acc: 0.6747 - top_k_categorical_accuracy: 0.9327
+79/82 [===========================>..] - ETA: 12:01 - loss: 1.0814 - acc: 0.6741 - top_k_categorical_accuracy: 0.9331
+80/82 [============================>.] - ETA: 8:00 - loss: 1.0813 - acc: 0.6734 - top_k_categorical_accuracy: 0.9332 
+81/82 [============================>.] - ETA: 4:00 - loss: 1.0788 - acc: 0.6740 - top_k_categorical_accuracy: 0.9336
+82/82 [==============================] - 20673s 252s/step - loss: 1.0739 - acc: 0.6753 - top_k_categorical_accuracy: 0.9345 - val_loss: 2.4217 - val_acc: 0.3445 - val_top_k_categorical_accuracy: 0.7242
+
+Epoch 00016: val_loss did not improve from 2.14949
+Epoch 17/1000
+
+ 1/82 [..............................] - ETA: 5:23:49 - loss: 0.8642 - acc: 0.7812 - top_k_categorical_accuracy: 0.9688
+ 2/82 [..............................] - ETA: 5:20:21 - loss: 0.8552 - acc: 0.7500 - top_k_categorical_accuracy: 0.9531
+ 3/82 [>.............................] - ETA: 5:16:23 - loss: 0.9718 - acc: 0.6979 - top_k_categorical_accuracy: 0.9583
+ 4/82 [>.............................] - ETA: 5:13:34 - loss: 0.9836 - acc: 0.7109 - top_k_categorical_accuracy: 0.9531
+ 5/82 [>.............................] - ETA: 5:10:25 - loss: 0.9480 - acc: 0.7250 - top_k_categorical_accuracy: 0.9625
+ 6/82 [=>............................] - ETA: 5:06:12 - loss: 0.9759 - acc: 0.7135 - top_k_categorical_accuracy: 0.9635
+ 7/82 [=>............................] - ETA: 5:01:38 - loss: 1.0311 - acc: 0.7098 - top_k_categorical_accuracy: 0.9554
+ 8/82 [=>............................] - ETA: 4:57:13 - loss: 1.0085 - acc: 0.7188 - top_k_categorical_accuracy: 0.9570
+ 9/82 [==>...........................] - ETA: 4:53:25 - loss: 1.0352 - acc: 0.7049 - top_k_categorical_accuracy: 0.9514
+10/82 [==>...........................] - ETA: 4:49:28 - loss: 1.0246 - acc: 0.7031 - top_k_categorical_accuracy: 0.9531
+11/82 [===>..........................] - ETA: 4:45:23 - loss: 1.0123 - acc: 0.7045 - top_k_categorical_accuracy: 0.9574
+12/82 [===>..........................] - ETA: 4:41:32 - loss: 1.0012 - acc: 0.7057 - top_k_categorical_accuracy: 0.9609
+13/82 [===>..........................] - ETA: 4:37:22 - loss: 1.0006 - acc: 0.6995 - top_k_categorical_accuracy: 0.9615
+14/82 [====>.........................] - ETA: 4:33:18 - loss: 0.9703 - acc: 0.7098 - top_k_categorical_accuracy: 0.9643
+15/82 [====>.........................] - ETA: 4:29:13 - loss: 0.9853 - acc: 0.7063 - top_k_categorical_accuracy: 0.9604
+16/82 [====>.........................] - ETA: 4:25:04 - loss: 0.9950 - acc: 0.7090 - top_k_categorical_accuracy: 0.9609
+17/82 [=====>........................] - ETA: 4:21:02 - loss: 1.0029 - acc: 0.7077 - top_k_categorical_accuracy: 0.9614
+18/82 [=====>........................] - ETA: 4:16:54 - loss: 0.9858 - acc: 0.7118 - top_k_categorical_accuracy: 0.9618
+19/82 [=====>........................] - ETA: 4:12:59 - loss: 0.9742 - acc: 0.7122 - top_k_categorical_accuracy: 0.9622
+20/82 [======>.......................] - ETA: 4:09:06 - loss: 0.9735 - acc: 0.7109 - top_k_categorical_accuracy: 0.9625
+21/82 [======>.......................] - ETA: 4:05:05 - loss: 0.9796 - acc: 0.7098 - top_k_categorical_accuracy: 0.9628
+22/82 [=======>......................] - ETA: 4:01:04 - loss: 0.9676 - acc: 0.7116 - top_k_categorical_accuracy: 0.9631
+23/82 [=======>......................] - ETA: 3:57:01 - loss: 0.9617 - acc: 0.7133 - top_k_categorical_accuracy: 0.9620
+24/82 [=======>......................] - ETA: 3:52:52 - loss: 0.9719 - acc: 0.7083 - top_k_categorical_accuracy: 0.9596
+25/82 [========>.....................] - ETA: 3:48:50 - loss: 0.9828 - acc: 0.7025 - top_k_categorical_accuracy: 0.9563
+26/82 [========>.....................] - ETA: 3:44:54 - loss: 0.9896 - acc: 0.6983 - top_k_categorical_accuracy: 0.9543
+27/82 [========>.....................] - ETA: 3:40:48 - loss: 0.9801 - acc: 0.7049 - top_k_categorical_accuracy: 0.9549
+28/82 [=========>....................] - ETA: 3:36:43 - loss: 0.9864 - acc: 0.7054 - top_k_categorical_accuracy: 0.9520
+29/82 [=========>....................] - ETA: 3:32:44 - loss: 0.9888 - acc: 0.7047 - top_k_categorical_accuracy: 0.9504
+30/82 [=========>....................] - ETA: 3:28:46 - loss: 0.9862 - acc: 0.7042 - top_k_categorical_accuracy: 0.9521
+31/82 [==========>...................] - ETA: 3:24:40 - loss: 0.9842 - acc: 0.7036 - top_k_categorical_accuracy: 0.9536
+32/82 [==========>...................] - ETA: 3:20:41 - loss: 0.9798 - acc: 0.7051 - top_k_categorical_accuracy: 0.9541
+33/82 [===========>..................] - ETA: 3:16:37 - loss: 0.9864 - acc: 0.7045 - top_k_categorical_accuracy: 0.9555
+34/82 [===========>..................] - ETA: 3:12:39 - loss: 0.9818 - acc: 0.7059 - top_k_categorical_accuracy: 0.9550
+35/82 [===========>..................] - ETA: 3:08:42 - loss: 0.9777 - acc: 0.7071 - top_k_categorical_accuracy: 0.9554
+36/82 [============>.................] - ETA: 3:04:45 - loss: 0.9807 - acc: 0.7066 - top_k_categorical_accuracy: 0.9540
+37/82 [============>.................] - ETA: 3:00:44 - loss: 0.9906 - acc: 0.7044 - top_k_categorical_accuracy: 0.9519
+38/82 [============>.................] - ETA: 2:56:44 - loss: 0.9931 - acc: 0.7039 - top_k_categorical_accuracy: 0.9515
+39/82 [=============>................] - ETA: 2:52:41 - loss: 0.9822 - acc: 0.7075 - top_k_categorical_accuracy: 0.9527
+40/82 [=============>................] - ETA: 2:48:38 - loss: 0.9796 - acc: 0.7078 - top_k_categorical_accuracy: 0.9531
+41/82 [==============>...............] - ETA: 2:44:40 - loss: 0.9822 - acc: 0.7088 - top_k_categorical_accuracy: 0.9535
+42/82 [==============>...............] - ETA: 2:40:39 - loss: 0.9794 - acc: 0.7113 - top_k_categorical_accuracy: 0.9539
+43/82 [==============>...............] - ETA: 2:36:38 - loss: 0.9830 - acc: 0.7129 - top_k_categorical_accuracy: 0.9528
+44/82 [===============>..............] - ETA: 2:32:35 - loss: 0.9857 - acc: 0.7116 - top_k_categorical_accuracy: 0.9531
+45/82 [===============>..............] - ETA: 2:28:33 - loss: 0.9877 - acc: 0.7104 - top_k_categorical_accuracy: 0.9535
+46/82 [===============>..............] - ETA: 2:24:30 - loss: 0.9798 - acc: 0.7126 - top_k_categorical_accuracy: 0.9545
+47/82 [================>.............] - ETA: 2:20:27 - loss: 0.9783 - acc: 0.7101 - top_k_categorical_accuracy: 0.9548
+48/82 [================>.............] - ETA: 2:16:26 - loss: 0.9744 - acc: 0.7116 - top_k_categorical_accuracy: 0.9544
+49/82 [================>.............] - ETA: 2:12:26 - loss: 0.9708 - acc: 0.7136 - top_k_categorical_accuracy: 0.9541
+50/82 [=================>............] - ETA: 2:08:26 - loss: 0.9761 - acc: 0.7131 - top_k_categorical_accuracy: 0.9537
+51/82 [=================>............] - ETA: 2:04:24 - loss: 0.9734 - acc: 0.7132 - top_k_categorical_accuracy: 0.9540
+52/82 [==================>...........] - ETA: 2:00:26 - loss: 0.9757 - acc: 0.7115 - top_k_categorical_accuracy: 0.9537
+53/82 [==================>...........] - ETA: 1:56:24 - loss: 0.9767 - acc: 0.7123 - top_k_categorical_accuracy: 0.9528
+54/82 [==================>...........] - ETA: 1:52:22 - loss: 0.9863 - acc: 0.7101 - top_k_categorical_accuracy: 0.9508
+55/82 [===================>..........] - ETA: 1:48:22 - loss: 0.9876 - acc: 0.7091 - top_k_categorical_accuracy: 0.9500
+56/82 [===================>..........] - ETA: 1:44:21 - loss: 0.9823 - acc: 0.7104 - top_k_categorical_accuracy: 0.9509
+57/82 [===================>..........] - ETA: 1:40:18 - loss: 0.9834 - acc: 0.7089 - top_k_categorical_accuracy: 0.9512
+58/82 [====================>.........] - ETA: 1:36:17 - loss: 0.9815 - acc: 0.7096 - top_k_categorical_accuracy: 0.9520
+59/82 [====================>.........] - ETA: 1:32:15 - loss: 0.9779 - acc: 0.7103 - top_k_categorical_accuracy: 0.9518
+60/82 [====================>.........] - ETA: 1:28:13 - loss: 0.9798 - acc: 0.7089 - top_k_categorical_accuracy: 0.9516
+61/82 [=====================>........] - ETA: 1:24:12 - loss: 0.9757 - acc: 0.7106 - top_k_categorical_accuracy: 0.9513
+62/82 [=====================>........] - ETA: 1:20:10 - loss: 0.9740 - acc: 0.7112 - top_k_categorical_accuracy: 0.9521
+63/82 [======================>.......] - ETA: 1:16:09 - loss: 0.9783 - acc: 0.7093 - top_k_categorical_accuracy: 0.9514
+64/82 [======================>.......] - ETA: 1:12:08 - loss: 0.9795 - acc: 0.7085 - top_k_categorical_accuracy: 0.9507
+65/82 [======================>.......] - ETA: 1:08:08 - loss: 0.9766 - acc: 0.7096 - top_k_categorical_accuracy: 0.9505
+66/82 [=======================>......] - ETA: 1:04:07 - loss: 0.9729 - acc: 0.7107 - top_k_categorical_accuracy: 0.9508
+67/82 [=======================>......] - ETA: 1:00:07 - loss: 0.9740 - acc: 0.7104 - top_k_categorical_accuracy: 0.9501
+68/82 [=======================>......] - ETA: 56:07 - loss: 0.9719 - acc: 0.7096 - top_k_categorical_accuracy: 0.9504  
+69/82 [========================>.....] - ETA: 52:06 - loss: 0.9731 - acc: 0.7092 - top_k_categorical_accuracy: 0.9506
+70/82 [========================>.....] - ETA: 48:05 - loss: 0.9727 - acc: 0.7089 - top_k_categorical_accuracy: 0.9513
+71/82 [========================>.....] - ETA: 44:05 - loss: 0.9743 - acc: 0.7091 - top_k_categorical_accuracy: 0.9511
+72/82 [=========================>....] - ETA: 40:04 - loss: 0.9689 - acc: 0.7114 - top_k_categorical_accuracy: 0.9514
+73/82 [=========================>....] - ETA: 36:04 - loss: 0.9697 - acc: 0.7106 - top_k_categorical_accuracy: 0.9512
+74/82 [==========================>...] - ETA: 32:03 - loss: 0.9693 - acc: 0.7095 - top_k_categorical_accuracy: 0.9514
+75/82 [==========================>...] - ETA: 28:03 - loss: 0.9686 - acc: 0.7104 - top_k_categorical_accuracy: 0.9521
+76/82 [==========================>...] - ETA: 24:02 - loss: 0.9656 - acc: 0.7113 - top_k_categorical_accuracy: 0.9519
+77/82 [===========================>..] - ETA: 20:02 - loss: 0.9646 - acc: 0.7114 - top_k_categorical_accuracy: 0.9521
+78/82 [===========================>..] - ETA: 16:01 - loss: 0.9598 - acc: 0.7127 - top_k_categorical_accuracy: 0.9527
+79/82 [===========================>..] - ETA: 12:01 - loss: 0.9542 - acc: 0.7148 - top_k_categorical_accuracy: 0.9529
+80/82 [============================>.] - ETA: 8:00 - loss: 0.9539 - acc: 0.7152 - top_k_categorical_accuracy: 0.9527 
+81/82 [============================>.] - ETA: 4:00 - loss: 0.9536 - acc: 0.7149 - top_k_categorical_accuracy: 0.9525
+82/82 [==============================] - 20688s 252s/step - loss: 0.9558 - acc: 0.7138 - top_k_categorical_accuracy: 0.9531 - val_loss: 2.5059 - val_acc: 0.3672 - val_top_k_categorical_accuracy: 0.7375
+Using TensorFlow backend.
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:198: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(64, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv1", input_shape=(40, 80, 8...)`
+  input_shape=self.input_shape))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:200: UserWarning: Update your `MaxPooling3D` call to the Keras 2 API: `MaxPooling3D(strides=(1, 2, 2), name="pool1", padding="valid", pool_size=(1, 2, 2))`
+  border_mode='valid', name='pool1'))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:204: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(128, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv2")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:206: UserWarning: Update your `MaxPooling3D` call to the Keras 2 API: `MaxPooling3D(strides=(2, 2, 2), name="pool2", padding="valid", pool_size=(2, 2, 2))`
+  border_mode='valid', name='pool2'))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:210: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(256, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv3a")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:213: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(256, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv3b")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:215: UserWarning: Update your `MaxPooling3D` call to the Keras 2 API: `MaxPooling3D(strides=(2, 2, 2), name="pool3", padding="valid", pool_size=(2, 2, 2))`
+  border_mode='valid', name='pool3'))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:219: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(512, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv4a")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:222: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(512, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv4b")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:224: UserWarning: Update your `MaxPooling3D` call to the Keras 2 API: `MaxPooling3D(strides=(2, 2, 2), name="pool4", padding="valid", pool_size=(2, 2, 2))`
+  border_mode='valid', name='pool4'))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:229: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(512, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv5a")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:232: UserWarning: Update your `Conv3D` call to the Keras 2 API: `Conv3D(512, (3, 3, 3), activation="relu", padding="same", strides=(1, 1, 1), name="conv5b")`
+  subsample=(1, 1, 1)))
+/home/ICTDOMAIN/d14122793/code/UCF101_Video_Classi/models.py:235: UserWarning: Update your `MaxPooling3D` call to the Keras 2 API: `MaxPooling3D(strides=(2, 2, 2), name="pool5", padding="valid", pool_size=(2, 2, 2))`
+  border_mode='valid', name='pool5'))
+
+Epoch 00017: val_loss did not improve from 2.14949
