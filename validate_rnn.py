@@ -58,7 +58,7 @@ def main():
                      image_shape=image_shape, class_limit=30)
 
         elif model == 'c3d':
-            saved_model = 'data/checkpoints/c3d-images.0*******.hdf5' # Need to modify later
+            saved_model = 'data/checkpoints/c3d-images.012-2.149.hdf5' # Need to modify later
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
 
