@@ -58,11 +58,7 @@ def main():
                      image_shape=image_shape, class_limit=30)
 
         elif model == 'c3d':
-<<<<<<< HEAD
             saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/c3d-images.012-2.149.hdf5'
-=======
-            saved_model = 'data/checkpoints/c3d-images.012-2.149.hdf5' # Need to modify later
->>>>>>> ab7485b4c4634a643ee86a08aa656b506b3ed103
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
 
