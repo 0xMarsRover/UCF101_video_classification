@@ -49,6 +49,7 @@ def main():
     # an actual video file, extract frames, generate sequences, etc.
     # video_name = 'v_Archery_g04_c02'
     video_name = 'v_Basketball_g07_c04'
+    #video_name = 'v_test_g01_c01'
     print ("Current video name:", video_name)
     # Chose images or features and image shape based on network.
     if model in ['conv_3d', 'c3d', 'lrcn']:
