@@ -22,5 +22,5 @@ def main(training_log):
         plt.show()
 
 if __name__ == '__main__':
-    training_log = 'data/logs/lstm-training-1540810228.3131764.log'
+    training_log = '/data/d14122793/UCF101_Video_Classi/data/logs/lstm-training-1540810228.3131764.log'
     main(training_log)

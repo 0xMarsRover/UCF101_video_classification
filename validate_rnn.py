@@ -53,17 +53,17 @@ def main():
         data_type = 'images'
         image_shape = (80, 80, 3)
         if model == 'conv_3d':
-            saved_model = 'data/checkpoints/conv_3d-images.019-1.926.hdf5'
+            saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/conv_3d-images.019-1.926.hdf5'
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
 
         elif model == 'c3d':
-            saved_model = 'data/checkpoints/c3d-images.0*******.hdf5' # Need to modify later
+            saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/c3d-images.012-2.149.hdf5'
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
 
         else:
-            saved_model = 'data/checkpoints/lrcn-images.030-2.581.hdf5'
+            saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/lrcn-images.030-2.581.hdf5'
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
 
@@ -72,12 +72,12 @@ def main():
         image_shape = None
 
         if model == 'lstm':
-            saved_model = 'data/checkpoints/lstm-features.017-0.525.hdf5'
+            saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/lstm-features.017-0.525.hdf5'
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
 
         else:
-            saved_model = 'data/checkpoints/mlp-features.006-0.513.hdf5'
+            saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/mlp-features.006-0.513.hdf5'
             validate(data_type, model, saved_model=saved_model,
                      image_shape=image_shape, class_limit=30)
     else:

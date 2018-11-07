@@ -16,7 +16,7 @@ def main(nb_images=5):
     model = load_model('data/checkpoints/inception.020-0.81.hdf5')
 
     # Get all our test images.
-    images = glob.glob(os.path.join('data', 'test', '**', '*.jpg'))
+    images = glob.glob(os.path.join('/data/d14122793/UCF101_Video_Classi/data', 'test', '**', '*.jpg'))
 
     for _ in range(nb_images):
         print('-'*80)

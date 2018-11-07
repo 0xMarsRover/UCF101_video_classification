@@ -35,7 +35,7 @@ def main():
     # model can be one of lstm, lrcn, mlp, conv_3d, c3d.
     model = 'lstm'
     # Must be a weights file.
-    saved_model = 'data/checkpoints/lstm-features.017-0.525.hdf5'
+    saved_model = '/data/d14122793/UCF101_Video_Classi/data/checkpoints/lstm-features.017-0.525.hdf5'
     # Sequence length must match the lengh used during training.
     seq_length = 40
     # Limit must match that used during training.
