@@ -38,8 +38,6 @@ def validate(data_type, model, seq_length=40, saved_model=None,
     #results = rm.model.evaluate_generator(
      #   generator=val_generator,
       #  val_samples=3200)
-    print("test_generator length: ")
-    print(len(test_generator))
     results = model.evaluate_generator(generator=test_generator, steps=test_data_num // batch_size)
     print(results)
     print(model.metrics)
