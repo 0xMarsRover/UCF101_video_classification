@@ -11,6 +11,7 @@ import argparse
 
 def validate(data_type, model, seq_length=40, saved_model=None,
              class_limit=None, image_shape=None):
+    test_data_num = 1084
     batch_size = 32
 
     # Get the data and process it.
@@ -39,7 +40,7 @@ def validate(data_type, model, seq_length=40, saved_model=None,
       #  val_samples=3200)
     print("test_generator length: ")
     print(len(test_generator))
-    results = model.evaluate_generator(generator=test_generator, steps=len(test_generator) // batch_size)
+    results = model.evaluate_generator(generator=test_generator, steps=test_data_num // batch_size)
     print(results)
     print(model.metrics)
     print(model.metrics_names)
