@@ -4,6 +4,7 @@ about the same number of videos as we have in our test set.
 """
 from keras.callbacks import TensorBoard, ModelCheckpoint, CSVLogger
 from models import ResearchModels
+from keras.models import load_model
 from data import DataSet
 import argparse
 
@@ -25,18 +26,23 @@ def validate(data_type, model, seq_length=40, saved_model=None,
             image_shape=image_shape
         )
 
-    val_generator = data.frame_generator(batch_size, 'test', data_type)
+    test_generator = data.frame_generator(batch_size, 'test', data_type)
 
     # Get the model.
-    rm = ResearchModels(len(data.classes), model, seq_length, saved_model)
+    #rm = ResearchModels(len(data.classes), model, seq_length, saved_model)
+
+    model = load_model(saved_model)
 
     # Evaluate!
-    results = rm.model.evaluate_generator(
-        generator=val_generator,
-        val_samples=3200)
-
+    #results = rm.model.evaluate_generator(
+     #   generator=val_generator,
+      #  val_samples=3200)
+    print("test_generator length: ")
+    print(len(test_generator))
+    results = model.evaluate_generator(generator=test_generator, steps=len(test_generator) // batch_size)
     print(results)
-    print(rm.model.metrics_names)
+    print(model.metrics)
+    print(model.metrics_names)
 
 
 def main():
