@@ -1,0 +1,60 @@
+2018-11-08 11:09:36.026235: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-08 11:09:36.034091: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-11-08 11:09:36.034134: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: ADAPT-02
+2018-11-08 11:09:36.034143: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: ADAPT-02
+2018-11-08 11:09:36.034201: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 387.26.0
+2018-11-08 11:09:36.034284: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 387.26.0
+2018-11-08 11:09:36.034300: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 387.26.0
+Using TensorFlow backend.
+Creating test generator with 1084 samples.
+[0.5753647504430829, 0.8106060606060606, 0.9801136363636364]
+['accuracy', 'top_k_categorical_accuracy']
+['loss', 'acc', 'top_k_categorical_accuracy']
+2018-11-08 11:10:09.602733: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-08 11:10:09.608580: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-11-08 11:10:09.608650: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: ADAPT-02
+2018-11-08 11:10:09.608664: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: ADAPT-02
+2018-11-08 11:10:09.608718: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 387.26.0
+2018-11-08 11:10:09.608781: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 387.26.0
+2018-11-08 11:10:09.608794: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 387.26.0
+Using TensorFlow backend.
+Creating test generator with 1084 samples.
+[2.6190459078008477, 0.24526515151515152, 0.5785984848484849]
+['accuracy', 'top_k_categorical_accuracy']
+['loss', 'acc', 'top_k_categorical_accuracy']
+2018-11-08 11:13:18.081683: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-08 11:13:18.090819: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-11-08 11:13:18.090896: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: ADAPT-02
+2018-11-08 11:13:18.090910: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: ADAPT-02
+2018-11-08 11:13:18.090980: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 387.26.0
+2018-11-08 11:13:18.091053: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 387.26.0
+2018-11-08 11:13:18.091067: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 387.26.0
+Using TensorFlow backend.
+Creating test generator with 1084 samples.
+[0.5211913070895455, 0.834280303030303, 0.978219696969697]
+['accuracy', 'top_k_categorical_accuracy']
+['loss', 'acc', 'top_k_categorical_accuracy']
+2018-11-08 11:13:26.769601: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-08 11:13:26.777263: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-11-08 11:13:26.777339: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: ADAPT-02
+2018-11-08 11:13:26.777351: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: ADAPT-02
+2018-11-08 11:13:26.777427: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 387.26.0
+2018-11-08 11:13:26.777490: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 387.26.0
+2018-11-08 11:13:26.777501: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 387.26.0
+Using TensorFlow backend.
+Creating test generator with 1084 samples.
+[1.9313316670331089, 0.4734848484848485, 0.8115530303030303]
+['accuracy', 'top_k_categorical_accuracy']
+['loss', 'acc', 'top_k_categorical_accuracy']
+2018-11-08 11:18:20.666346: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-11-08 11:18:20.673526: E tensorflow/stream_executor/cuda/cuda_driver.cc:300] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2018-11-08 11:18:20.673612: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: ADAPT-02
+2018-11-08 11:18:20.673627: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: ADAPT-02
+2018-11-08 11:18:20.673693: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 387.26.0
+2018-11-08 11:18:20.673775: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 387.26.0
+2018-11-08 11:18:20.673790: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 387.26.0
+Using TensorFlow backend.
+Creating test generator with 1084 samples.
+[2.217116131927028, 0.36174242424242425, 0.7490530303030303]
+['accuracy', 'top_k_categorical_accuracy']
+['loss', 'acc', 'top_k_categorical_accuracy']
